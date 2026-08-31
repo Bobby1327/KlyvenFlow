@@ -250,13 +250,28 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
                   {t.propSummaryTitle}
                 </h4>
 
-                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid var(--border-line)', marginBottom: '18px' }}>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid var(--border-line)', marginBottom: '12px' }}>
                   <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)', textTransform: 'uppercase', fontWeight: '700', letterSpacing: '0.05em' }}>{t.propOneTimeBuild}</div>
-                  <div style={{ fontSize: '2.4rem', fontWeight: '800', color: '#ffffff', fontFamily: 'monospace', margin: '4px 0', letterSpacing: '-0.02em' }}>
+                  <div style={{ fontSize: '2.3rem', fontWeight: '800', color: '#ffffff', fontFamily: 'monospace', margin: '4px 0', letterSpacing: '-0.02em' }}>
                     {formatPrice(totalEstimate)}
                   </div>
                   <div style={{ fontSize: '0.78rem', color: '#10b981', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '4px' }}>
                     <Clock size={12} /> {t.propReadyIn.replace('{days}', daysEstimate)}
+                  </div>
+                </div>
+
+                {/* Monthly Maintenance Fee */}
+                <div style={{ background: 'var(--bg-card-hover)', padding: '12px 16px', borderRadius: '8px', border: '1px solid var(--border-line)', marginBottom: '18px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px' }}>
+                  <div style={{ flex: 1, minWidth: '160px' }}>
+                    <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)', textTransform: 'uppercase', fontWeight: '700', letterSpacing: '0.05em' }}>
+                      {t.propMonthlyMaintenance}
+                    </div>
+                    <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>
+                      {t.propMonthlyDesc}
+                    </div>
+                  </div>
+                  <div style={{ fontSize: '1.2rem', fontWeight: '800', color: 'var(--theme-accent)', fontFamily: 'monospace', whiteSpace: 'nowrap' }}>
+                    {t.propMonthlyFee}
                   </div>
                 </div>
 

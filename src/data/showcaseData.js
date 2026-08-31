@@ -205,9 +205,12 @@ export const TRANSLATIONS = {
     propOneTimeBuild: 'Investimento único de criação',
     propReadyIn: 'Sistema pronto em {days}',
     propIncludesCount: 'Configurado com {count} ferramenta(s):',
+    propMonthlyMaintenance: 'Manutenção & Hospedagem Contínua',
+    propMonthlyFee: 'R$ 89/mês',
+    propMonthlyDesc: 'Hospedagem ultra rápida, backups diários e suporte contínuo',
     propBullet1: 'Página moderna focada no celular (design exclusivo)',
-    propBullet2: 'Você é dono do código (sem comissões mensais)',
-    propBullet3: 'Suporte completo para colocar no ar',
+    propBullet2: 'Você é dono do código (sem comissões sobre vendas)',
+    propBullet3: 'Manutenção & suporte contínuo por apenas R$ 89/mês',
     propCta: 'Enviar proposta no meu e-mail',
 
     // Testimonials
@@ -456,9 +459,12 @@ export const TRANSLATIONS = {
     propOneTimeBuild: 'One-time custom build investment',
     propReadyIn: 'System ready in {days}',
     propIncludesCount: 'Configured with {count} feature(s):',
+    propMonthlyMaintenance: 'Monthly Maintenance & Cloud Hosting',
+    propMonthlyFee: '$89/mo',
+    propMonthlyDesc: 'Ultra-fast hosting, daily backups & ongoing developer support',
     propBullet1: 'Clean mobile-first design (fully unique style)',
-    propBullet2: 'You own 100% of the code (no commissions)',
-    propBullet3: 'Full deployment setup & WhatsApp integrations',
+    propBullet2: 'You own 100% of the code (no sales commissions)',
+    propBullet3: 'Ongoing hosting & developer support for just $89/mo',
     propCta: 'Email my custom scope specs',
 
     // Testimonials
