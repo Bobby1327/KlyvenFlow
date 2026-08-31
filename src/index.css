@@ -573,11 +573,11 @@ input[type=range]::-webkit-slider-thumb:hover {
 
 /* Thick Accent Separator Line */
 .thick-separator {
-  height: 12px;
+  height: 6px;
   background: linear-gradient(90deg, var(--theme-accent) 0%, #3b82f6 50%, var(--accent-orange) 100%);
   width: 100%;
   border-radius: 6px;
-  margin: 48px 0;
+  margin: 24px 0;
   box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15);
 }
 
@@ -590,7 +590,7 @@ input[type=range]::-webkit-slider-thumb:hover {
   /* Force all layouts wrapped in .demo-grid-layout to collapse into single column */
   .demo-grid-layout {
     grid-template-columns: 1fr !important;
-    gap: 20px !important;
+    gap: 16px !important;
   }
 }
 
@@ -611,7 +611,7 @@ input[type=range]::-webkit-slider-thumb:hover {
 
   /* Sections Padding */
   section {
-    padding: 60px 16px !important;
+    padding: 44px 16px !important;
   }
 
   /* Reduce sandbox padding so content fits on narrow mobile displays */

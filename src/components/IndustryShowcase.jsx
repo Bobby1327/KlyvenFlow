@@ -75,19 +75,19 @@ export default function IndustryShowcase({ lang, activeIndustry, onSelectIndustr
   };
 
   return (
-    <section id="showcase" style={{ padding: '100px 24px', borderBottom: '1px solid var(--border-line)' }}>
+    <section id="showcase" style={{ padding: '60px 24px', borderBottom: '1px solid var(--border-line)' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         
         {/* Section Title */}
-        <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <div className="badge badge-glow" style={{ marginBottom: '12px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '28px' }}>
+          <div className="badge badge-glow" style={{ marginBottom: '8px' }}>
             <Sparkles size={14} style={{ marginRight: '6px' }} />
             <span>{t.showcaseBadge}</span>
           </div>
-          <h2 style={{ fontSize: 'clamp(2rem, 4.5vw, 3.2rem)', fontWeight: '700', marginBottom: '18px' }}>
+          <h2 style={{ fontSize: 'clamp(1.9rem, 4vw, 2.8rem)', fontWeight: '700', marginBottom: '12px' }}>
             {t.showcaseTitlePart1} <span style={{ color: currentInd.accentColor }}>{t.showcaseTitlePart2}</span>
           </h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: '1.15rem', maxWidth: '680px', margin: '0 auto', lineHeight: '1.6' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', maxWidth: '680px', margin: '0 auto', lineHeight: '1.5' }}>
             {t.showcaseSub}
           </p>
         </div>
@@ -96,9 +96,9 @@ export default function IndustryShowcase({ lang, activeIndustry, onSelectIndustr
         <div style={{ 
           display: 'flex', 
           justifyContent: 'center', 
-          gap: '12px', 
+          gap: '10px', 
           flexWrap: 'wrap',
-          marginBottom: '40px'
+          marginBottom: '24px'
         }}>
           {INDUSTRIES.map((ind) => {
             const Icon = getIcon(ind.icon);
@@ -108,21 +108,21 @@ export default function IndustryShowcase({ lang, activeIndustry, onSelectIndustr
                 key={ind.id}
                 onClick={() => onSelectIndustry(ind.id)}
                 style={{
-                  padding: '14px 24px',
+                  padding: '10px 18px',
                   borderRadius: '6px',
                   border: isActive ? `2px solid ${ind.accentColor}` : '1px solid var(--border-line)',
                   background: isActive ? 'var(--bg-card-hover)' : 'transparent',
                   color: '#ffffff',
                   fontWeight: '700',
-                  fontSize: '0.9rem',
+                  fontSize: '0.88rem',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '10px',
+                  gap: '8px',
                   transition: 'all 0.2s ease'
                 }}
               >
-                <Icon size={18} color={ind.accentColor} />
+                <Icon size={16} color={ind.accentColor} />
                 <span>{getIndustryLabel(ind)}</span>
               </button>
             );
@@ -130,29 +130,26 @@ export default function IndustryShowcase({ lang, activeIndustry, onSelectIndustr
         </div>
 
         {/* Industry Highlight Banner */}
-        <div className="glass-panel" style={{ padding: '28px 36px', marginBottom: '32px', borderLeft: `4px solid ${currentInd.accentColor}`, background: 'transparent' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '20px' }}>
+        <div className="glass-panel" style={{ padding: '18px 24px', marginBottom: '24px', borderLeft: `4px solid ${currentInd.accentColor}`, background: 'transparent' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
             <div>
-              <div style={{ fontSize: '0.78rem', textTransform: 'uppercase', color: currentInd.accentColor, fontWeight: '800', letterSpacing: '0.05em', marginBottom: '6px' }}>
+              <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: currentInd.accentColor, fontWeight: '800', letterSpacing: '0.05em', marginBottom: '4px' }}>
                 {t.keyProblemSolved} {getIndustryLabel(currentInd)}
               </div>
-              <h3 style={{ fontSize: '1.35rem', color: 'var(--text-main)', marginBottom: '4px', fontWeight: '700' }}>{getTagline(currentInd)}</h3>
+              <h3 style={{ fontSize: '1.2rem', color: 'var(--text-main)', margin: 0, fontWeight: '700' }}>{getTagline(currentInd)}</h3>
             </div>
 
             {/* Quick Stat Pill */}
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
               {Object.entries(currentInd.stats).map(([key, val]) => (
-                <div key={key} style={{ background: 'var(--bg-card-hover)', padding: '10px 18px', borderRadius: '6px', textAlign: 'center', border: '1px solid var(--border-line)' }}>
-                  <div style={{ fontSize: '1.15rem', fontWeight: '800', color: currentInd.accentColor, fontFamily: 'monospace' }}>{val}</div>
-                  <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>{getStatLabel(key)}</div>
+                <div key={key} style={{ background: 'var(--bg-card-hover)', padding: '8px 14px', borderRadius: '6px', textAlign: 'center', border: '1px solid var(--border-line)' }}>
+                  <div style={{ fontSize: '1.05rem', fontWeight: '800', color: currentInd.accentColor, fontFamily: 'monospace' }}>{val}</div>
+                  <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>{getStatLabel(key)}</div>
                 </div>
               ))}
             </div>
           </div>
         </div>
-
-        {/* Thick line separator separating the demo area at the top */}
-        <div className="thick-separator" />
 
         {/* Browser Device Mockup wrapper to fully separate the simulated app */}
         <div className="browser-device-frame">
@@ -178,9 +175,6 @@ export default function IndustryShowcase({ lang, activeIndustry, onSelectIndustr
             {renderMiniApp()}
           </div>
         </div>
-
-        {/* Thick line separator separating the demo area at the bottom */}
-        <div className="thick-separator" />
 
       </div>
     </section>

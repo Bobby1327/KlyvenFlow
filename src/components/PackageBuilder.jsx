@@ -62,89 +62,89 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
   };
 
   return (
-    <section id="package-builder" style={{ padding: '100px 24px', borderBottom: '1px solid var(--border-line)' }}>
+    <section id="package-builder" style={{ padding: '60px 24px', borderBottom: '1px solid var(--border-line)' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         
-        <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-          <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--theme-accent)', fontWeight: '800', letterSpacing: '0.08em', display: 'block', marginBottom: '12px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+          <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--theme-accent)', fontWeight: '800', letterSpacing: '0.08em', display: 'block', marginBottom: '8px' }}>
             {t.propBadge}
           </span>
-          <h2 style={{ fontSize: 'clamp(2rem, 4.5vw, 3.2rem)', fontWeight: '700', marginBottom: '18px' }}>
+          <h2 style={{ fontSize: 'clamp(1.9rem, 4vw, 2.8rem)', fontWeight: '700', marginBottom: '12px' }}>
             {t.propTitle}
           </h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: '1.15rem', maxWidth: '720px', margin: '0 auto', lineHeight: '1.6' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', maxWidth: '720px', margin: '0 auto', lineHeight: '1.5' }}>
             {t.propSub}
           </p>
         </div>
 
         {proposalSent ? (
-          <div className="glass-panel" style={{ padding: '48px 32px', textAlign: 'center', maxWidth: '640px', margin: '0 auto', borderRadius: '12px', border: '1px solid #10b981', background: 'transparent' }}>
-            <div style={{ width: '56px', height: '56px', borderRadius: '50%', background: '#10b981', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px auto' }}>
-              <Check size={28} />
+          <div className="glass-panel" style={{ padding: '36px 24px', textAlign: 'center', maxWidth: '600px', margin: '0 auto', borderRadius: '12px', border: '1px solid #10b981', background: 'transparent' }}>
+            <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: '#10b981', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px auto' }}>
+              <Check size={24} />
             </div>
-            <h3 style={{ fontSize: '1.6rem', color: '#fff', marginBottom: '12px', fontWeight: '700' }}>{t.propSummaryTitle}</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '1rem', marginBottom: '28px', lineHeight: '1.6' }}>
+            <h3 style={{ fontSize: '1.4rem', color: '#fff', marginBottom: '10px', fontWeight: '700' }}>{t.propSummaryTitle}</h3>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginBottom: '20px', lineHeight: '1.5' }}>
               {lang === 'pt' 
                 ? `Escopo personalizado gerado com sucesso. Investimento total estimado: ${formatPrice(totalEstimate)} com entrega estimada em ${daysEstimate}.`
                 : `Scope specs configured. Total estimated investment: ${formatPrice(totalEstimate)} with delivery targeted in ${daysEstimate}.`
               }
             </p>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap', marginBottom: '24px' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '18px' }}>
               <a 
                 href={`https://wa.me/5535997745407?text=${encodeURIComponent(lang === 'pt' ? `Olá! Montei uma proposta no KlyvenFlow com valor estimado de ${formatPrice(totalEstimate)}. Gostaria de agendar o início do projeto!` : `Hello! I configured a package on KlyvenFlow with estimated total of ${formatPrice(totalEstimate)}. Let's build it!`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary" 
-                style={{ borderRadius: '6px', background: '#10b981', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '14px 24px' }}
+                style={{ borderRadius: '6px', background: '#10b981', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 20px', fontSize: '0.88rem' }}
               >
-                <MessageCircle size={20} />
+                <MessageCircle size={18} />
                 <span>{lang === 'pt' ? 'Enviar Proposta no WhatsApp: (55) 35 99774-5407' : 'Send via WhatsApp: (55) 35 99774-5407'}</span>
               </a>
 
               <a
                 href={`mailto:KlyvenFlow@gmail.com?subject=${encodeURIComponent(lang === 'pt' ? 'Proposta Personalizada KlyvenFlow' : 'KlyvenFlow Custom Package Proposal')}&body=${encodeURIComponent(lang === 'pt' ? `Olá! Configurei uma proposta no valor de ${formatPrice(totalEstimate)}.` : `Hello! I configured a proposal of ${formatPrice(totalEstimate)}.`)}`}
                 className="btn-secondary"
-                style={{ borderRadius: '6px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '14px 20px' }}
+                style={{ borderRadius: '6px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 18px', fontSize: '0.88rem' }}
               >
-                <Mail size={18} color="var(--theme-accent)" />
+                <Mail size={16} color="var(--theme-accent)" />
                 <span>{lang === 'pt' ? 'Enviar por E-mail (KlyvenFlow@gmail.com)' : 'Send via Email (KlyvenFlow@gmail.com)'}</span>
               </a>
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap' }}>
-              <button onClick={() => setProposalSent(false)} className="btn-secondary" style={{ borderRadius: '6px', fontSize: '0.85rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
+              <button onClick={() => setProposalSent(false)} className="btn-secondary" style={{ borderRadius: '6px', fontSize: '0.82rem', padding: '8px 16px' }}>
                 {lang === 'pt' ? '← Modificar Configurações' : '← Modify Specs'}
               </button>
-              <button onClick={onOpenContactModal} className="btn-secondary" style={{ borderRadius: '6px', fontSize: '0.85rem' }}>
+              <button onClick={onOpenContactModal} className="btn-secondary" style={{ borderRadius: '6px', fontSize: '0.82rem', padding: '8px 16px' }}>
                 {t.bookConsultation}
               </button>
             </div>
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: '48px' }} className="demo-grid-layout">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 360px', gap: '28px' }} className="demo-grid-layout">
             
             {/* Left: Step Builder */}
-            <div className="glass-panel" style={{ padding: '36px', borderRadius: '12px', background: 'transparent' }}>
+            <div className="glass-panel" style={{ padding: '28px', borderRadius: '12px', background: 'transparent' }}>
               
               {/* Step 1: Industry */}
-              <div style={{ marginBottom: '40px' }}>
-                <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '700' }}>
-                  <span style={{ width: '20px', height: '20px', borderRadius: '50%', background: 'var(--theme-accent)', color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: '800' }}>1</span>
+              <div style={{ marginBottom: '24px' }}>
+                <h4 style={{ fontSize: '1rem', color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '700' }}>
+                  <span style={{ width: '18px', height: '18px', borderRadius: '50%', background: 'var(--theme-accent)', color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.72rem', fontWeight: '800' }}>1</span>
                   {t.propStep1}
                 </h4>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '8px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '8px' }}>
                   {INDUSTRIES.map(ind => (
                     <button
                       key={ind.id}
                       onClick={() => setSelectedInd(ind.id)}
                       style={{
-                        padding: '12px',
+                        padding: '10px 12px',
                         borderRadius: '6px',
                         border: '1px solid var(--border-line)',
                         background: selectedInd === ind.id ? 'var(--theme-accent)' : 'transparent',
                         color: '#fff',
                         fontWeight: '600',
-                        fontSize: '0.85rem',
+                        fontSize: '0.82rem',
                         cursor: 'pointer',
                         textAlign: 'left',
                         transition: 'all 0.2s ease'
@@ -157,12 +157,12 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
               </div>
 
               {/* Step 2: Feature Selection */}
-              <div style={{ marginBottom: '40px' }}>
-                <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '700' }}>
-                  <span style={{ width: '20px', height: '20px', borderRadius: '50%', background: 'var(--theme-accent)', color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: '800' }}>2</span>
+              <div style={{ marginBottom: '24px' }}>
+                <h4 style={{ fontSize: '1rem', color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '700' }}>
+                  <span style={{ width: '18px', height: '18px', borderRadius: '50%', background: 'var(--theme-accent)', color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.72rem', fontWeight: '800' }}>2</span>
                   {t.propStep2}
                 </h4>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '10px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '8px' }}>
                   {PACKAGE_OPTIONS.map(opt => {
                     const isChecked = selectedFeatures.includes(opt.id);
                     return (
@@ -170,8 +170,8 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
                         key={opt.id}
                         onClick={() => toggleFeature(opt.id)}
                         style={{
-                          padding: '14px',
-                          borderRadius: '8px',
+                          padding: '10px 12px',
+                          borderRadius: '6px',
                           border: isChecked ? '1px solid var(--theme-accent)' : '1px solid var(--border-line)',
                           background: isChecked ? 'var(--theme-accent-light)' : 'transparent',
                           cursor: 'pointer',
@@ -181,16 +181,16 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
                           transition: 'all 0.15s ease'
                         }}
                       >
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                          <div style={{ width: '16px', height: '16px', borderRadius: '4px', border: isChecked ? 'none' : '1px solid #4b5563', background: isChecked ? 'var(--theme-accent)' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            {isChecked && <Check size={12} color="#fff" />}
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                          <div style={{ width: '15px', height: '15px', borderRadius: '4px', border: isChecked ? 'none' : '1px solid #4b5563', background: isChecked ? 'var(--theme-accent)' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            {isChecked && <Check size={11} color="#fff" />}
                           </div>
                           <div>
-                            <div style={{ fontSize: '0.85rem', fontWeight: '600', color: '#fff' }}>{getFeatureName(opt)}</div>
-                            <span style={{ fontSize: '0.72rem', color: 'var(--text-dim)' }}>{getCategoryLabel(opt)}</span>
+                            <div style={{ fontSize: '0.82rem', fontWeight: '600', color: '#fff' }}>{getFeatureName(opt)}</div>
+                            <span style={{ fontSize: '0.68rem', color: 'var(--text-dim)' }}>{getCategoryLabel(opt)}</span>
                           </div>
                         </div>
-                        <span style={{ fontSize: '0.82rem', fontWeight: '700', fontFamily: 'monospace', color: 'var(--theme-accent)' }}>+{formatPrice(opt.costEstimate)}</span>
+                        <span style={{ fontSize: '0.78rem', fontWeight: '700', fontFamily: 'monospace', color: 'var(--theme-accent)' }}>+{formatPrice(opt.costEstimate)}</span>
                       </div>
                     );
                   })}
@@ -199,16 +199,16 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
 
               {/* Step 3: Speed */}
               <div>
-                <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '700' }}>
-                  <span style={{ width: '20px', height: '20px', borderRadius: '50%', background: 'var(--theme-accent)', color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: '800' }}>3</span>
+                <h4 style={{ fontSize: '1rem', color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '700' }}>
+                  <span style={{ width: '18px', height: '18px', borderRadius: '50%', background: 'var(--theme-accent)', color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.72rem', fontWeight: '800' }}>3</span>
                   {t.propStep3}
                 </h4>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
                   <button
                     onClick={() => setSpeed('standard')}
                     style={{
-                      padding: '14px',
-                      borderRadius: '8px',
+                      padding: '12px',
+                      borderRadius: '6px',
                       border: speed === 'standard' ? '1px solid var(--theme-accent)' : '1px solid var(--border-line)',
                       background: speed === 'standard' ? 'rgba(255, 255, 255, 0.03)' : 'transparent',
                       color: '#fff',
@@ -216,15 +216,15 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
                       textAlign: 'left'
                     }}
                   >
-                    <div style={{ fontWeight: '700', fontSize: '0.9rem' }}>{t.propStandardSpeed}</div>
-                    <div style={{ fontSize: '0.78rem', color: 'var(--text-dim)' }}>{t.propStandardSub}</div>
+                    <div style={{ fontWeight: '700', fontSize: '0.85rem' }}>{t.propStandardSpeed}</div>
+                    <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)' }}>{t.propStandardSub}</div>
                   </button>
 
                   <button
                     onClick={() => setSpeed('express')}
                     style={{
-                      padding: '14px',
-                      borderRadius: '8px',
+                      padding: '12px',
+                      borderRadius: '6px',
                       border: speed === 'express' ? '1px solid var(--accent-orange)' : '1px solid var(--border-line)',
                       background: speed === 'express' ? 'rgba(249, 115, 22, 0.05)' : 'transparent',
                       color: '#fff',
@@ -232,10 +232,10 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
                       textAlign: 'left'
                     }}
                   >
-                    <div style={{ fontWeight: '700', fontSize: '0.9rem', color: 'var(--accent-orange)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                      <Zap size={14} /> {t.propExpressSpeed}
+                    <div style={{ fontWeight: '700', fontSize: '0.85rem', color: 'var(--accent-orange)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <Zap size={13} /> {t.propExpressSpeed}
                     </div>
-                    <div style={{ fontSize: '0.78rem', color: 'var(--text-dim)' }}>{t.propExpressSub}</div>
+                    <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)' }}>{t.propExpressSub}</div>
                   </button>
                 </div>
               </div>
@@ -243,28 +243,28 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
             </div>
 
             {/* Right: Live Quote Summary Card */}
-            <div className="glass-panel" style={{ padding: '36px', borderRadius: '12px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: '1px solid var(--theme-accent)', background: 'transparent' }}>
+            <div className="glass-panel" style={{ padding: '28px', borderRadius: '12px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: '1px solid var(--theme-accent)', background: 'transparent' }}>
               <div>
-                <h4 style={{ fontSize: '1.2rem', color: '#fff', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '700' }}>
-                  <Sparkles size={18} color="var(--theme-accent)" />
+                <h4 style={{ fontSize: '1.1rem', color: '#fff', marginBottom: '18px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '700' }}>
+                  <Sparkles size={16} color="var(--theme-accent)" />
                   {t.propSummaryTitle}
                 </h4>
 
-                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '8px', border: '1px solid var(--border-line)', marginBottom: '24px' }}>
-                  <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', textTransform: 'uppercase', fontWeight: '700', letterSpacing: '0.05em' }}>{t.propOneTimeBuild}</div>
-                  <div style={{ fontSize: '2.6rem', fontWeight: '800', color: '#ffffff', fontFamily: 'monospace', margin: '6px 0', letterSpacing: '-0.02em' }}>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid var(--border-line)', marginBottom: '18px' }}>
+                  <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)', textTransform: 'uppercase', fontWeight: '700', letterSpacing: '0.05em' }}>{t.propOneTimeBuild}</div>
+                  <div style={{ fontSize: '2.4rem', fontWeight: '800', color: '#ffffff', fontFamily: 'monospace', margin: '4px 0', letterSpacing: '-0.02em' }}>
                     {formatPrice(totalEstimate)}
                   </div>
-                  <div style={{ fontSize: '0.8rem', color: '#10b981', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <div style={{ fontSize: '0.78rem', color: '#10b981', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '4px' }}>
                     <Clock size={12} /> {t.propReadyIn.replace('{days}', daysEstimate)}
                   </div>
                 </div>
 
-                <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginBottom: '16px', fontWeight: '600' }}>
+                <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginBottom: '12px', fontWeight: '600' }}>
                   {t.propIncludesCount.replace('{count}', selectedFeatures.length)}
                 </div>
 
-                <ul style={{ fontSize: '0.82rem', color: 'var(--text-muted)', paddingLeft: '18px', margin: '0 0 32px 0', lineHeight: '1.8' }}>
+                <ul style={{ fontSize: '0.78rem', color: 'var(--text-muted)', paddingLeft: '16px', margin: '0 0 20px 0', lineHeight: '1.6' }}>
                   <li>{t.propBullet1}</li>
                   {selectedFeatures.map(fId => {
                     const feat = PACKAGE_OPTIONS.find(p => p.id === fId);
@@ -275,26 +275,28 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
                 </ul>
               </div>
 
-              <button 
-                onClick={handleSendProposal}
-                className="btn-primary"
-                style={{ width: '100%', justifyContent: 'center', padding: '14px', borderRadius: '6px' }}
-              >
-                <Send size={16} style={{ marginRight: '4px' }} /> {t.propCta}
-              </button>
-
-              <div style={{ marginTop: '14px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <a
-                  href="https://wa.me/5535997745407"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-pill-whatsapp"
-                  style={{ width: '100%', boxSizing: 'border-box', justifyContent: 'center', fontSize: '0.82rem', padding: '8px 14px' }}
+              <div>
+                <button 
+                  onClick={handleSendProposal}
+                  className="btn-primary"
+                  style={{ width: '100%', justifyContent: 'center', padding: '12px', borderRadius: '6px', fontSize: '0.9rem' }}
                 >
-                  <span className="live-pulse-dot" />
-                  <MessageCircle size={15} />
-                  <span>WhatsApp: <strong>(55) 35 99774-5407</strong></span>
-                </a>
+                  <Send size={15} style={{ marginRight: '4px' }} /> {t.propCta}
+                </button>
+
+                <div style={{ marginTop: '10px' }}>
+                  <a
+                    href="https://wa.me/5535997745407"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact-pill-whatsapp"
+                    style={{ width: '100%', boxSizing: 'border-box', justifyContent: 'center', fontSize: '0.8rem', padding: '8px 12px' }}
+                  >
+                    <span className="live-pulse-dot" />
+                    <MessageCircle size={14} />
+                    <span>WhatsApp: <strong>(55) 35 99774-5407</strong></span>
+                  </a>
+                </div>
               </div>
             </div>
 

@@ -29,33 +29,33 @@ export default function Testimonials({ lang, onOpenContactModal }) {
   };
 
   return (
-    <section style={{ padding: '100px 24px', borderBottom: '1px solid var(--border-line)' }}>
+    <section style={{ padding: '60px 24px', borderBottom: '1px solid var(--border-line)' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         
-        <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-          <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--theme-accent)', fontWeight: '800', letterSpacing: '0.08em', display: 'block', marginBottom: '12px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '28px' }}>
+          <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--theme-accent)', fontWeight: '800', letterSpacing: '0.08em', display: 'block', marginBottom: '8px' }}>
             {t.testBadge}
           </span>
-          <h2 style={{ fontSize: 'clamp(2rem, 4.5vw, 3.2rem)', fontWeight: '700', marginBottom: '18px' }}>
+          <h2 style={{ fontSize: 'clamp(1.9rem, 4vw, 2.8rem)', fontWeight: '700', marginBottom: '12px' }}>
             {t.testTitle}
           </h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: '1.15rem', maxWidth: '700px', margin: '0 auto', lineHeight: '1.6' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', maxWidth: '700px', margin: '0 auto', lineHeight: '1.5' }}>
             {t.testSub}
           </p>
         </div>
 
         {/* Filter buttons */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: '40px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: '24px' }}>
           {['all', 'restaurant', 'salon', 'contractor'].map(cat => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
               style={{
-                padding: '8px 16px',
+                padding: '6px 14px',
                 borderRadius: '6px',
                 border: '1px solid var(--border-line)',
                 cursor: 'pointer',
-                fontSize: '0.85rem',
+                fontSize: '0.82rem',
                 fontWeight: '700',
                 textTransform: 'capitalize',
                 background: filter === cat ? 'var(--theme-accent)' : 'transparent',
@@ -68,27 +68,27 @@ export default function Testimonials({ lang, onOpenContactModal }) {
           ))}
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
           {filteredStudies.map(study => (
-            <div key={study.id} className="glass-panel" style={{ padding: '32px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: 'transparent', borderRadius: '12px' }}>
+            <div key={study.id} className="glass-panel" style={{ padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: 'transparent', borderRadius: '12px' }}>
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
-                  <span style={{ fontSize: '0.75rem', fontWeight: '800', color: '#10b981', background: 'rgba(16, 185, 129, 0.08)', padding: '4px 12px', borderRadius: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+                  <span style={{ fontSize: '0.72rem', fontWeight: '800', color: '#10b981', background: 'rgba(16, 185, 129, 0.08)', padding: '3px 10px', borderRadius: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                     <TrendingUp size={12} /> {getMetric(study)}
                   </span>
-                  <span style={{ fontFamily: 'var(--font-heading)', fontStyle: 'italic', fontSize: '2.5rem', color: 'var(--border-line-hover)', lineHeight: '1' }}>“</span>
+                  <span style={{ fontFamily: 'var(--font-heading)', fontStyle: 'italic', fontSize: '2rem', color: 'var(--border-line-hover)', lineHeight: '1' }}>“</span>
                 </div>
 
-                <p style={{ fontSize: '1.05rem', color: '#e5e7eb', fontFamily: 'var(--font-heading)', fontStyle: 'italic', marginBottom: '32px', lineHeight: '1.6' }}>
+                <p style={{ fontSize: '0.98rem', color: '#e5e7eb', fontFamily: 'var(--font-heading)', fontStyle: 'italic', marginBottom: '20px', lineHeight: '1.5' }}>
                   {getDesc(study)}
                 </p>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingTop: '20px', borderTop: '1px solid var(--border-line)' }}>
-                <img src={study.avatar} alt={study.author} style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover' }} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', paddingTop: '16px', borderTop: '1px solid var(--border-line)' }}>
+                <img src={study.avatar} alt={study.author} style={{ width: '36px', height: '36px', borderRadius: '50%', objectFit: 'cover' }} />
                 <div>
-                  <h5 style={{ fontSize: '0.9rem', color: '#fff', margin: 0, fontWeight: '700' }}>{study.author}</h5>
-                  <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)' }}>{study.client} &bull; {study.location}</div>
+                  <h5 style={{ fontSize: '0.88rem', color: '#fff', margin: 0, fontWeight: '700' }}>{study.author}</h5>
+                  <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)' }}>{study.client} &bull; {study.location}</div>
                 </div>
               </div>
             </div>

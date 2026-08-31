@@ -28,12 +28,12 @@ export default function Hero({ lang, onOpenContactModal, onSelectIndustry }) {
   };
 
   return (
-    <section style={{ padding: '100px 24px 80px 24px', position: 'relative', borderBottom: '1px solid var(--border-line)' }}>
+    <section style={{ padding: '56px 24px 44px 24px', position: 'relative', borderBottom: '1px solid var(--border-line)' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         
         {/* Animated Badge */}
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '32px' }}>
-          <div className="badge badge-glow" style={{ padding: '8px 18px', fontSize: '0.8rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+          <div className="badge badge-glow" style={{ padding: '6px 16px', fontSize: '0.8rem' }}>
             <Sparkles size={14} style={{ marginRight: '6px' }} />
             <span>{t.heroBadge}</span>
           </div>
@@ -41,12 +41,12 @@ export default function Hero({ lang, onOpenContactModal, onSelectIndustry }) {
 
         {/* Main Headline */}
         <h1 style={{ 
-          fontSize: 'clamp(2.5rem, 6vw, 4.4rem)', 
+          fontSize: 'clamp(2.3rem, 5.5vw, 4rem)', 
           fontWeight: '700', 
-          lineHeight: '1.1', 
-          marginBottom: '28px',
+          lineHeight: '1.12', 
+          marginBottom: '16px',
           textAlign: 'center',
-          maxWidth: '1000px',
+          maxWidth: '960px',
           marginInline: 'auto'
         }}>
           {t.heroTitlePart1} <span className="gradient-accent-text">{t.heroTitlePart2}</span>
@@ -54,31 +54,31 @@ export default function Hero({ lang, onOpenContactModal, onSelectIndustry }) {
 
         {/* Subtitle */}
         <p style={{ 
-          fontSize: '1.2rem', 
+          fontSize: '1.15rem', 
           color: 'var(--text-muted)', 
           maxWidth: '740px', 
-          margin: '0 auto 48px auto',
+          margin: '0 auto 28px auto',
           textAlign: 'center',
-          lineHeight: '1.7',
+          lineHeight: '1.6',
           fontWeight: '400'
         }}>
           {t.heroSub}
         </p>
 
         {/* Action Buttons */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '24px' }}>
-          <a href="#showcase" className="btn-primary" style={{ padding: '16px 32px', fontSize: '1rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px', flexWrap: 'wrap', marginBottom: '18px' }}>
+          <a href="#showcase" className="btn-primary" style={{ padding: '14px 28px', fontSize: '0.95rem' }}>
             <span>{t.heroCtaPrimary}</span>
             <ArrowRight size={18} />
           </a>
-          <button onClick={onOpenContactModal} className="btn-secondary" style={{ padding: '16px 32px', fontSize: '1rem' }}>
+          <button onClick={onOpenContactModal} className="btn-secondary" style={{ padding: '14px 28px', fontSize: '0.95rem' }}>
             <Zap size={18} color="var(--accent-orange)" />
             <span>{t.heroCtaSecondary}</span>
           </button>
         </div>
 
         {/* Standout Direct Contact Bar */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', marginBottom: '64px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', marginBottom: '36px' }}>
           <div className="contact-highlight-bar">
             <a
               href="https://wa.me/5535997745407"
@@ -88,7 +88,7 @@ export default function Hero({ lang, onOpenContactModal, onSelectIndustry }) {
               title="Falar no WhatsApp"
             >
               <span className="live-pulse-dot" />
-              <MessageCircle size={17} />
+              <MessageCircle size={16} />
               <span>WhatsApp: <strong style={{ letterSpacing: '0.02em' }}>(55) 35 99774-5407</strong></span>
             </a>
 
@@ -97,21 +97,21 @@ export default function Hero({ lang, onOpenContactModal, onSelectIndustry }) {
               className="contact-pill-email"
               title="Enviar e-mail para KlyvenFlow@gmail.com"
             >
-              <Mail size={17} color="var(--theme-accent)" />
+              <Mail size={16} color="var(--theme-accent)" />
               <span>E-mail: <strong style={{ letterSpacing: '0.02em' }}>KlyvenFlow@gmail.com</strong></span>
             </a>
           </div>
-          <span style={{ fontSize: '0.78rem', color: 'var(--text-dim)', fontWeight: '600' }}>
+          <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)', fontWeight: '600' }}>
             {lang === 'pt' ? '⚡ Atendimento imediato de Segunda a Sábado' : '⚡ Instant direct response Monday to Saturday'}
           </span>
         </div>
 
         {/* Industry Quick Selector */}
-        <div style={{ marginBottom: '80px', textAlign: 'center' }}>
-          <div style={{ fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-dim)', marginBottom: '20px', fontWeight: '700' }}>
+        <div style={{ marginBottom: '40px', textAlign: 'center' }}>
+          <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-dim)', marginBottom: '12px', fontWeight: '700' }}>
             {t.heroQuickLinks}
           </div>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
             {INDUSTRIES.map((item) => {
               const IconComponent = getIcon(item.icon);
               return (
@@ -121,20 +121,20 @@ export default function Hero({ lang, onOpenContactModal, onSelectIndustry }) {
                   onClick={() => onSelectIndustry(item.id)}
                   className="glass-card"
                   style={{
-                    padding: '12px 24px',
+                    padding: '10px 20px',
                     borderRadius: '6px',
                     textDecoration: 'none',
                     color: '#ffffff',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '10px',
+                    gap: '8px',
                     fontWeight: '600',
-                    fontSize: '0.9rem',
+                    fontSize: '0.88rem',
                     background: 'transparent',
                     border: '1px solid var(--border-line)'
                   }}
                 >
-                  <IconComponent size={18} color={item.accentColor} />
+                  <IconComponent size={17} color={item.accentColor} />
                   <span>{getIndustryLabel(item)}</span>
                 </a>
               );
