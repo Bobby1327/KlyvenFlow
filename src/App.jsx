@@ -50,29 +50,38 @@ export default function App() {
     ripple.style.top = `${y - radius}px`;
 
     // Set color to the theme we are changing TO
-    ripple.style.backgroundColor = isLightMode ? '#151822' : '#f8fafc';
+    ripple.style.backgroundColor = isLightMode ? '#151822' : '#f1f5f9';
     document.body.appendChild(ripple);
 
-    // Force repaint
-    ripple.offsetWidth;
+    // Request animation frames to execute transition smoothly
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        ripple.classList.add('active');
+      });
+    });
 
-    // Trigger expansion
-    ripple.classList.add('active');
-
-    // Switch the actual theme variables after ripple covers screen
+    // Wait until the screen is fully covered by the ripple (e.g. 450ms) before re-rendering theme variables
     setTimeout(() => {
-      setIsLightMode(!isLightMode);
-      if (!isLightMode) {
-        document.documentElement.classList.add('light');
-      } else {
-        document.documentElement.classList.remove('light');
-      }
-    }, 300); // halfway through transition
+      setIsLightMode(prev => {
+        const next = !prev;
+        if (next) {
+          document.documentElement.classList.add('light');
+        } else {
+          document.documentElement.classList.remove('light');
+        }
+        return next;
+      });
+    }, 450);
 
-    // Cleanup ripple element
+    // Smoothly fade out the ripple overlay
+    setTimeout(() => {
+      ripple.classList.add('fade-out');
+    }, 600);
+
+    // Completely remove the ripple element after fadeout finishes
     setTimeout(() => {
       ripple.remove();
-    }, 700);
+    }, 1000);
   };
 
   useEffect(() => {
