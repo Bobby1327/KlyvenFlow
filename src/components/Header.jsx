@@ -148,7 +148,7 @@ export default function Header({ lang, setLang, isLightMode, onToggleTheme, onOp
               className="btn-primary"
               style={{ padding: '10px 18px', fontSize: '0.9rem' }}
             >
-              <Calendar size={18} />
+              <MessageCircle size={18} />
               <span className="hide-mobile">{t.bookConsultation}</span>
             </button>
           </div>

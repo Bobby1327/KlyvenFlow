@@ -212,8 +212,8 @@ export const TRANSLATIONS = {
     testAll: 'Todos os setores',
 
     // Contact Modal
-    contactTitle: 'Conversar com o Desenvolvedor',
-    contactSub: 'Sem compromisso. Vamos bater um papo rápido de 15 minutos para entender como a tecnologia pode simplificar sua rotina e aumentar suas vendas.',
+    contactTitle: 'Falar com o Desenvolvedor',
+    contactSub: 'Entre em contato direto pelo WhatsApp ou E-mail para tirar dúvidas, receber uma estimativa ou dar início ao seu projeto.',
     contactLabelName: 'Seu Nome *',
     contactPlaceholderName: 'Ex: Maria Santos',
     contactLabelBusiness: 'Nome do seu Negócio *',
@@ -450,8 +450,8 @@ export const TRANSLATIONS = {
     testAll: 'All Categories',
 
     // Contact Modal
-    contactTitle: 'Talk to the Developer',
-    contactSub: 'No sales pitch. Let\'s spend 15 minutes talking about how to simplify your business operations and cut down commission fees.',
+    contactTitle: 'Talk to Developer',
+    contactSub: 'Reach out directly via WhatsApp or Email to ask questions, request an estimate, or start your project.',
     contactLabelName: 'Your Name *',
     contactPlaceholderName: 'e.g. John Doe',
     contactLabelBusiness: 'Business Name *',
