@@ -243,6 +243,8 @@ export const TRANSLATIONS = {
     copyBtn: 'Copiar',
     copiedBtn: 'Copiado!',
     closeBtn: 'Fechar',
+    paymentNubankOnly: 'Pagamentos aceitos exclusivamente via NuBank (Pix / Transferência)',
+    paymentNubankBadge: 'Pagamentos via NuBank',
 
     // Footer
     footerSub: 'Sistemas inteligentes e automatizados para restaurantes, salões, prestadores de serviço e comércios locais powered by Klyven.AI.',
@@ -495,6 +497,8 @@ export const TRANSLATIONS = {
     copyBtn: 'Copy',
     copiedBtn: 'Copied!',
     closeBtn: 'Close',
+    paymentNubankOnly: 'Payments accepted exclusively via NuBank (Pix / Wire)',
+    paymentNubankBadge: 'NuBank Payments Only',
 
     // Footer
     footerSub: 'Smart, automated local web applications for restaurants, salons, contractors, and retail shops powered by Klyven.AI.',

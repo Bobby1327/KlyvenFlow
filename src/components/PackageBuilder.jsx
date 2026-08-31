@@ -302,6 +302,11 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
                     <span>WhatsApp: <strong>(55) 35 99774-5407</strong></span>
                   </a>
                 </div>
+
+                <div style={{ marginTop: '10px', textAlign: 'center', fontSize: '0.73rem', color: 'var(--text-dim)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
+                  <span>🟣</span>
+                  <span>{t.paymentNubankOnly}</span>
+                </div>
               </div>
             </div>
 

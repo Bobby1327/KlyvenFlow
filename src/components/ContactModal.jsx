@@ -185,22 +185,41 @@ export default function ContactModal({ lang, isOpen, onClose }) {
 
         </div>
 
-        {/* Footer Note */}
-        <div style={{
-          textAlign: 'center',
-          padding: '12px 16px',
-          background: 'var(--bg-card-hover)',
-          borderRadius: '8px',
-          border: '1px solid var(--border-line)',
-          fontSize: '0.78rem',
-          color: 'var(--text-muted)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '8px'
-        }}>
-          <Sparkles size={14} color="var(--accent-orange)" />
-          <span>{lang === 'pt' ? 'Atendimento direto de Segunda a Sábado sem intermediários' : 'Direct developer support Monday to Saturday with zero middleman'}</span>
+        {/* Payment & Developer Guarantee Notes */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          <div style={{
+            textAlign: 'center',
+            padding: '10px 14px',
+            background: 'var(--bg-card-hover)',
+            borderRadius: '8px',
+            border: '1px solid rgba(168, 85, 247, 0.25)',
+            fontSize: '0.78rem',
+            color: 'var(--text-main)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px'
+          }}>
+            <span>🟣</span>
+            <span><strong>{t.paymentNubankOnly}</strong></span>
+          </div>
+
+          <div style={{
+            textAlign: 'center',
+            padding: '10px 14px',
+            background: 'var(--bg-card-hover)',
+            borderRadius: '8px',
+            border: '1px solid var(--border-line)',
+            fontSize: '0.76rem',
+            color: 'var(--text-muted)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px'
+          }}>
+            <Sparkles size={13} color="var(--accent-orange)" />
+            <span>{lang === 'pt' ? 'Atendimento direto de Segunda a Sábado sem intermediários' : 'Direct developer support Monday to Saturday with zero middleman'}</span>
+          </div>
         </div>
 
       </div>

@@ -38,6 +38,9 @@ export default function Footer({ lang, onOpenContactModal }) {
               <span className="badge" style={{ background: 'var(--bg-card-hover)', color: 'var(--text-dim)', border: '1px solid var(--border-line)', fontSize: '0.7rem' }}>⚡ React & Vite</span>
               <span className="badge" style={{ background: 'var(--bg-card-hover)', color: 'var(--text-dim)', border: '1px solid var(--border-line)', fontSize: '0.7rem' }}>📱 PWA Mobile</span>
               <span className="badge" style={{ background: 'var(--bg-card-hover)', color: 'var(--text-dim)', border: '1px solid var(--border-line)', fontSize: '0.7rem' }}>🔒 SSL & Schema SEO</span>
+              <span className="badge" style={{ background: 'var(--bg-card-hover)', color: '#c084fc', border: '1px solid rgba(168, 85, 247, 0.3)', fontSize: '0.7rem', fontWeight: '600' }}>
+                🟣 {t.paymentNubankBadge}
+              </span>
             </div>
           </div>
 
