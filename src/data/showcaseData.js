@@ -730,12 +730,12 @@ export const CASE_STUDIES = [
 ];
 
 export const PACKAGE_OPTIONS = [
-  { id: 'ordering', name: 'Painel de Pedidos Direto (Comida / Loja)', nameEn: 'Direct Ordering System (Food / Shop)', category: 'Core App', costEstimate: 1200 },
-  { id: 'booking', name: 'Agenda Automática com Horários Livres', nameEn: '24/7 Self-Service Scheduling System', category: 'Core App', costEstimate: 1000 },
-  { id: 'quote', name: 'Simulador de Cotação de Mão de Obra', nameEn: 'Automatic Cost Estimator Widget', category: 'Core App', costEstimate: 900 },
-  { id: 'qr', name: 'Impressões de QR Code para Balcão/Mesa', nameEn: 'Printable Table QR codes / Menu link', category: 'Features', costEstimate: 400 },
-  { id: 'sms', name: 'Lembretes de Agenda Enviados pelo WhatsApp', nameEn: 'WhatsApp Booking Confirmation Alert', category: 'Features', costEstimate: 600 },
-  { id: 'loyalty', name: 'Cartão Fidelidade Digital (Acumular Selos)', nameEn: 'Digital Stamp Loyalty Card Module', category: 'Features', costEstimate: 700 },
-  { id: 'google', name: 'Otimização Local do Google Maps & Perfil', nameEn: 'Local Google Map Profile Optimization', category: 'Growth', costEstimate: 500 },
-  { id: 'analytics', name: 'Painel de Controle Financeiro Simples', nameEn: 'Simple Sales & Customer Dashboard', category: 'Growth', costEstimate: 600 }
+  { id: 'ordering', name: 'Painel de Pedidos Direto (Comida / Loja)', nameEn: 'Direct Ordering System (Food / Shop)', category: 'Core App', costEstimate: 450 },
+  { id: 'booking', name: 'Agenda Automática com Horários Livres', nameEn: '24/7 Self-Service Scheduling System', category: 'Core App', costEstimate: 390 },
+  { id: 'quote', name: 'Simulador de Cotação de Mão de Obra', nameEn: 'Automatic Cost Estimator Widget', category: 'Core App', costEstimate: 350 },
+  { id: 'qr', name: 'Impressões de QR Code para Balcão/Mesa', nameEn: 'Printable Table QR codes / Menu link', category: 'Features', costEstimate: 120 },
+  { id: 'sms', name: 'Lembretes de Agenda Enviados pelo WhatsApp', nameEn: 'WhatsApp Booking Confirmation Alert', category: 'Features', costEstimate: 220 },
+  { id: 'loyalty', name: 'Cartão Fidelidade Digital (Acumular Selos)', nameEn: 'Digital Stamp Loyalty Card Module', category: 'Features', costEstimate: 240 },
+  { id: 'google', name: 'Otimização Local do Google Maps & Perfil', nameEn: 'Local Google Map Profile Optimization', category: 'Growth', costEstimate: 180 },
+  { id: 'analytics', name: 'Painel de Controle Financeiro Simples', nameEn: 'Simple Sales & Customer Dashboard', category: 'Growth', costEstimate: 200 }
 ];

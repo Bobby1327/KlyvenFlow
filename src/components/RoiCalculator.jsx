@@ -25,7 +25,7 @@ export default function RoiCalculator({ lang, onOpenContactModal }) {
   const monthlyHoursSaved = Math.round((monthlyVolume * 0.6 * 2) / 60);
 
   const totalAnnualValue = annualCommissionSaved + annualExtraRevenue;
-  const estimatedAppCost = 5800; // estimated build cost in R$
+  const estimatedAppCost = 1950; // estimated build cost in R$
   const estimatedRoiMonths = Math.round((estimatedAppCost / (totalAnnualValue / 12)) * 10) / 10;
 
   const formatPrice = (price) => {
