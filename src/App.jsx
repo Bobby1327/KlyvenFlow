@@ -86,9 +86,27 @@ export default function App() {
   };
 
   useEffect(() => {
+    // Disable browser automatic scroll restoration and force scroll to top on entry
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+    if (window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+    // Re-assert top scroll after initial DOM paint and asset layout
+    const timer = setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }, 50);
+
     // Set initial theme properties
     document.documentElement.style.setProperty('--theme-accent', currentTheme.primary);
     document.documentElement.style.setProperty('--theme-accent-light', currentTheme.glow);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
