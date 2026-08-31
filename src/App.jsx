@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { MessageCircle } from 'lucide-react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import IndustryShowcase from './components/IndustryShowcase';
@@ -161,6 +162,19 @@ export default function App() {
         isOpen={isContactModalOpen}
         onClose={() => setIsContactModalOpen(false)}
       />
+
+      {/* Floating Standout WhatsApp Contact Button */}
+      <a
+        href="https://wa.me/5535997745407"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="floating-contact-btn"
+        title="Falar no WhatsApp: (55) 35 99774-5407"
+      >
+        <span className="live-pulse-dot" style={{ backgroundColor: '#ffffff' }} />
+        <MessageCircle size={20} />
+        <span>WhatsApp: <strong>(55) 35 99774-5407</strong></span>
+      </a>
 
     </div>
   );

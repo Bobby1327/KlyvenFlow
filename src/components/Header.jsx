@@ -9,11 +9,10 @@ export default function Header({ lang, setLang, isLightMode, onToggleTheme, onOp
     <>
       {/* Top Contact & Announcement Bar */}
       <div style={{
-        background: 'var(--bg-card-hover)',
+        background: 'var(--bg-card)',
         borderBottom: '1px solid var(--border-line)',
-        padding: '6px 24px',
-        fontSize: '0.78rem',
-        color: 'var(--text-muted)',
+        padding: '8px 24px',
+        fontSize: '0.82rem',
         transition: 'background-color 0.3s ease, border-color 0.3s ease'
       }}>
         <div style={{
@@ -23,44 +22,34 @@ export default function Header({ lang, setLang, isLightMode, onToggleTheme, onOp
           alignItems: 'center',
           justifyContent: 'space-between',
           flexWrap: 'wrap',
-          gap: '10px'
+          gap: '12px'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '18px', flexWrap: 'wrap' }}>
-            <a
-              href="mailto:KlyvenFlow@gmail.com"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                color: 'inherit',
-                textDecoration: 'none',
-                fontWeight: '600'
-              }}
-            >
-              <Mail size={13} color="var(--theme-accent)" />
-              <span>KlyvenFlow@gmail.com</span>
-            </a>
-
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
             <a
               href="https://wa.me/5535997745407"
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                color: 'inherit',
-                textDecoration: 'none',
-                fontWeight: '600'
-              }}
+              className="contact-pill-whatsapp"
+              title="Iniciar conversa no WhatsApp"
             >
-              <MessageCircle size={13} color="#10b981" />
-              <span>(55) 35 99774-5407</span>
+              <span className="live-pulse-dot" />
+              <MessageCircle size={15} />
+              <span>WhatsApp: <strong>(55) 35 99774-5407</strong></span>
+            </a>
+
+            <a
+              href="mailto:KlyvenFlow@gmail.com"
+              className="contact-pill-email"
+              title="Enviar e-mail para KlyvenFlow@gmail.com"
+            >
+              <Mail size={15} color="var(--theme-accent)" />
+              <span><strong>KlyvenFlow@gmail.com</strong></span>
             </a>
           </div>
 
-          <div className="hide-mobile" style={{ fontSize: '0.75rem', color: 'var(--text-dim)', fontWeight: '600' }}>
-            {lang === 'pt' ? '⚡ Atendimento Direto via WhatsApp & E-mail' : '⚡ Direct WhatsApp & Email Support'}
+          <div className="hide-mobile" style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span style={{ color: '#10b981', fontWeight: '700' }}>● Online</span>
+            <span>{lang === 'pt' ? '⚡ Atendimento Direto & Resposta Rápida' : '⚡ Direct Developer Response & Support'}</span>
           </div>
         </div>
       </div>

@@ -28,7 +28,7 @@ export default function ComparisonSection({ lang, onOpenContactModal }) {
   return (
     <section id="comparison" style={{ padding: '100px 24px', borderBottom: '1px solid var(--border-line)' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        
+
         <div style={{ textAlign: 'center', marginBottom: '64px' }}>
           <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--theme-accent)', fontWeight: '800', letterSpacing: '0.08em', display: 'block', marginBottom: '12px' }}>
             {t.compBadge}
@@ -43,7 +43,7 @@ export default function ComparisonSection({ lang, onOpenContactModal }) {
 
         {/* Side by Side Comparison Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', marginBottom: '48px' }} className="demo-grid-layout">
-          
+
           {/* Old Static Website Card */}
           <div className="glass-panel" style={{ padding: '36px', borderRadius: '12px', background: 'transparent', borderColor: 'rgba(239, 68, 68, 0.2)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '32px' }}>

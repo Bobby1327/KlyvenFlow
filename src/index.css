@@ -206,6 +206,179 @@ h6 {
   transform: translateY(-1px);
 }
 
+/* ==========================================================================
+   STANDOUT CONTACT BADGES & CARDS (WHATSAPP & GMAIL)
+   ========================================================================== */
+
+.contact-highlight-bar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 8px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-line-hover);
+  border-radius: 99px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+}
+
+.contact-pill-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1.5px solid #10b981;
+  border-radius: 99px;
+  color: #10b981 !important;
+  text-decoration: none;
+  font-weight: 750;
+  font-size: 0.88rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.2);
+}
+
+.contact-pill-whatsapp:hover {
+  background: #10b981 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 24px rgba(16, 185, 129, 0.45);
+}
+
+.contact-pill-whatsapp:hover * {
+  color: #ffffff !important;
+}
+
+.contact-pill-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: var(--theme-accent-light);
+  border: 1.5px solid var(--theme-accent);
+  border-radius: 99px;
+  color: var(--text-main) !important;
+  text-decoration: none;
+  font-weight: 750;
+  font-size: 0.88rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.2);
+}
+
+.contact-pill-email:hover {
+  background: var(--theme-accent) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 24px rgba(139, 92, 246, 0.45);
+}
+
+.contact-pill-email:hover * {
+  color: #ffffff !important;
+}
+
+/* Contact Card Box for Modals and Footers */
+.contact-card-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-line);
+  border-radius: 10px;
+  padding: 16px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-card-box:hover {
+  border-color: var(--border-line-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.contact-card-box.whatsapp-box {
+  border-color: rgba(16, 185, 129, 0.3);
+  background: linear-gradient(180deg, rgba(16, 185, 129, 0.06) 0%, var(--bg-card) 100%);
+}
+
+.contact-card-box.whatsapp-box:hover {
+  border-color: #10b981;
+  box-shadow: 0 8px 28px rgba(16, 185, 129, 0.25);
+}
+
+.contact-card-box.email-box {
+  border-color: rgba(139, 92, 246, 0.3);
+  background: linear-gradient(180deg, var(--theme-accent-light) 0%, var(--bg-card) 100%);
+}
+
+.contact-card-box.email-box:hover {
+  border-color: var(--theme-accent);
+  box-shadow: 0 8px 28px rgba(139, 92, 246, 0.25);
+}
+
+/* Pulse Live Status Dot */
+.live-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.live-pulse-dot::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(16, 185, 129, 0.6);
+  animation: pulse-ring 1.8s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+/* Floating WhatsApp Quick Action Button */
+.floating-contact-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff !important;
+  padding: 12px 20px;
+  border-radius: 99px;
+  text-decoration: none;
+  font-weight: 750;
+  font-size: 0.9rem;
+  box-shadow: 0 6px 24px rgba(16, 185, 129, 0.4);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(8px);
+}
+
+.floating-contact-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 32px rgba(16, 185, 129, 0.6);
+  color: #ffffff !important;
+}
+
+
 /* Global Opaque Styling for Inputs, Selects, and Textareas */
 input[type="text"],
 input[type="date"],

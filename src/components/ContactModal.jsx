@@ -96,26 +96,105 @@ export default function ContactModal({ lang, isOpen, onClose }) {
               {t.contactSub}
             </p>
 
-            {/* Quick Contact Chips */}
-            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '20px', padding: '10px', background: 'var(--bg-card-hover)', borderRadius: '6px', border: '1px solid var(--border-line)', fontSize: '0.8rem' }}>
-              <a
-                href="https://wa.me/5535997745407"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#10b981', textDecoration: 'none', fontWeight: '700' }}
-              >
-                <MessageCircle size={15} />
-                <span>(55) 35 99774-5407</span>
-                <ArrowUpRight size={12} />
-              </a>
-              <span style={{ color: 'var(--border-line)' }}>|</span>
-              <a
-                href="mailto:KlyvenFlow@gmail.com"
-                style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--text-muted)', textDecoration: 'none', fontWeight: '600' }}
-              >
-                <Mail size={15} color="var(--theme-accent)" />
-                <span>KlyvenFlow@gmail.com</span>
-              </a>
+            {/* Standout Direct Contact Cards */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '24px' }} className="demo-grid-layout">
+              <div className="contact-card-box whatsapp-box">
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <MessageCircle size={18} color="#10b981" />
+                    <span style={{ fontSize: '0.75rem', fontWeight: '800', textTransform: 'uppercase', color: '#10b981', letterSpacing: '0.04em' }}>WhatsApp</span>
+                  </div>
+                  <span className="live-pulse-dot" title="Online Agora" />
+                </div>
+                <a
+                  href="https://wa.me/5535997745407"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontSize: '0.95rem',
+                    fontWeight: '800',
+                    color: '#ffffff',
+                    textDecoration: 'none',
+                    display: 'block',
+                    marginBottom: '8px'
+                  }}
+                >
+                  (55) 35 99774-5407
+                </a>
+                <a
+                  href="https://wa.me/5535997745407"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    background: '#10b981',
+                    color: '#ffffff',
+                    padding: '6px 12px',
+                    borderRadius: '6px',
+                    textDecoration: 'none',
+                    fontSize: '0.78rem',
+                    fontWeight: '700',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '4px',
+                    width: '100%',
+                    boxSizing: 'border-box'
+                  }}
+                >
+                  <span>{lang === 'pt' ? 'Falar no WhatsApp' : 'Open WhatsApp'}</span>
+                  <ArrowUpRight size={13} />
+                </a>
+              </div>
+
+              <div className="contact-card-box email-box">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '8px' }}>
+                  <Mail size={18} color="var(--theme-accent)" />
+                  <span style={{ fontSize: '0.75rem', fontWeight: '800', textTransform: 'uppercase', color: 'var(--theme-accent)', letterSpacing: '0.04em' }}>E-mail</span>
+                </div>
+                <a
+                  href="mailto:KlyvenFlow@gmail.com"
+                  style={{
+                    fontSize: '0.88rem',
+                    fontWeight: '800',
+                    color: '#ffffff',
+                    textDecoration: 'none',
+                    display: 'block',
+                    marginBottom: '8px',
+                    wordBreak: 'break-all'
+                  }}
+                >
+                  KlyvenFlow@gmail.com
+                </a>
+                <a
+                  href="mailto:KlyvenFlow@gmail.com"
+                  style={{
+                    background: 'var(--theme-accent)',
+                    color: '#ffffff',
+                    padding: '6px 12px',
+                    borderRadius: '6px',
+                    textDecoration: 'none',
+                    fontSize: '0.78rem',
+                    fontWeight: '700',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '4px',
+                    width: '100%',
+                    boxSizing: 'border-box'
+                  }}
+                >
+                  <span>{lang === 'pt' ? 'Enviar E-mail' : 'Send Email'}</span>
+                  <ArrowUpRight size={13} />
+                </a>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '18px' }}>
+              <div style={{ height: '1px', flex: 1, background: 'var(--border-line)' }} />
+              <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--text-dim)', fontWeight: '700', letterSpacing: '0.05em' }}>
+                {lang === 'pt' ? 'Ou envie os dados do seu negócio' : 'Or fill your project details'}
+              </span>
+              <div style={{ height: '1px', flex: 1, background: 'var(--border-line)' }} />
             </div>
 
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>

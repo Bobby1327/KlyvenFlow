@@ -69,82 +69,59 @@ export default function Footer({ lang, onOpenContactModal }) {
 
           {/* Col 4: Contact Info & CTA */}
           <div>
-            <h5 style={{ color: 'var(--text-main)', fontSize: '0.95rem', fontWeight: '700', marginBottom: '16px' }}>
-              {lang === 'pt' ? 'Contato Direto' : 'Direct Contact'}
+            <h5 style={{ color: 'var(--text-main)', fontSize: '0.95rem', fontWeight: '700', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span>{lang === 'pt' ? 'Contato Direto' : 'Direct Contact'}</span>
+              <span className="live-pulse-dot" />
             </h5>
             
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '18px', fontSize: '0.88rem' }}>
-              <a
-                href="mailto:KlyvenFlow@gmail.com"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  color: 'var(--text-muted)',
-                  textDecoration: 'none'
-                }}
-              >
-                <Mail size={15} color="var(--theme-accent)" />
-                <span>KlyvenFlow@gmail.com</span>
-              </a>
-
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '16px' }}>
+              {/* WhatsApp Card */}
               <a
                 href="https://wa.me/5535997745407"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  color: 'var(--text-muted)',
-                  textDecoration: 'none'
-                }}
+                className="contact-pill-whatsapp"
+                style={{ width: '100%', boxSizing: 'border-box', justifyContent: 'space-between' }}
               >
-                <MessageCircle size={15} color="#10b981" />
-                <span>(55) 35 99774-5407</span>
-              </a>
-            </div>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <a
-                href="https://wa.me/5535997745407"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  background: '#10b981',
-                  color: '#ffffff',
-                  padding: '10px 16px',
-                  borderRadius: '6px',
-                  textDecoration: 'none',
-                  fontSize: '0.85rem',
-                  fontWeight: '700',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '8px',
-                  boxShadow: '0 2px 8px rgba(16, 185, 129, 0.2)'
-                }}
-              >
-                <MessageCircle size={16} />
-                <span>{lang === 'pt' ? 'Chamar no WhatsApp' : 'Chat on WhatsApp'}</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <MessageCircle size={17} />
+                  <span>WhatsApp: <strong>(55) 35 99774-5407</strong></span>
+                </div>
                 <ArrowUpRight size={14} />
               </a>
 
-              <button
-                onClick={onOpenContactModal}
-                className="btn-secondary"
-                style={{ width: '100%', justifyContent: 'center', fontSize: '0.85rem', padding: '10px 16px' }}
+              {/* Gmail Card */}
+              <a
+                href="mailto:KlyvenFlow@gmail.com"
+                className="contact-pill-email"
+                style={{ width: '100%', boxSizing: 'border-box', justifyContent: 'space-between' }}
               >
-                {t.footerCta}
-              </button>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <Mail size={17} color="var(--theme-accent)" />
+                  <span>E-mail: <strong>KlyvenFlow@gmail.com</strong></span>
+                </div>
+                <ArrowUpRight size={14} />
+              </a>
             </div>
+
+            <button
+              onClick={onOpenContactModal}
+              className="btn-secondary"
+              style={{ width: '100%', justifyContent: 'center', fontSize: '0.88rem', padding: '10px 16px' }}
+            >
+              {t.footerCta}
+            </button>
           </div>
 
         </div>
 
         <div style={{ paddingTop: '24px', borderTop: '1px solid var(--border-line)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', fontSize: '0.82rem' }}>
-          <div>
-            &copy; {new Date().getFullYear()} {t.footerCopyright} &bull; <a href="mailto:KlyvenFlow@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>KlyvenFlow@gmail.com</a>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+            <span>&copy; {new Date().getFullYear()} {t.footerCopyright}</span>
+            <span>&bull;</span>
+            <a href="mailto:KlyvenFlow@gmail.com" style={{ color: 'var(--theme-accent)', textDecoration: 'none', fontWeight: '700' }}>KlyvenFlow@gmail.com</a>
+            <span>&bull;</span>
+            <a href="https://wa.me/5535997745407" target="_blank" rel="noopener noreferrer" style={{ color: '#10b981', textDecoration: 'none', fontWeight: '700' }}>(55) 35 99774-5407</a>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--text-dim)' }}>
             <span>{t.footerLove}</span>

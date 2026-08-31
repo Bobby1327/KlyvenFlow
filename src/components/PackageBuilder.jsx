@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, Sparkles, Send, Zap, Clock, MessageCircle } from 'lucide-react';
+import { Check, Sparkles, Send, Zap, Clock, MessageCircle, Mail } from 'lucide-react';
 import { PACKAGE_OPTIONS, INDUSTRIES, TRANSLATIONS } from '../data/showcaseData';
 
 export default function PackageBuilder({ lang, onOpenContactModal }) {
@@ -89,21 +89,33 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
                 : `Scope specs configured. Total estimated investment: ${formatPrice(totalEstimate)} with delivery targeted in ${daysEstimate}.`
               }
             </p>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap' }}>
-              <button onClick={() => setProposalSent(false)} className="btn-secondary" style={{ borderRadius: '6px' }}>
-                {lang === 'pt' ? 'Mudar Ferramentas' : 'Change Specs'}
-              </button>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap', marginBottom: '24px' }}>
               <a 
                 href={`https://wa.me/5535997745407?text=${encodeURIComponent(lang === 'pt' ? `Olá! Montei uma proposta no KlyvenFlow com valor estimado de ${formatPrice(totalEstimate)}. Gostaria de agendar o início do projeto!` : `Hello! I configured a package on KlyvenFlow with estimated total of ${formatPrice(totalEstimate)}. Let's build it!`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary" 
-                style={{ borderRadius: '6px', background: '#10b981', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}
+                style={{ borderRadius: '6px', background: '#10b981', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '14px 24px' }}
               >
-                <MessageCircle size={18} />
-                <span>{lang === 'pt' ? 'Enviar no WhatsApp' : 'Send via WhatsApp'}</span>
+                <MessageCircle size={20} />
+                <span>{lang === 'pt' ? 'Enviar Proposta no WhatsApp: (55) 35 99774-5407' : 'Send via WhatsApp: (55) 35 99774-5407'}</span>
               </a>
-              <button onClick={onOpenContactModal} className="btn-secondary" style={{ borderRadius: '6px' }}>
+
+              <a
+                href={`mailto:KlyvenFlow@gmail.com?subject=${encodeURIComponent(lang === 'pt' ? 'Proposta Personalizada KlyvenFlow' : 'KlyvenFlow Custom Package Proposal')}&body=${encodeURIComponent(lang === 'pt' ? `Olá! Configurei uma proposta no valor de ${formatPrice(totalEstimate)}.` : `Hello! I configured a proposal of ${formatPrice(totalEstimate)}.`)}`}
+                className="btn-secondary"
+                style={{ borderRadius: '6px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '14px 20px' }}
+              >
+                <Mail size={18} color="var(--theme-accent)" />
+                <span>{lang === 'pt' ? 'Enviar por E-mail (KlyvenFlow@gmail.com)' : 'Send via Email (KlyvenFlow@gmail.com)'}</span>
+              </a>
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap' }}>
+              <button onClick={() => setProposalSent(false)} className="btn-secondary" style={{ borderRadius: '6px', fontSize: '0.85rem' }}>
+                {lang === 'pt' ? '← Modificar Configurações' : '← Modify Specs'}
+              </button>
+              <button onClick={onOpenContactModal} className="btn-secondary" style={{ borderRadius: '6px', fontSize: '0.85rem' }}>
                 {t.bookConsultation}
               </button>
             </div>
@@ -175,7 +187,7 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
                           </div>
                           <div>
                             <div style={{ fontSize: '0.85rem', fontWeight: '600', color: '#fff' }}>{getFeatureName(opt)}</div>
-                            <span style={{ fontSize: '0.72rem', color: 'var(--text-dim)' }}>{getFeatureCategory(opt)}</span>
+                            <span style={{ fontSize: '0.72rem', color: 'var(--text-dim)' }}>{getCategoryLabel(opt)}</span>
                           </div>
                         </div>
                         <span style={{ fontSize: '0.82rem', fontWeight: '700', fontFamily: 'monospace', color: 'var(--theme-accent)' }}>+{formatPrice(opt.costEstimate)}</span>
@@ -270,6 +282,20 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
               >
                 <Send size={16} style={{ marginRight: '4px' }} /> {t.propCta}
               </button>
+
+              <div style={{ marginTop: '14px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <a
+                  href="https://wa.me/5535997745407"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-pill-whatsapp"
+                  style={{ width: '100%', boxSizing: 'border-box', justifyContent: 'center', fontSize: '0.82rem', padding: '8px 14px' }}
+                >
+                  <span className="live-pulse-dot" />
+                  <MessageCircle size={15} />
+                  <span>WhatsApp: <strong>(55) 35 99774-5407</strong></span>
+                </a>
+              </div>
             </div>
 
           </div>

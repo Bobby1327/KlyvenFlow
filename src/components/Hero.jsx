@@ -77,28 +77,33 @@ export default function Hero({ lang, onOpenContactModal, onSelectIndustry }) {
           </button>
         </div>
 
-        {/* Direct Contact Pill */}
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '64px' }}>
-          <a
-            href="https://wa.me/5535997745407"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              fontSize: '0.85rem',
-              color: 'var(--text-muted)',
-              textDecoration: 'none',
-              background: 'var(--bg-card)',
-              padding: '8px 18px',
-              borderRadius: '99px',
-              border: '1px solid var(--border-line)'
-            }}
-          >
-            <MessageCircle size={15} color="#10b981" />
-            <span>WhatsApp Direto: <strong style={{ color: 'var(--text-main)' }}>(55) 35 99774-5407</strong> &bull; <span style={{ color: 'var(--theme-accent)' }}>KlyvenFlow@gmail.com</span></span>
-          </a>
+        {/* Standout Direct Contact Bar */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', marginBottom: '64px' }}>
+          <div className="contact-highlight-bar">
+            <a
+              href="https://wa.me/5535997745407"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-pill-whatsapp"
+              title="Falar no WhatsApp"
+            >
+              <span className="live-pulse-dot" />
+              <MessageCircle size={17} />
+              <span>WhatsApp: <strong style={{ letterSpacing: '0.02em' }}>(55) 35 99774-5407</strong></span>
+            </a>
+
+            <a
+              href="mailto:KlyvenFlow@gmail.com"
+              className="contact-pill-email"
+              title="Enviar e-mail para KlyvenFlow@gmail.com"
+            >
+              <Mail size={17} color="var(--theme-accent)" />
+              <span>E-mail: <strong style={{ letterSpacing: '0.02em' }}>KlyvenFlow@gmail.com</strong></span>
+            </a>
+          </div>
+          <span style={{ fontSize: '0.78rem', color: 'var(--text-dim)', fontWeight: '600' }}>
+            {lang === 'pt' ? '⚡ Atendimento imediato de Segunda a Sábado' : '⚡ Instant direct response Monday to Saturday'}
+          </span>
         </div>
 
         {/* Industry Quick Selector */}
