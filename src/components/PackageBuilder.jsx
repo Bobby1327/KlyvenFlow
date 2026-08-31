@@ -21,7 +21,7 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
     return sum + (feat ? feat.costEstimate : 0);
   }, 0);
 
-  const speedMultiplier = speed === 'express' ? 1.2 : 1.0;
+  const speedMultiplier = speed === 'express' ? 1.25 : 1.0;
   const totalEstimate = Math.round((basePrice + featuresTotal) * speedMultiplier);
 
   const daysEstimate = speed === 'express' 
