@@ -234,7 +234,7 @@ export const TRANSLATIONS = {
     footerSub: 'Sistemas inteligentes e automatizados para restaurantes, salões, prestadores de serviço e comércios locais powered by Klyven.AI.',
     footerReadyToLaunch: 'Quer automatizar e simplificar seu negócio este mês?',
     footerCta: 'Falar com o desenvolvedor',
-    footerCopyright: 'KlyveFlow. Todos os direitos reservados.',
+    footerCopyright: 'KlyvenFlow. Todos os direitos reservados.',
     footerLove: 'Feito com carinho para fortalecer o comércio local.'
   },
   en: {
@@ -472,7 +472,7 @@ export const TRANSLATIONS = {
     footerSub: 'Smart, automated local web applications for restaurants, salons, contractors, and retail shops powered by Klyven.AI.',
     footerReadyToLaunch: 'Ready to automate and simplify your business operations this month?',
     footerCta: 'Contact developer',
-    footerCopyright: 'KlyveFlow. All rights reserved.',
+    footerCopyright: 'KlyvenFlow. All rights reserved.',
     footerLove: 'Built to support and grow neighborhood trade.'
   }
 };

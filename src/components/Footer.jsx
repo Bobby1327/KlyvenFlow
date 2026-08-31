@@ -27,7 +27,7 @@ export default function Footer({ lang, onOpenContactModal }) {
                 <Rocket size={20} color="#ffffff" />
               </div>
               <span style={{ fontFamily: 'var(--font-heading)', fontWeight: '800', fontSize: '1.2rem', color: '#ffffff' }}>
-                Klyve <span style={{ color: 'var(--theme-accent)' }}>Flow</span>
+                Klyven <span style={{ color: 'var(--theme-accent)' }}>Flow</span>
               </span>
             </div>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '20px', maxWidth: '360px' }}>

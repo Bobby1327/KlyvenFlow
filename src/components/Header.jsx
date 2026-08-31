@@ -37,7 +37,7 @@ export default function Header({ lang, setLang, isLightMode, onToggleTheme, onOp
           </div>
           <div>
             <div style={{ fontFamily: 'var(--font-heading)', fontWeight: '700', fontSize: '1.2rem', color: 'var(--text-main)', lineHeight: 1.1 }}>
-              Klyve <span style={{ color: 'var(--theme-accent)' }}>Flow</span>
+              Klyven <span style={{ color: 'var(--theme-accent)' }}>Flow</span>
             </div>
             <div style={{ fontSize: '0.7rem', color: 'var(--text-dim)', letterSpacing: '0.05em', fontWeight: '700' }}>
               {lang === 'pt' ? 'WEB APPS PARA NEGÓCIOS LOCAIS' : 'WEB APPS FOR LOCAL BUSINESS'}
