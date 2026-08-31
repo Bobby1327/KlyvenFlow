@@ -26,7 +26,6 @@
   --theme-accent: #8b5cf6;
   --theme-accent-light: rgba(139, 92, 246, 0.1);
   
-  /* Background of the simulator sandbox - highly contrasted off-black */
   --bg-simulator: #08090d;
 }
 
@@ -46,7 +45,6 @@
   
   --theme-accent-light: rgba(139, 92, 246, 0.08);
   
-  /* Background of the simulator sandbox - highly contrasted dark slate */
   --bg-simulator: #e2e8f0;
 }
 
@@ -55,6 +53,12 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+}
+
+html, body, #root {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -269,6 +273,8 @@ input[type=range]::-webkit-slider-thumb:hover {
 
 .modal-overlay > div {
   animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+  max-width: 600px;
 }
 
 /* Clean grid structures and humanlike details */
@@ -317,6 +323,7 @@ input[type=range]::-webkit-slider-thumb:hover {
   padding: 0 16px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 16px;
 }
 
@@ -359,8 +366,8 @@ input[type=range]::-webkit-slider-thumb:hover {
 }
 
 .browser-device-body {
-  background-color: var(--bg-simulator); /* Contrasting background specifically for the prototype body */
-  padding: 24px; /* Added spacing to float the demo app container inside the browser body */
+  background-color: var(--bg-simulator); 
+  padding: 24px; 
   transition: background-color 0.3s ease;
 }
 
@@ -372,4 +379,106 @@ input[type=range]::-webkit-slider-thumb:hover {
   border-radius: 6px;
   margin: 48px 0;
   box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15);
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS & MEDIA QUERIES
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  /* Force all layouts wrapped in .demo-grid-layout to collapse into single column */
+  .demo-grid-layout {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Navigation & Header elements */
+  .desktop-nav {
+    display: none !important;
+  }
+  .logo-subtitle {
+    display: none !important;
+  }
+  .hide-mobile {
+    display: none !important;
+  }
+  
+  /* Sections Padding */
+  section {
+    padding: 60px 16px !important;
+  }
+  
+  /* Reduce sandbox padding so content fits on narrow mobile displays */
+  .browser-device-body {
+    padding: 12px !important;
+  }
+  
+  .browser-device-address-bar {
+    max-width: 220px !important;
+    font-size: 0.7rem !important;
+  }
+  
+  .browser-device-status-indicator {
+    font-size: 0.65rem !important;
+  }
+  
+  /* Modal responsive sizing */
+  .modal-overlay > div {
+    max-width: 92% !important;
+    padding: 20px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Sub-grids collapsing to prevent narrow container overflows */
+  .browser-device-body div[style*="display: grid"],
+  .browser-device-body div[style*="display:grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  
+  /* Force mini-app header bars to stack cleanly on mobile screen widths */
+  .browser-device-body div[style*="justify-content: space-between"][style*="align-items: center"],
+  .browser-device-body div[style*="justifyContent: 'space-between'"][style*="alignItems: 'center'"] {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 12px !important;
+  }
+  
+  .browser-device-body div[style*="justify-content: space-between"] > div {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+}
+
+@media (max-width: 500px) {
+  /* Hide minor elements in browser mockup on small devices to prevent wrapping glitches */
+  .browser-device-dots {
+    display: none !important;
+  }
+  .browser-device-status-indicator {
+    display: none !important;
+  }
+  .browser-device-address-bar {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .browser-device-body {
+    padding: 6px !important;
+  }
+  
+  .editorial-grid-item {
+    padding: 20px !important;
+  }
+  
+  .browser-device-header {
+    padding: 8px 12px !important;
+  }
 }

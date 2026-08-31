@@ -70,7 +70,7 @@ export default function ContactModal({ lang, isOpen, onClose }) {
             </p>
 
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+              <div className="demo-grid-layout" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 <div>
                   <label style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'block', marginBottom: '4px' }}>{t.contactLabelName}</label>
                   <input 
@@ -79,7 +79,7 @@ export default function ContactModal({ lang, isOpen, onClose }) {
                     placeholder={t.contactPlaceholderName} 
                     value={ownerName} 
                     onChange={e => setOwnerName(e.target.value)}
-                    style={{ width: '100%', padding: '10px', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.9rem' }} 
+                    style={{ width: '100%' }} 
                   />
                 </div>
                 <div>
@@ -90,12 +90,12 @@ export default function ContactModal({ lang, isOpen, onClose }) {
                     placeholder={t.contactPlaceholderBusiness} 
                     value={businessName} 
                     onChange={e => setBusinessName(e.target.value)}
-                    style={{ width: '100%', padding: '10px', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.9rem' }} 
+                    style={{ width: '100%' }} 
                   />
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+              <div className="demo-grid-layout" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 <div>
                   <label style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'block', marginBottom: '4px' }}>{t.contactLabelEmail}</label>
                   <input 
@@ -104,7 +104,7 @@ export default function ContactModal({ lang, isOpen, onClose }) {
                     placeholder="exemplo@empresa.com" 
                     value={email} 
                     onChange={e => setEmail(e.target.value)}
-                    style={{ width: '100%', padding: '10px', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.9rem' }} 
+                    style={{ width: '100%' }} 
                   />
                 </div>
                 <div>
@@ -114,18 +114,18 @@ export default function ContactModal({ lang, isOpen, onClose }) {
                     placeholder="(11) 99999-9999" 
                     value={phone} 
                     onChange={e => setPhone(e.target.value)}
-                    style={{ width: '100%', padding: '10px', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.9rem' }} 
+                    style={{ width: '100%' }} 
                   />
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+              <div className="demo-grid-layout" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 <div>
                   <label style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'block', marginBottom: '4px' }}>{t.contactLabelIndustry}</label>
                   <select 
                     value={industry} 
                     onChange={e => setIndustry(e.target.value)}
-                    style={{ width: '100%', padding: '10px', borderRadius: '8px', background: '#1e293b', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.9rem' }}
+                    style={{ width: '100%' }}
                   >
                     <option value="Restaurant">{lang === 'pt' ? 'Restaurante / Café' : 'Restaurant / Cafe'}</option>
                     <option value="Salon">{lang === 'pt' ? 'Salão / Estética' : 'Salon / Spa / Barber'}</option>
@@ -141,7 +141,7 @@ export default function ContactModal({ lang, isOpen, onClose }) {
                   <select 
                     value={timeframe} 
                     onChange={e => setTimeframe(e.target.value)}
-                    style={{ width: '100%', padding: '10px', borderRadius: '8px', background: '#1e293b', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.9rem' }}
+                    style={{ width: '100%' }}
                   >
                     <option value="ASAP">{t.contactTimeframeASAP}</option>
                     <option value="Month">{t.contactTimeframeMonth}</option>

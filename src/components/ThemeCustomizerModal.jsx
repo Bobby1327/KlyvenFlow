@@ -31,18 +31,18 @@ export default function ThemeCustomizerModal({ lang, isOpen, onClose, currentThe
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
           <Palette size={28} color="var(--theme-accent)" />
-          <h3 style={{ fontSize: '1.5rem' }}>
+          <h3 style={{ fontSize: '1.5rem', color: 'var(--text-main)' }}>
             {lang === 'pt' ? 'Paleta de Cores da Marca' : 'Brand Theme Previewer'}
           </h3>
         </div>
-        <p style={{ color: '#94a3b8', fontSize: '0.95rem', marginBottom: '24px' }}>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginBottom: '24px' }}>
           {lang === 'pt' 
             ? 'Escolha um esquema de cor abaixo para ver como nossos modelos de web app se adaptam à identidade visual do seu negócio.' 
             : 'Select a color palette below to test how our web app templates adapt seamlessly to match your local business\'s brand identity.'
           }
         </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginBottom: '24px' }}>
+        <div className="demo-grid-layout" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginBottom: '24px' }}>
           {COLOR_PALETTES.map((palette) => {
             const isSelected = currentTheme.primary === palette.primary;
             return (
@@ -52,8 +52,8 @@ export default function ThemeCustomizerModal({ lang, isOpen, onClose, currentThe
                 style={{
                   padding: '16px',
                   borderRadius: '14px',
-                  background: isSelected ? 'rgba(255, 255, 255, 0.08)' : 'rgba(15, 23, 42, 0.6)',
-                  border: isSelected ? `2px solid ${palette.primary}` : '1px solid rgba(255,255,255,0.08)',
+                  background: isSelected ? 'var(--bg-card-hover)' : 'var(--bg-card)',
+                  border: isSelected ? `2px solid ${palette.primary}` : '1px solid var(--border-line)',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
                   display: 'flex',
@@ -64,11 +64,11 @@ export default function ThemeCustomizerModal({ lang, isOpen, onClose, currentThe
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <span style={{ width: '16px', height: '16px', borderRadius: '50%', background: palette.primary, boxShadow: `0 0 10px ${palette.primary}` }} />
-                    <span style={{ fontWeight: '600', fontSize: '0.9rem' }}>{palette.name}</span>
+                    <span style={{ fontWeight: '600', fontSize: '0.9rem', color: 'var(--text-main)' }}>{palette.name}</span>
                   </div>
                   {isSelected && <Check size={18} color={palette.primary} />}
                 </div>
-                <span style={{ fontSize: '0.75rem', color: '#64748b' }}>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)' }}>
                   {lang === 'pt' ? palette.tagPt : palette.tag}
                 </span>
               </div>

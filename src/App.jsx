@@ -16,7 +16,7 @@ export default function App() {
   const [activeIndustry, setActiveIndustry] = useState('restaurant');
   const [isThemeModalOpen, setIsThemeModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-  
+
   const [currentTheme, setCurrentTheme] = useState({
     name: 'Indigo Electric',
     primary: '#6366f1',
@@ -48,7 +48,7 @@ export default function App() {
     ripple.style.height = `${radius * 2}px`;
     ripple.style.left = `${x - radius}px`;
     ripple.style.top = `${y - radius}px`;
-    
+
     // Set color to the theme we are changing TO
     ripple.style.backgroundColor = isLightMode ? '#151822' : '#f8fafc';
     document.body.appendChild(ripple);
@@ -83,9 +83,9 @@ export default function App() {
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      
+
       {/* Navigation Header */}
-      <Header 
+      <Header
         lang={lang}
         setLang={setLang}
         isLightMode={isLightMode}
@@ -95,51 +95,51 @@ export default function App() {
       />
 
       {/* Hero Header Section */}
-      <Hero 
+      <Hero
         lang={lang}
         onOpenContactModal={() => setIsContactModalOpen(true)}
         onSelectIndustry={(id) => setActiveIndustry(id)}
       />
 
       {/* Main Live Showcase Hub */}
-      <IndustryShowcase 
+      <IndustryShowcase
         lang={lang}
         activeIndustry={activeIndustry}
         onSelectIndustry={(id) => setActiveIndustry(id)}
       />
 
       {/* Business ROI & Savings Calculator */}
-      <RoiCalculator 
+      <RoiCalculator
         lang={lang}
         onOpenContactModal={() => setIsContactModalOpen(true)}
       />
 
       {/* Old Static Site vs Modern Web App Engine */}
-      <ComparisonSection 
+      <ComparisonSection
         lang={lang}
         onOpenContactModal={() => setIsContactModalOpen(true)}
       />
 
       {/* Custom Solution & Proposal Package Builder */}
-      <PackageBuilder 
+      <PackageBuilder
         lang={lang}
         onOpenContactModal={() => setIsContactModalOpen(true)}
       />
 
       {/* Real Local Business Case Studies */}
-      <Testimonials 
+      <Testimonials
         lang={lang}
         onOpenContactModal={() => setIsContactModalOpen(true)}
       />
 
       {/* Footer */}
-      <Footer 
+      <Footer
         lang={lang}
         onOpenContactModal={() => setIsContactModalOpen(true)}
       />
 
       {/* Modals */}
-      <ThemeCustomizerModal 
+      <ThemeCustomizerModal
         lang={lang}
         isOpen={isThemeModalOpen}
         onClose={() => setIsThemeModalOpen(false)}
@@ -147,7 +147,7 @@ export default function App() {
         onSelectTheme={handleSelectTheme}
       />
 
-      <ContactModal 
+      <ContactModal
         lang={lang}
         isOpen={isContactModalOpen}
         onClose={() => setIsContactModalOpen(false)}

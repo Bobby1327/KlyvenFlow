@@ -39,7 +39,7 @@ export default function Header({ lang, setLang, isLightMode, onToggleTheme, onOp
             <div style={{ fontFamily: 'var(--font-heading)', fontWeight: '700', fontSize: '1.2rem', color: 'var(--text-main)', lineHeight: 1.1 }}>
               Klyven <span style={{ color: 'var(--theme-accent)' }}>Flow</span>
             </div>
-            <div style={{ fontSize: '0.7rem', color: 'var(--text-dim)', letterSpacing: '0.05em', fontWeight: '700' }}>
+            <div className="logo-subtitle" style={{ fontSize: '0.7rem', color: 'var(--text-dim)', letterSpacing: '0.05em', fontWeight: '700' }}>
               {lang === 'pt' ? 'WEB APPS PARA NEGÓCIOS LOCAIS' : 'WEB APPS FOR LOCAL BUSINESS'}
             </div>
           </div>
@@ -101,7 +101,7 @@ export default function Header({ lang, setLang, isLightMode, onToggleTheme, onOp
             style={{ padding: '10px 18px', fontSize: '0.9rem' }}
           >
             <Calendar size={18} />
-            <span>{t.bookConsultation}</span>
+            <span className="hide-mobile">{t.bookConsultation}</span>
           </button>
         </div>
       </div>
