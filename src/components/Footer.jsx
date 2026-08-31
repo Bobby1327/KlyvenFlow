@@ -1,5 +1,5 @@
 import React from 'react';
-import { Rocket, Heart } from 'lucide-react';
+import { Rocket, Heart, Mail, MessageCircle, Phone, ArrowUpRight } from 'lucide-react';
 import { TRANSLATIONS } from '../data/showcaseData';
 
 export default function Footer({ lang, onOpenContactModal }) {
@@ -7,14 +7,15 @@ export default function Footer({ lang, onOpenContactModal }) {
 
   return (
     <footer style={{
-      background: 'rgba(9, 13, 22, 0.95)',
-      borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+      background: 'var(--bg-card)',
+      borderTop: '1px solid var(--border-line)',
       padding: '60px 24px 40px 24px',
-      color: 'var(--text-muted)'
+      color: 'var(--text-muted)',
+      transition: 'background-color 0.3s ease, border-color 0.3s ease'
     }}>
       <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
         
-        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1.5fr', gap: '40px', marginBottom: '48px' }} className="demo-grid-layout">
+        <div style={{ display: 'grid', gridTemplateColumns: '1.8fr 1fr 1fr 1.6fr', gap: '40px', marginBottom: '48px' }} className="demo-grid-layout">
           
           {/* Col 1: Brand */}
           <div>
@@ -26,7 +27,7 @@ export default function Footer({ lang, onOpenContactModal }) {
               }}>
                 <Rocket size={20} color="#ffffff" />
               </div>
-              <span style={{ fontFamily: 'var(--font-heading)', fontWeight: '800', fontSize: '1.2rem', color: '#ffffff' }}>
+              <span style={{ fontFamily: 'var(--font-heading)', fontWeight: '800', fontSize: '1.2rem', color: 'var(--text-main)' }}>
                 Klyven <span style={{ color: 'var(--theme-accent)' }}>Flow</span>
               </span>
             </div>
@@ -34,15 +35,15 @@ export default function Footer({ lang, onOpenContactModal }) {
               {t.footerSub}
             </p>
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-              <span className="badge" style={{ background: 'rgba(255,255,255,0.05)', color: '#94a3b8' }}>⚡ React & Vite</span>
-              <span className="badge" style={{ background: 'rgba(255,255,255,0.05)', color: '#94a3b8' }}>📱 PWA Mobile</span>
-              <span className="badge" style={{ background: 'rgba(255,255,255,0.05)', color: '#94a3b8' }}>🔒 SSL & Schema SEO</span>
+              <span className="badge" style={{ background: 'var(--bg-card-hover)', color: 'var(--text-dim)', border: '1px solid var(--border-line)' }}>⚡ React & Vite</span>
+              <span className="badge" style={{ background: 'var(--bg-card-hover)', color: 'var(--text-dim)', border: '1px solid var(--border-line)' }}>📱 PWA Mobile</span>
+              <span className="badge" style={{ background: 'var(--bg-card-hover)', color: 'var(--text-dim)', border: '1px solid var(--border-line)' }}>🔒 SSL & Schema SEO</span>
             </div>
           </div>
 
           {/* Col 2: Solutions */}
           <div>
-            <h5 style={{ color: '#fff', fontSize: '0.95rem', fontWeight: '700', marginBottom: '16px' }}>
+            <h5 style={{ color: 'var(--text-main)', fontSize: '0.95rem', fontWeight: '700', marginBottom: '16px' }}>
               {lang === 'pt' ? 'Soluções' : 'Solutions'}
             </h5>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem' }}>
@@ -56,7 +57,7 @@ export default function Footer({ lang, onOpenContactModal }) {
 
           {/* Col 3: Interactive Tools */}
           <div>
-            <h5 style={{ color: '#fff', fontSize: '0.95rem', fontWeight: '700', marginBottom: '16px' }}>
+            <h5 style={{ color: 'var(--text-main)', fontSize: '0.95rem', fontWeight: '700', marginBottom: '16px' }}>
               {lang === 'pt' ? 'Ferramentas' : 'Interactive Tools'}
             </h5>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem' }}>
@@ -66,22 +67,84 @@ export default function Footer({ lang, onOpenContactModal }) {
             </ul>
           </div>
 
-          {/* Col 4: Contact CTA */}
+          {/* Col 4: Contact Info & CTA */}
           <div>
-            <h5 style={{ color: '#fff', fontSize: '0.95rem', fontWeight: '700', marginBottom: '16px' }}>
-              {lang === 'pt' ? 'Iniciar Projeto' : 'Get Started'}
+            <h5 style={{ color: 'var(--text-main)', fontSize: '0.95rem', fontWeight: '700', marginBottom: '16px' }}>
+              {lang === 'pt' ? 'Contato Direto' : 'Direct Contact'}
             </h5>
-            <p style={{ fontSize: '0.88rem', marginBottom: '16px' }}>{t.footerReadyToLaunch}</p>
-            <button onClick={onOpenContactModal} className="btn-primary" style={{ width: '100%', justifyContent: 'center', fontSize: '0.88rem' }}>
-              {t.footerCta}
-            </button>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '18px', fontSize: '0.88rem' }}>
+              <a
+                href="mailto:KlyvenFlow@gmail.com"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  color: 'var(--text-muted)',
+                  textDecoration: 'none'
+                }}
+              >
+                <Mail size={15} color="var(--theme-accent)" />
+                <span>KlyvenFlow@gmail.com</span>
+              </a>
+
+              <a
+                href="https://wa.me/5535997745407"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  color: 'var(--text-muted)',
+                  textDecoration: 'none'
+                }}
+              >
+                <MessageCircle size={15} color="#10b981" />
+                <span>(55) 35 99774-5407</span>
+              </a>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <a
+                href="https://wa.me/5535997745407"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  background: '#10b981',
+                  color: '#ffffff',
+                  padding: '10px 16px',
+                  borderRadius: '6px',
+                  textDecoration: 'none',
+                  fontSize: '0.85rem',
+                  fontWeight: '700',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '8px',
+                  boxShadow: '0 2px 8px rgba(16, 185, 129, 0.2)'
+                }}
+              >
+                <MessageCircle size={16} />
+                <span>{lang === 'pt' ? 'Chamar no WhatsApp' : 'Chat on WhatsApp'}</span>
+                <ArrowUpRight size={14} />
+              </a>
+
+              <button
+                onClick={onOpenContactModal}
+                className="btn-secondary"
+                style={{ width: '100%', justifyContent: 'center', fontSize: '0.85rem', padding: '10px 16px' }}
+              >
+                {t.footerCta}
+              </button>
+            </div>
           </div>
 
         </div>
 
-        <div style={{ paddingTop: '24px', borderTop: '1px solid rgba(255, 255, 255, 0.06)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', fontSize: '0.82rem' }}>
+        <div style={{ paddingTop: '24px', borderTop: '1px solid var(--border-line)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', fontSize: '0.82rem' }}>
           <div>
-            &copy; {new Date().getFullYear()} {t.footerCopyright}
+            &copy; {new Date().getFullYear()} {t.footerCopyright} &bull; <a href="mailto:KlyvenFlow@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>KlyvenFlow@gmail.com</a>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--text-dim)' }}>
             <span>{t.footerLove}</span>

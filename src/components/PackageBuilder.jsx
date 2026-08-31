@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, Sparkles, Send, Zap, Clock } from 'lucide-react';
+import { Check, Sparkles, Send, Zap, Clock, MessageCircle } from 'lucide-react';
 import { PACKAGE_OPTIONS, INDUSTRIES, TRANSLATIONS } from '../data/showcaseData';
 
 export default function PackageBuilder({ lang, onOpenContactModal }) {
@@ -28,6 +28,8 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
     ? (lang === 'pt' ? '4 - 6 Dias Úteis' : '4 - 6 Business Days')
     : (lang === 'pt' ? '10 - 12 Dias Úteis' : '10 - 12 Business Days');
 
+  const selectedIndObj = INDUSTRIES.find(i => i.id === selectedInd);
+
   const handleSendProposal = (e) => {
     e.preventDefault();
     setProposalSent(true);
@@ -43,10 +45,10 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
     return opt.nameEn || opt.name;
   };
 
-  const getFeatureCategory = (opt) => {
+  const getCategoryLabel = (opt) => {
     if (lang === 'pt') {
-      if (opt.category === 'Core App') return 'App Base';
-      if (opt.category === 'Features') return 'Módulos Extras';
+      if (opt.category === 'Core App') return 'App Central';
+      if (opt.category === 'Features') return 'Recursos';
       if (opt.category === 'Growth') return 'Divulgação';
     }
     return opt.category;
@@ -91,7 +93,17 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
               <button onClick={() => setProposalSent(false)} className="btn-secondary" style={{ borderRadius: '6px' }}>
                 {lang === 'pt' ? 'Mudar Ferramentas' : 'Change Specs'}
               </button>
-              <button onClick={onOpenContactModal} className="btn-primary" style={{ borderRadius: '6px' }}>
+              <a 
+                href={`https://wa.me/5535997745407?text=${encodeURIComponent(lang === 'pt' ? `Olá! Montei uma proposta no KlyvenFlow com valor estimado de ${formatPrice(totalEstimate)}. Gostaria de agendar o início do projeto!` : `Hello! I configured a package on KlyvenFlow with estimated total of ${formatPrice(totalEstimate)}. Let's build it!`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary" 
+                style={{ borderRadius: '6px', background: '#10b981', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}
+              >
+                <MessageCircle size={18} />
+                <span>{lang === 'pt' ? 'Enviar no WhatsApp' : 'Send via WhatsApp'}</span>
+              </a>
+              <button onClick={onOpenContactModal} className="btn-secondary" style={{ borderRadius: '6px' }}>
                 {t.bookConsultation}
               </button>
             </div>

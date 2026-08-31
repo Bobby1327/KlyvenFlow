@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Sparkles, Utensils, Scissors, Wrench, ShoppingBag, Dumbbell, Zap } from 'lucide-react';
+import { ArrowRight, Sparkles, Utensils, Scissors, Wrench, ShoppingBag, Dumbbell, Zap, MessageCircle, Mail } from 'lucide-react';
 import { TRANSLATIONS, INDUSTRIES } from '../data/showcaseData';
 
 export default function Hero({ lang, onOpenContactModal, onSelectIndustry }) {
@@ -66,7 +66,7 @@ export default function Hero({ lang, onOpenContactModal, onSelectIndustry }) {
         </p>
 
         {/* Action Buttons */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '72px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '24px' }}>
           <a href="#showcase" className="btn-primary" style={{ padding: '16px 32px', fontSize: '1rem' }}>
             <span>{t.heroCtaPrimary}</span>
             <ArrowRight size={18} />
@@ -75,6 +75,30 @@ export default function Hero({ lang, onOpenContactModal, onSelectIndustry }) {
             <Zap size={18} color="var(--accent-orange)" />
             <span>{t.heroCtaSecondary}</span>
           </button>
+        </div>
+
+        {/* Direct Contact Pill */}
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '64px' }}>
+          <a
+            href="https://wa.me/5535997745407"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              fontSize: '0.85rem',
+              color: 'var(--text-muted)',
+              textDecoration: 'none',
+              background: 'var(--bg-card)',
+              padding: '8px 18px',
+              borderRadius: '99px',
+              border: '1px solid var(--border-line)'
+            }}
+          >
+            <MessageCircle size={15} color="#10b981" />
+            <span>WhatsApp Direto: <strong style={{ color: 'var(--text-main)' }}>(55) 35 99774-5407</strong> &bull; <span style={{ color: 'var(--theme-accent)' }}>KlyvenFlow@gmail.com</span></span>
+          </a>
         </div>
 
         {/* Industry Quick Selector */}

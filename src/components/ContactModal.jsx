@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Calendar, Check, Rocket } from 'lucide-react';
+import { X, Calendar, Check, Rocket, MessageCircle, Mail, ArrowUpRight } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { TRANSLATIONS } from '../data/showcaseData';
 
@@ -51,10 +51,37 @@ export default function ContactModal({ lang, isOpen, onClose }) {
             <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: '#10b981', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px auto' }}>
               <Check size={36} />
             </div>
-            <h3 style={{ fontSize: '1.8rem', color: '#fff', marginBottom: '12px' }}>{t.contactSuccessTitle}</h3>
+            <h3 style={{ fontSize: '1.8rem', color: 'var(--text-main)', marginBottom: '12px' }}>{t.contactSuccessTitle}</h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.98rem', marginBottom: '24px' }}>
               {t.contactSuccessSub.replace('{ownerName}', ownerName || 'Maria').replace('{businessName}', businessName || 'Bistro')}
             </p>
+
+            <div style={{ background: 'var(--bg-card-hover)', padding: '16px', borderRadius: '8px', border: '1px solid var(--border-line)', marginBottom: '24px' }}>
+              <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '10px' }}>
+                {lang === 'pt' ? 'Precisa de resposta urgente? Chame direto:' : 'Need immediate assistance? Message directly:'}
+              </div>
+              <a
+                href="https://wa.me/5535997745407"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  background: '#10b981',
+                  color: '#ffffff',
+                  padding: '10px 20px',
+                  borderRadius: '6px',
+                  textDecoration: 'none',
+                  fontSize: '0.9rem',
+                  fontWeight: '750',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px'
+                }}
+              >
+                <MessageCircle size={18} />
+                <span>WhatsApp: (55) 35 99774-5407</span>
+              </a>
+            </div>
+
             <button onClick={onClose} className="btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
               {t.contactSuccessBtn}
             </button>
@@ -63,11 +90,33 @@ export default function ContactModal({ lang, isOpen, onClose }) {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
               <Calendar size={28} color="var(--theme-accent)" />
-              <h3 style={{ fontSize: '1.6rem', color: '#fff', margin: 0 }}>{t.contactTitle}</h3>
+              <h3 style={{ fontSize: '1.6rem', color: 'var(--text-main)', margin: 0 }}>{t.contactTitle}</h3>
             </div>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', marginBottom: '24px' }}>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', marginBottom: '20px' }}>
               {t.contactSub}
             </p>
+
+            {/* Quick Contact Chips */}
+            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '20px', padding: '10px', background: 'var(--bg-card-hover)', borderRadius: '6px', border: '1px solid var(--border-line)', fontSize: '0.8rem' }}>
+              <a
+                href="https://wa.me/5535997745407"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#10b981', textDecoration: 'none', fontWeight: '700' }}
+              >
+                <MessageCircle size={15} />
+                <span>(55) 35 99774-5407</span>
+                <ArrowUpRight size={12} />
+              </a>
+              <span style={{ color: 'var(--border-line)' }}>|</span>
+              <a
+                href="mailto:KlyvenFlow@gmail.com"
+                style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--text-muted)', textDecoration: 'none', fontWeight: '600' }}
+              >
+                <Mail size={15} color="var(--theme-accent)" />
+                <span>KlyvenFlow@gmail.com</span>
+              </a>
+            </div>
 
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div className="demo-grid-layout" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
@@ -125,7 +174,7 @@ export default function ContactModal({ lang, isOpen, onClose }) {
                   <select 
                     value={industry} 
                     onChange={e => setIndustry(e.target.value)}
-                    style={{ width: '100%' }}
+                    style={{ width: '100%' }} 
                   >
                     <option value="Restaurant">{lang === 'pt' ? 'Restaurante / Café' : 'Restaurant / Cafe'}</option>
                     <option value="Salon">{lang === 'pt' ? 'Salão / Estética' : 'Salon / Spa / Barber'}</option>
@@ -141,7 +190,7 @@ export default function ContactModal({ lang, isOpen, onClose }) {
                   <select 
                     value={timeframe} 
                     onChange={e => setTimeframe(e.target.value)}
-                    style={{ width: '100%' }}
+                    style={{ width: '100%' }} 
                   >
                     <option value="ASAP">{t.contactTimeframeASAP}</option>
                     <option value="Month">{t.contactTimeframeMonth}</option>
