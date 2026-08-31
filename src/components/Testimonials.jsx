@@ -24,8 +24,23 @@ export default function Testimonials({ lang, onOpenContactModal }) {
       if (cat === 'restaurant') return 'Restaurantes';
       if (cat === 'salon') return 'Salões';
       if (cat === 'contractor') return 'Serviços';
+    } else {
+      if (cat === 'all') return 'All Sectors';
+      if (cat === 'restaurant') return 'Restaurants';
+      if (cat === 'salon') return 'Salons';
+      if (cat === 'contractor') return 'Services';
     }
     return cat.charAt(0).toUpperCase() + cat.slice(1);
+  };
+
+  const getAuthor = (study) => {
+    if (lang === 'pt') return study.author;
+    return study.authorEn || study.author;
+  };
+
+  const getLocation = (study) => {
+    if (lang === 'pt') return study.location;
+    return study.locationEn || study.location;
   };
 
   return (
@@ -79,16 +94,16 @@ export default function Testimonials({ lang, onOpenContactModal }) {
                   <span style={{ fontFamily: 'var(--font-heading)', fontStyle: 'italic', fontSize: '2rem', color: 'var(--border-line-hover)', lineHeight: '1' }}>“</span>
                 </div>
 
-                <p style={{ fontSize: '0.98rem', color: '#e5e7eb', fontFamily: 'var(--font-heading)', fontStyle: 'italic', marginBottom: '20px', lineHeight: '1.5' }}>
+                <p style={{ fontSize: '0.98rem', color: 'var(--text-main)', fontFamily: 'var(--font-heading)', fontStyle: 'italic', marginBottom: '20px', lineHeight: '1.5' }}>
                   {getDesc(study)}
                 </p>
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', paddingTop: '16px', borderTop: '1px solid var(--border-line)' }}>
-                <img src={study.avatar} alt={study.author} style={{ width: '36px', height: '36px', borderRadius: '50%', objectFit: 'cover' }} />
+                <img src={study.avatar} alt={getAuthor(study)} style={{ width: '36px', height: '36px', borderRadius: '50%', objectFit: 'cover' }} />
                 <div>
-                  <h5 style={{ fontSize: '0.88rem', color: '#fff', margin: 0, fontWeight: '700' }}>{study.author}</h5>
-                  <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)' }}>{study.client} &bull; {study.location}</div>
+                  <h5 style={{ fontSize: '0.88rem', color: 'var(--text-main)', margin: 0, fontWeight: '700' }}>{getAuthor(study)}</h5>
+                  <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)' }}>{study.client} &bull; {getLocation(study)}</div>
                 </div>
               </div>
             </div>

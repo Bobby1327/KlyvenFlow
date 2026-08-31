@@ -10,11 +10,14 @@ export default function RetailDemo({ lang }) {
   const [pickupTime, setPickupTime] = useState('Today, 4:00 PM');
   const [isOrdered, setIsOrdered] = useState(false);
 
+  const [promoMessage, setPromoMessage] = useState(null);
+
   const applyPromo = () => {
     if (promoCode.toUpperCase() === 'VIP10' || promoCode.toUpperCase() === 'LOCAL15') {
       setDiscount(0.15);
+      setPromoMessage({ type: 'success', text: lang === 'pt' ? '✓ Desconto de 15% aplicado com sucesso!' : '✓ 15% discount applied successfully!' });
     } else {
-      alert(lang === 'pt' ? 'Use o cupom "LOCAL15" para economizar 15%!' : 'Try promo code "LOCAL15" for 15% off local pickup!');
+      setPromoMessage({ type: 'error', text: lang === 'pt' ? 'Dica: use o cupom "LOCAL15" para 15% de desconto!' : 'Tip: try code "LOCAL15" for 15% off!' });
     }
   };
 
@@ -36,7 +39,7 @@ export default function RetailDemo({ lang }) {
     if (lang === 'pt') {
       return `R$ ${price.toFixed(2).replace('.', ',')}`;
     }
-    return `R$ ${price.toFixed(2)}`;
+    return `$${price.toFixed(2)}`;
   };
 
   return (
@@ -137,9 +140,23 @@ export default function RetailDemo({ lang }) {
                 <button onClick={applyPromo} style={{ background: 'var(--bg-card)', border: '1px solid var(--border-line)', color: 'var(--text-main)', padding: '8px 12px', borderRadius: '4px', cursor: 'pointer', fontSize: '0.8rem', fontWeight: '700' }}>{t.retailPromoBtn}</button>
               </div>
 
+              {promoMessage && (
+                <div style={{
+                  fontSize: '0.75rem',
+                  padding: '6px 10px',
+                  borderRadius: '4px',
+                  marginBottom: '12px',
+                  background: promoMessage.type === 'success' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(239, 68, 68, 0.1)',
+                  color: promoMessage.type === 'success' ? '#10b981' : '#f87171',
+                  border: `1px solid ${promoMessage.type === 'success' ? 'rgba(16, 185, 129, 0.2)' : 'rgba(239, 68, 68, 0.2)'}`
+                }}>
+                  {promoMessage.text}
+                </div>
+              )}
+
               <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '16px', borderTop: '1px solid var(--border-line)', paddingTop: '12px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span>Subtotal ({cartItems.length} items):</span>
+                  <span>{t.retailSubtotalItems.replace('{count}', cartItems.length)}</span>
                   <span style={{ color: 'var(--text-main)', fontFamily: 'monospace' }}>{formatPrice(subtotal)}</span>
                 </div>
                 {discount > 0 && (

@@ -70,6 +70,21 @@ export default function IndustryShowcase({ lang, activeIndustry, onSelectIndustr
       if (key === 'trialConversions') return 'Conversão Exper.';
       if (key === 'classCapacity') return 'Capacidade Aulas';
       if (key === 'churnReduction') return 'Churn Reduzido';
+    } else {
+      if (key === 'commissionSaved') return 'Commission Saved';
+      if (key === 'avgOrderIncrease') return 'Order Boost';
+      if (key === 'phoneCallsReduced') return 'Calls Reduced';
+      if (key === 'noShowsReduced') return 'No-shows Down';
+      if (key === 'recurringClients') return 'Repeat Clients';
+      if (key === 'leadCaptureBoost') return 'Leads Captured';
+      if (key === 'quoteTimeSaved') return 'Admin Saved';
+      if (key === 'highValueJobs') return 'Premium Jobs';
+      if (key === 'repeatPurchases') return 'Repeat Orders';
+      if (key === 'localPickupGrowth') return 'Store Pickups';
+      if (key === 'footTraffic') return 'Walk-in Traffic';
+      if (key === 'trialConversions') return 'Trial Signups';
+      if (key === 'classCapacity') return 'Class Capacity';
+      if (key === 'churnReduction') return 'Churn Reduced';
     }
     return key.replace(/([A-Z])/g, ' $1');
   };

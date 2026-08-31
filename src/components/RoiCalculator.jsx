@@ -32,7 +32,7 @@ export default function RoiCalculator({ lang, onOpenContactModal }) {
     if (lang === 'pt') {
       return `R$ ${Math.round(price).toLocaleString('pt-BR')}`;
     }
-    return `R$ ${Math.round(price).toLocaleString('en-US')}`;
+    return `$${Math.round(price).toLocaleString('en-US')}`;
   };
 
   const getIndustryLabel = (ind) => {

@@ -17,11 +17,16 @@ export default function RestaurantDemo({ lang }) {
   const [resGuests, setResGuests] = useState(2);
   const [resConfirmed, setResConfirmed] = useState(false);
 
-  const categories = lang === 'pt' ? ['Tudo', 'Mains', 'Appetizers', 'Drinks', 'Desserts'] : ['All', 'Mains', 'Appetizers', 'Drinks', 'Desserts'];
+  const CATEGORIES = [
+    { id: 'All', labelPt: 'Todos', labelEn: 'All' },
+    { id: 'Mains', labelPt: 'Pratos Principais', labelEn: 'Mains' },
+    { id: 'Appetizers', labelPt: 'Entradas', labelEn: 'Appetizers' },
+    { id: 'Drinks', labelPt: 'Bebidas', labelEn: 'Drinks' },
+    { id: 'Desserts', labelPt: 'Sobremesas', labelEn: 'Desserts' }
+  ];
 
   const filteredMenu = RESTAURANT_MENU.filter(item => {
-    const mappedCat = selectedCategory === 'Tudo' || selectedCategory === 'All' ? 'All' : selectedCategory;
-    const matchesCategory = mappedCat === 'All' || item.category === mappedCat;
+    const matchesCategory = selectedCategory === 'All' || item.category === selectedCategory;
     const itemName = lang === 'pt' ? item.name : (item.nameEn || item.name);
     const itemDesc = lang === 'pt' ? item.desc : (item.descEn || item.desc);
     const matchesSearch = itemName.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -68,7 +73,7 @@ export default function RestaurantDemo({ lang }) {
     if (lang === 'pt') {
       return `R$ ${price.toFixed(2).replace('.', ',')}`;
     }
-    return `R$ ${price.toFixed(2)}`;
+    return `$${price.toFixed(2)}`;
   };
 
   return (
@@ -173,20 +178,21 @@ export default function RestaurantDemo({ lang }) {
                     />
                   </div>
                   <div style={{ display: 'flex', gap: '6px', overflowX: 'auto', paddingBottom: '4px' }}>
-                    {categories.map((cat, idx) => {
-                      const isCatSelected = selectedCategory === cat || (idx === 0 && (selectedCategory === 'All' || selectedCategory === 'Tudo'));
+                    {CATEGORIES.map((cat) => {
+                      const isCatSelected = selectedCategory === cat.id;
                       return (
                         <button
-                          key={cat}
-                          onClick={() => setSelectedCategory(cat)}
+                          key={cat.id}
+                          onClick={() => setSelectedCategory(cat.id)}
                           style={{
-                            padding: '8px 14px', borderRadius: '6px', border: 'none', cursor: 'pointer', fontSize: '0.82rem', fontWeight: '600',
-                            background: isCatSelected ? 'var(--theme-accent)' : 'var(--bg-card-hover)',
+                            padding: '8px 14px', borderRadius: '6px', cursor: 'pointer', fontSize: '0.82rem', fontWeight: '600',
+                            background: isCatSelected ? '#f97316' : 'var(--bg-card-hover)',
                             color: isCatSelected ? '#fff' : 'var(--text-muted)',
-                            border: '1px solid var(--border-line)'
+                            border: isCatSelected ? '1px solid #f97316' : '1px solid var(--border-line)',
+                            whiteSpace: 'nowrap'
                           }}
                         >
-                          {cat}
+                          {lang === 'pt' ? cat.labelPt : cat.labelEn}
                         </button>
                       );
                     })}
@@ -304,7 +310,7 @@ export default function RestaurantDemo({ lang }) {
                       </div>
                     )}
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <span>Tax (8%):</span>
+                      <span>{t.restTaxLabel}</span>
                       <span style={{ color: 'var(--text-main)', fontFamily: 'monospace' }}>{formatPrice(tax)}</span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.95rem', fontWeight: '800', color: 'var(--text-main)', paddingTop: '8px', borderTop: '1px solid var(--border-line)' }}>

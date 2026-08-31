@@ -32,7 +32,7 @@ export default function ContractorDemo({ lang }) {
     if (lang === 'pt') {
       return `R$ ${min.toLocaleString('pt-BR')} - R$ ${max.toLocaleString('pt-BR')}`;
     }
-    return `R$ ${min.toLocaleString('en-US')} - R$ ${max.toLocaleString('en-US')}`;
+    return `$${min.toLocaleString('en-US')} - $${max.toLocaleString('en-US')}`;
   };
 
   return (
@@ -62,7 +62,9 @@ export default function ContractorDemo({ lang }) {
         </div>
 
         <a 
-          href="tel:5550192834"
+          href="https://wa.me/5535997745407?text=Olá!%20Preciso%20de%20um%20atendimento%20de%20urgência."
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
             background: 'var(--bg-card)', border: '1px solid #ef4444', color: '#ef4444',
             padding: '8px 16px', borderRadius: '4px', textDecoration: 'none', fontSize: '0.85rem', fontWeight: '750',

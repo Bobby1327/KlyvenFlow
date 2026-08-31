@@ -38,6 +38,7 @@ export const TRANSLATIONS = {
     showcaseSub: 'Toque nos botões do protótipo abaixo como se estivesse no celular do seu cliente. É exatamente essa velocidade que eles vão sentir.',
     keyProblemSolved: 'O que resolvemos para',
     quickStatsTitle: 'Métricas Reais',
+    livePrototypeBadge: 'PROTÓTIPO ATIVO',
 
     // Restaurant Demo
     restOpenStatus: 'Recebendo pedidos agora no WhatsApp',
@@ -45,7 +46,7 @@ export const TRANSLATIONS = {
     restTabReserve: 'Reservar Mesa',
     restTabQr: 'QR Code de Mesa',
     restOrderSuccessTitle: 'Pedido gerado com sucesso!',
-    restOrderSuccessSub: 'Pedido pronto para ser enviado via WhatsApp para o Nonno! Clique no botão abaixo para simular o envio.',
+    restOrderSuccessSub: 'Pedido pronto para ser enviado via WhatsApp para a Cantina! Clique no botão abaixo para simular o envio.',
     restOrderAnother: 'Fazer outro pedido de teste',
     restSearchPlaceholder: 'Procurar prato ou bebida...',
     restAddToCart: 'Adicionar',
@@ -56,6 +57,7 @@ export const TRANSLATIONS = {
     restCartEmpty: 'Sua sacola está vazia. Adicione alguns pratos acima.',
     restSubtotal: 'Subtotal:',
     restDeliveryFee: 'Entrega:',
+    restTaxLabel: 'Taxa de serviço (8%):',
     restTotal: 'Total do Pedido:',
     restPlaceOrder: 'Enviar Pedido pelo WhatsApp (Teste)',
     restReserveTitle: 'Reservar uma mesa na Cantina',
@@ -141,6 +143,7 @@ export const TRANSLATIONS = {
     retailPromoAlert: 'Dica: digite o cupom "LOCAL15" para testar o desconto de 15%.',
     retailSavings: 'Desconto Local (15%):',
     retailCta: 'Confirmar Reserva e Retirada',
+    retailSubtotalItems: 'Subtotal ({count} itens):',
 
     // Fitness Demo
     fitOpenStatus: 'Grade de aulas da semana',
@@ -153,6 +156,8 @@ export const TRANSLATIONS = {
     fitCapacity: 'Capacidade máxima:',
     fitReserveSpot: 'Reservar minha vaga',
     fitCancelSpot: 'Cancelar minha vaga',
+    fitInstructor: 'Instrutor(a):',
+    fitLevel: 'Nível:',
 
     // ROI Calculator
     roiBadge: 'Papo reto sobre finanças',
@@ -211,7 +216,7 @@ export const TRANSLATIONS = {
     testSub: 'Pessoas reais, comércios de verdade. Veja como a tecnologia simples ajudou a melhorar o dia a dia deles.',
     testAll: 'Todos os setores',
 
-    // Contact Modal
+    // Contact Modal & General
     contactTitle: 'Falar com o Desenvolvedor',
     contactSub: 'Entre em contato direto pelo WhatsApp ou E-mail para tirar dúvidas, receber uma estimativa ou dar início ao seu projeto.',
     contactLabelName: 'Seu Nome *',
@@ -229,6 +234,14 @@ export const TRANSLATIONS = {
     contactSuccessTitle: 'Mensagem recebida!',
     contactSuccessSub: 'Obrigado, {ownerName}! Já vi sua mensagem sobre a {businessName}. Vou te chamar no WhatsApp em breve para conversarmos.',
     contactSuccessBtn: 'Voltar para a página',
+    onlineNow: 'Online Agora',
+    whatsappAndPhone: 'WhatsApp & Telefone',
+    officialEmail: 'E-mail Oficial',
+    openInWhatsApp: 'Conversar no WhatsApp',
+    sendDirectEmail: 'Enviar E-mail Direto',
+    copyBtn: 'Copiar',
+    copiedBtn: 'Copiado!',
+    closeBtn: 'Fechar',
 
     // Footer
     footerSub: 'Sistemas inteligentes e automatizados para restaurantes, salões, prestadores de serviço e comércios locais powered by Klyven.AI.',
@@ -276,6 +289,7 @@ export const TRANSLATIONS = {
     showcaseSub: 'Interact with the demo previews below. This is exactly the speed and look your customer will feel on their phone.',
     keyProblemSolved: 'What we solve for',
     quickStatsTitle: 'Real Metrics',
+    livePrototypeBadge: 'LIVE DEMO',
 
     // Restaurant Demo
     restOpenStatus: 'Taking orders now directly via WhatsApp',
@@ -283,7 +297,7 @@ export const TRANSLATIONS = {
     restTabReserve: 'Book Table',
     restTabQr: 'Table QR Code',
     restOrderSuccessTitle: 'Order generated successfully!',
-    restOrderSuccessSub: 'Order ready to be sent to Nonno\'s WhatsApp! Click the button below to test.',
+    restOrderSuccessSub: 'Order ready to be sent to Cantina\'s WhatsApp! Click the button below to test.',
     restOrderAnother: 'Place another test order',
     restSearchPlaceholder: 'Search dishes or drinks...',
     restAddToCart: 'Add to Bag',
@@ -294,6 +308,7 @@ export const TRANSLATIONS = {
     restCartEmpty: 'Your bag is empty. Add some local dishes above.',
     restSubtotal: 'Subtotal:',
     restDeliveryFee: 'Delivery:',
+    restTaxLabel: 'Service / Tax (8%):',
     restTotal: 'Order Total:',
     restPlaceOrder: 'Send Order to WhatsApp (Test)',
     restReserveTitle: 'Reserve a table at the Cantina',
@@ -306,7 +321,7 @@ export const TRANSLATIONS = {
     restGuest4: '4 people',
     restGuest6: 'Large family table',
     restReserveConfirmBtn: 'Confirm date & table',
-    restReserveSuccessTitle: 'Mesa reserved!',
+    restReserveSuccessTitle: 'Table reserved!',
     restReserveSuccessSub: 'Table for {guests} on {date} at {time}. Pre-confirmed.',
     restReserveNewBtn: 'Book another table',
     restQrTitle: 'QR Code on the table',
@@ -379,6 +394,7 @@ export const TRANSLATIONS = {
     retailPromoAlert: 'Pro-tip: type the coupon "LOCAL15" to test a 15% discount.',
     retailSavings: 'Local discount (15%):',
     retailCta: 'Confirm Local Pickup',
+    retailSubtotalItems: 'Subtotal ({count} items):',
 
     // Fitness Demo
     fitOpenStatus: 'Weekly class schedule spot booking',
@@ -391,6 +407,8 @@ export const TRANSLATIONS = {
     fitCapacity: 'Max capacity:',
     fitReserveSpot: 'Reserve my spot',
     fitCancelSpot: 'Cancel spot',
+    fitInstructor: 'Instructor:',
+    fitLevel: 'Level:',
 
     // ROI Calculator
     roiBadge: 'Honest numbers talk',
@@ -449,7 +467,7 @@ export const TRANSLATIONS = {
     testSub: 'Real people, actual local businesses. Hear how direct pages simplified their lives and helped their margin.',
     testAll: 'All Categories',
 
-    // Contact Modal
+    // Contact Modal & General
     contactTitle: 'Talk to Developer',
     contactSub: 'Reach out directly via WhatsApp or Email to ask questions, request an estimate, or start your project.',
     contactLabelName: 'Your Name *',
@@ -467,6 +485,14 @@ export const TRANSLATIONS = {
     contactSuccessTitle: 'Message received!',
     contactSuccessSub: 'Thank you, {ownerName}! Got your details for {businessName}. I will reach out on WhatsApp shortly.',
     contactSuccessBtn: 'Back to page',
+    onlineNow: 'Online Now',
+    whatsappAndPhone: 'WhatsApp & Phone',
+    officialEmail: 'Official Email',
+    openInWhatsApp: 'Open in WhatsApp',
+    sendDirectEmail: 'Send Direct Email',
+    copyBtn: 'Copy',
+    copiedBtn: 'Copied!',
+    closeBtn: 'Close',
 
     // Footer
     footerSub: 'Smart, automated local web applications for restaurants, salons, contractors, and retail shops powered by Klyven.AI.',
@@ -696,11 +722,13 @@ export const CASE_STUDIES = [
     client: 'Cantina do Nonno',
     category: 'restaurant',
     location: 'Pinheiros, São Paulo - SP',
+    locationEn: 'Pinheiros, São Paulo',
     metric: '+42% Pedidos Diretos',
     metricEn: '+42% Direct Orders',
     desc: 'Abandonamos os aplicativos de entrega para focar no delivery próprio via WhatsApp. Nossos clientes fiéis amaram pedir direto pela nossa página.',
     descEn: 'We stopped relying on delivery aggregators and focused on direct orders. Our loyal locals preferred the simple page experience.',
     author: 'Chef Antonio (Proprietário)',
+    authorEn: 'Chef Antonio (Owner)',
     avatar: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=150&q=80'
   },
   {
@@ -708,11 +736,13 @@ export const CASE_STUDIES = [
     client: 'Studio Lívia Costa',
     category: 'salon',
     location: 'Bangu, Rio de Janeiro - RJ',
+    locationEn: 'Bangu, Rio de Janeiro',
     metric: '90% Agendas Online',
     metricEn: '90% Automated Bookings',
     desc: 'Chega de telefone tocando enquanto estou atendendo. As clientes agendam pelo link no Instagram no sábado à noite e eu só checo na segunda.',
     descEn: 'No more phone calls interrupting hair sessions. Clients book from Instagram at night, and I just check my dashboard on Monday.',
     author: 'Lívia Costa (Esteticista)',
+    authorEn: 'Lívia Costa (Esthetician)',
     avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80'
   },
   {
@@ -720,11 +750,13 @@ export const CASE_STUDIES = [
     client: 'Marido de Aluguel Reparos',
     category: 'contractor',
     location: 'Santo André, SP',
+    locationEn: 'Santo André, SP',
     metric: 'Dobro de Chamados',
     metricEn: 'Double Local Leads',
     desc: 'O cliente vê o preço aproximado da instalação na hora pelo simulador de CEP e já chama no WhatsApp com o serviço fechado.',
     descEn: 'Clients see the average labor cost instantly using the zip code tool and click to chat with the job already half-closed.',
     author: 'Carlos Eduardo (Eletricista)',
+    authorEn: 'Carlos Eduardo (Electrician)',
     avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=150&q=80'
   }
 ];

@@ -36,7 +36,7 @@ export default function SalonDemo({ lang }) {
     if (lang === 'pt') {
       return `R$ ${price.toFixed(2).replace('.', ',')}`;
     }
-    return `R$ ${price.toFixed(2)}`;
+    return `$${price.toFixed(2)}`;
   };
 
   return (

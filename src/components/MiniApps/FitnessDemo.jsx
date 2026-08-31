@@ -85,7 +85,7 @@ export default function FitnessDemo({ lang }) {
                     <h5 style={{ fontSize: '0.95rem', color: 'var(--text-main)', margin: 0, fontWeight: '700' }}>{getClassName(item)}</h5>
                   </div>
                   <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                    Instructor: <strong>{item.instructor}</strong> &bull; Level: {getClassLevel(item)}
+                    {t.fitInstructor} <strong>{item.instructor}</strong> &bull; {t.fitLevel} {getClassLevel(item)}
                   </div>
                 </div>
 

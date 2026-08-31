@@ -28,7 +28,7 @@ export default function ContactModal({ lang, isOpen, onClose }) {
           style={{
             position: 'absolute', top: '18px', right: '18px', background: 'transparent', border: 'none', color: 'var(--text-muted)', cursor: 'pointer'
           }}
-          title="Fechar"
+          title={t.closeBtn}
         >
           <X size={22} />
         </button>
@@ -66,12 +66,12 @@ export default function ContactModal({ lang, isOpen, onClose }) {
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <MessageCircle size={20} color="#10b981" />
                 <span style={{ fontSize: '0.8rem', fontWeight: '800', textTransform: 'uppercase', color: '#10b981', letterSpacing: '0.05em' }}>
-                  WhatsApp & Telefone
+                  {t.whatsappAndPhone}
                 </span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.72rem', color: '#10b981', fontWeight: '700' }}>
                 <span className="live-pulse-dot" />
-                <span>Online Agora</span>
+                <span>{t.onlineNow}</span>
               </div>
             </div>
 
@@ -100,7 +100,7 @@ export default function ContactModal({ lang, isOpen, onClose }) {
                   boxShadow: '0 4px 14px rgba(16, 185, 129, 0.3)'
                 }}
               >
-                <span>{lang === 'pt' ? 'Conversar no WhatsApp' : 'Open in WhatsApp'}</span>
+                <span>{t.openInWhatsApp}</span>
                 <ArrowUpRight size={16} />
               </a>
 
@@ -115,10 +115,10 @@ export default function ContactModal({ lang, isOpen, onClose }) {
                   alignItems: 'center',
                   gap: '6px'
                 }}
-                title="Copiar número"
+                title={lang === 'pt' ? 'Copiar número' : 'Copy number'}
               >
                 {copiedType === 'phone' ? <Check size={16} color="#10b981" /> : <Copy size={16} />}
-                <span>{copiedType === 'phone' ? (lang === 'pt' ? 'Copiado!' : 'Copied!') : (lang === 'pt' ? 'Copiar' : 'Copy')}</span>
+                <span>{copiedType === 'phone' ? t.copiedBtn : t.copyBtn}</span>
               </button>
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function ContactModal({ lang, isOpen, onClose }) {
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Mail size={20} color="var(--theme-accent)" />
                 <span style={{ fontSize: '0.8rem', fontWeight: '800', textTransform: 'uppercase', color: 'var(--theme-accent)', letterSpacing: '0.05em' }}>
-                  E-mail Oficial
+                  {t.officialEmail}
                 </span>
               </div>
               <span style={{ fontSize: '0.72rem', color: 'var(--text-dim)', fontWeight: '700' }}>
@@ -160,7 +160,7 @@ export default function ContactModal({ lang, isOpen, onClose }) {
                   boxShadow: '0 4px 14px rgba(139, 92, 246, 0.3)'
                 }}
               >
-                <span>{lang === 'pt' ? 'Enviar E-mail Direto' : 'Send Direct Email'}</span>
+                <span>{t.sendDirectEmail}</span>
                 <ArrowUpRight size={16} />
               </a>
 
@@ -175,10 +175,10 @@ export default function ContactModal({ lang, isOpen, onClose }) {
                   alignItems: 'center',
                   gap: '6px'
                 }}
-                title="Copiar e-mail"
+                title={lang === 'pt' ? 'Copiar e-mail' : 'Copy email'}
               >
                 {copiedType === 'email' ? <Check size={16} color="#10b981" /> : <Copy size={16} />}
-                <span>{copiedType === 'email' ? (lang === 'pt' ? 'Copiado!' : 'Copied!') : (lang === 'pt' ? 'Copiar' : 'Copy')}</span>
+                <span>{copiedType === 'email' ? t.copiedBtn : t.copyBtn}</span>
               </button>
             </div>
           </div>

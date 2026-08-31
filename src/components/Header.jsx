@@ -117,7 +117,7 @@ export default function Header({ lang, setLang, isLightMode, onToggleTheme, onOp
               onClick={(e) => onToggleTheme(e)}
               className="btn-secondary"
               style={{ padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-              title={isLightMode ? 'Ativar Modo Escuro' : 'Ativar Modo Claro'}
+              title={isLightMode ? (lang === 'pt' ? 'Ativar Modo Escuro' : 'Switch to Dark Mode') : (lang === 'pt' ? 'Ativar Modo Claro' : 'Switch to Light Mode')}
             >
               {isLightMode ? <Moon size={18} /> : <Sun size={18} />}
             </button>
@@ -136,7 +136,7 @@ export default function Header({ lang, setLang, isLightMode, onToggleTheme, onOp
             <button 
               onClick={onOpenThemeModal}
               className="btn-secondary"
-              title="Mudar tom visual"
+              title={lang === 'pt' ? 'Mudar tom visual' : 'Change brand colors'}
               style={{ padding: '10px 14px', fontSize: '0.88rem' }}
             >
               <Palette size={18} color="var(--theme-accent)" />
