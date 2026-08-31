@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Check, Sparkles, Send, Zap, Clock, MessageCircle, Mail } from 'lucide-react';
+import InstagramIcon from './InstagramIcon';
 import { PACKAGE_OPTIONS, INDUSTRIES, TRANSLATIONS } from '../data/showcaseData';
 
 export default function PackageBuilder({ lang, onOpenContactModal }) {
@@ -95,19 +96,30 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary" 
-                style={{ borderRadius: '6px', background: '#10b981', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 20px', fontSize: '0.88rem' }}
+                style={{ borderRadius: '6px', background: '#10b981', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 18px', fontSize: '0.88rem' }}
               >
                 <MessageCircle size={18} />
-                <span>{lang === 'pt' ? 'Enviar Proposta no WhatsApp: (55) 35 99774-5407' : 'Send via WhatsApp: (55) 35 99774-5407'}</span>
+                <span>WhatsApp: (55) 35 99774-5407</span>
               </a>
 
               <a
                 href={`mailto:KlyvenFlow@gmail.com?subject=${encodeURIComponent(lang === 'pt' ? 'Proposta Personalizada KlyvenFlow' : 'KlyvenFlow Custom Package Proposal')}&body=${encodeURIComponent(lang === 'pt' ? `Olá! Configurei uma proposta no valor de ${formatPrice(totalEstimate)}.` : `Hello! I configured a proposal of ${formatPrice(totalEstimate)}.`)}`}
                 className="btn-secondary"
-                style={{ borderRadius: '6px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 18px', fontSize: '0.88rem' }}
+                style={{ borderRadius: '6px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 16px', fontSize: '0.88rem' }}
               >
                 <Mail size={16} color="var(--theme-accent)" />
-                <span>{lang === 'pt' ? 'Enviar por E-mail (KlyvenFlow@gmail.com)' : 'Send via Email (KlyvenFlow@gmail.com)'}</span>
+                <span>KlyvenFlow@gmail.com</span>
+              </a>
+
+              <a
+                href="https://instagram.com/KlyvenFlow"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+                style={{ borderRadius: '6px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 16px', fontSize: '0.88rem' }}
+              >
+                <InstagramIcon size={16} color="#e1306c" />
+                <span>@KlyvenFlow</span>
               </a>
             </div>
 
@@ -289,17 +301,28 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
                   <Send size={15} style={{ marginRight: '4px' }} /> {t.propCta}
                 </button>
 
-                <div style={{ marginTop: '10px' }}>
+                <div style={{ marginTop: '8px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
                   <a
                     href="https://wa.me/5535997745407"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="contact-pill-whatsapp"
-                    style={{ width: '100%', boxSizing: 'border-box', justifyContent: 'center', fontSize: '0.8rem', padding: '8px 12px' }}
+                    style={{ width: '100%', boxSizing: 'border-box', justifyContent: 'center', fontSize: '0.78rem', padding: '7px 12px' }}
                   >
                     <span className="live-pulse-dot" />
-                    <MessageCircle size={14} />
+                    <MessageCircle size={13} />
                     <span>WhatsApp: <strong>(55) 35 99774-5407</strong></span>
+                  </a>
+
+                  <a
+                    href="https://instagram.com/KlyvenFlow"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact-pill-instagram"
+                    style={{ width: '100%', boxSizing: 'border-box', justifyContent: 'center', fontSize: '0.78rem', padding: '7px 12px' }}
+                  >
+                    <InstagramIcon size={13} color="#e1306c" />
+                    <span>Instagram: <strong>@KlyvenFlow</strong></span>
                   </a>
                 </div>
 

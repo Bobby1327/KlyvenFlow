@@ -1,5 +1,6 @@
 import React from 'react';
 import { Rocket, Heart, Mail, MessageCircle, Phone, ArrowUpRight } from 'lucide-react';
+import InstagramIcon from './InstagramIcon';
 import { TRANSLATIONS } from '../data/showcaseData';
 
 export default function Footer({ lang, onOpenContactModal }) {
@@ -105,6 +106,21 @@ export default function Footer({ lang, onOpenContactModal }) {
                 </div>
                 <ArrowUpRight size={13} />
               </a>
+
+              {/* Instagram Card */}
+              <a
+                href="https://instagram.com/KlyvenFlow"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-pill-instagram"
+                style={{ width: '100%', boxSizing: 'border-box', justifyContent: 'space-between', fontSize: '0.82rem', padding: '7px 14px' }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <InstagramIcon size={15} color="#e1306c" />
+                  <span>Instagram: <strong>@KlyvenFlow</strong></span>
+                </div>
+                <ArrowUpRight size={13} />
+              </a>
             </div>
 
             <button
@@ -122,9 +138,11 @@ export default function Footer({ lang, onOpenContactModal }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
             <span>&copy; {new Date().getFullYear()} {t.footerCopyright}</span>
             <span>&bull;</span>
+            <a href="https://wa.me/5535997745407" target="_blank" rel="noopener noreferrer" style={{ color: '#10b981', textDecoration: 'none', fontWeight: '700' }}>(55) 35 99774-5407</a>
+            <span>&bull;</span>
             <a href="mailto:KlyvenFlow@gmail.com" style={{ color: 'var(--theme-accent)', textDecoration: 'none', fontWeight: '700' }}>KlyvenFlow@gmail.com</a>
             <span>&bull;</span>
-            <a href="https://wa.me/5535997745407" target="_blank" rel="noopener noreferrer" style={{ color: '#10b981', textDecoration: 'none', fontWeight: '700' }}>(55) 35 99774-5407</a>
+            <a href="https://instagram.com/KlyvenFlow" target="_blank" rel="noopener noreferrer" style={{ color: '#e1306c', textDecoration: 'none', fontWeight: '700' }}>@KlyvenFlow</a>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--text-dim)' }}>
             <span>{t.footerLove}</span>

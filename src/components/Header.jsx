@@ -1,5 +1,6 @@
 import React from 'react';
 import { Rocket, Palette, Calendar, Globe, Sun, Moon, Mail, MessageCircle, Phone } from 'lucide-react';
+import InstagramIcon from './InstagramIcon';
 import { TRANSLATIONS } from '../data/showcaseData';
 
 export default function Header({ lang, setLang, isLightMode, onToggleTheme, onOpenThemeModal, onOpenContactModal }) {
@@ -24,13 +25,13 @@ export default function Header({ lang, setLang, isLightMode, onToggleTheme, onOp
           flexWrap: 'wrap',
           gap: '12px'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
             <a
               href="https://wa.me/5535997745407"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-pill-whatsapp"
-              title="Iniciar conversa no WhatsApp"
+              title="WhatsApp: (55) 35 99774-5407"
             >
               <span className="live-pulse-dot" />
               <MessageCircle size={15} />
@@ -40,10 +41,21 @@ export default function Header({ lang, setLang, isLightMode, onToggleTheme, onOp
             <a
               href="mailto:KlyvenFlow@gmail.com"
               className="contact-pill-email"
-              title="Enviar e-mail para KlyvenFlow@gmail.com"
+              title="E-mail: KlyvenFlow@gmail.com"
             >
               <Mail size={15} color="var(--theme-accent)" />
               <span><strong>KlyvenFlow@gmail.com</strong></span>
+            </a>
+
+            <a
+              href="https://instagram.com/KlyvenFlow"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-pill-instagram"
+              title="Instagram: @KlyvenFlow"
+            >
+              <InstagramIcon size={15} color="#e1306c" />
+              <span><strong>@KlyvenFlow</strong></span>
             </a>
           </div>
 

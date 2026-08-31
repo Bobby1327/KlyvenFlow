@@ -278,6 +278,33 @@ h6 {
   color: #ffffff !important;
 }
 
+.contact-pill-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: rgba(225, 48, 108, 0.1);
+  border: 1.5px solid #e1306c;
+  border-radius: 99px;
+  color: var(--text-main) !important;
+  text-decoration: none;
+  font-weight: 750;
+  font-size: 0.88rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 16px rgba(225, 48, 108, 0.2);
+}
+
+.contact-pill-instagram:hover {
+  background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 24px rgba(225, 48, 108, 0.45);
+}
+
+.contact-pill-instagram:hover * {
+  color: #ffffff !important;
+}
+
 /* Contact Card Box for Modals and Footers */
 .contact-card-box {
   background: var(--bg-card);
@@ -316,6 +343,16 @@ h6 {
   box-shadow: 0 8px 28px rgba(139, 92, 246, 0.25);
 }
 
+.contact-card-box.instagram-box {
+  border-color: rgba(225, 48, 108, 0.3);
+  background: linear-gradient(180deg, rgba(225, 48, 108, 0.07) 0%, var(--bg-card) 100%);
+}
+
+.contact-card-box.instagram-box:hover {
+  border-color: #e1306c;
+  box-shadow: 0 8px 28px rgba(225, 48, 108, 0.25);
+}
+
 /* Pulse Live Status Dot */
 .live-pulse-dot {
   width: 8px;
@@ -344,6 +381,7 @@ h6 {
     transform: scale(0.6);
     opacity: 1;
   }
+
   100% {
     transform: scale(2.4);
     opacity: 0;
