@@ -45,13 +45,13 @@ export default function ComparisonSection({ lang, onOpenContactModal }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '28px' }} className="demo-grid-layout">
 
           {/* Old Static Website Card */}
-          <div className="glass-panel" style={{ padding: '24px', borderRadius: '12px', background: 'transparent', borderColor: 'rgba(239, 68, 68, 0.2)' }}>
+          <div className="glass-panel" style={{ padding: '24px', borderRadius: '12px', borderColor: 'rgba(239, 68, 68, 0.2)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
               <div style={{ width: '32px', height: '32px', borderRadius: '6px', background: 'rgba(239, 68, 68, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <XCircle size={18} color="#ef4444" />
               </div>
               <div>
-                <h3 style={{ fontSize: '1.15rem', color: '#fff', margin: 0, fontWeight: '700' }}>{t.compOldTitle}</h3>
+                <h3 style={{ fontSize: '1.15rem', color: 'var(--text-main)', margin: 0, fontWeight: '700' }}>{t.compOldTitle}</h3>
                 <span style={{ fontSize: '0.75rem', color: '#ef4444', fontWeight: '600' }}>{t.compOldSub}</span>
               </div>
             </div>
@@ -60,7 +60,7 @@ export default function ComparisonSection({ lang, onOpenContactModal }) {
               {COMPARISON_POINTS.map((pt, idx) => (
                 <div key={idx} style={{ padding: '12px 14px', borderRadius: '6px', border: '1px solid var(--border-line)' }}>
                   <div style={{ fontSize: '0.7rem', color: 'var(--text-dim)', fontWeight: '700', textTransform: 'uppercase', marginBottom: '4px', letterSpacing: '0.05em' }}>{getFeature(pt)}</div>
-                  <div style={{ fontSize: '0.85rem', color: '#cbd5e1', display: 'flex', alignItems: 'flex-start', gap: '8px', lineHeight: '1.4' }}>
+                  <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'flex-start', gap: '8px', lineHeight: '1.4' }}>
                     <XCircle size={14} color="#ef4444" style={{ marginTop: '2px', flexShrink: 0 }} />
                     <span>{getOldWay(pt)}</span>
                   </div>
@@ -70,13 +70,13 @@ export default function ComparisonSection({ lang, onOpenContactModal }) {
           </div>
 
           {/* New Modern Web App Card */}
-          <div className="glass-panel" style={{ padding: '24px', borderRadius: '12px', background: 'transparent', borderColor: 'var(--theme-accent)', boxShadow: '0 4px 30px rgba(139, 92, 246, 0.04)' }}>
+          <div className="glass-panel" style={{ padding: '24px', borderRadius: '12px', borderColor: 'var(--theme-accent)', boxShadow: '0 4px 30px rgba(139, 92, 246, 0.04)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
               <div style={{ width: '32px', height: '32px', borderRadius: '6px', background: 'var(--theme-accent-light)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <CheckCircle2 size={18} color="var(--theme-accent)" />
               </div>
               <div>
-                <h3 style={{ fontSize: '1.15rem', color: '#fff', margin: 0, fontWeight: '700' }}>{t.compNewTitle}</h3>
+                <h3 style={{ fontSize: '1.15rem', color: 'var(--text-main)', margin: 0, fontWeight: '700' }}>{t.compNewTitle}</h3>
                 <span style={{ fontSize: '0.75rem', color: '#10b981', fontWeight: '700' }}>{t.compNewSub}</span>
               </div>
             </div>
@@ -88,7 +88,7 @@ export default function ComparisonSection({ lang, onOpenContactModal }) {
                     <div style={{ fontSize: '0.7rem', color: 'var(--theme-accent)', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{getFeature(pt)}</div>
                     <span style={{ fontSize: '0.7rem', fontWeight: '700', color: '#10b981', background: 'rgba(16, 185, 129, 0.08)', padding: '2px 6px', borderRadius: '4px' }}>{getImpact(pt)}</span>
                   </div>
-                  <div style={{ fontSize: '0.85rem', color: '#ffffff', fontWeight: '600', display: 'flex', alignItems: 'flex-start', gap: '8px', lineHeight: '1.4' }}>
+                  <div style={{ fontSize: '0.85rem', color: 'var(--text-main)', fontWeight: '600', display: 'flex', alignItems: 'flex-start', gap: '8px', lineHeight: '1.4' }}>
                     <CheckCircle2 size={14} color="#10b981" style={{ marginTop: '2px', flexShrink: 0 }} />
                     <span>{getNewWay(pt)}</span>
                   </div>
@@ -100,9 +100,9 @@ export default function ComparisonSection({ lang, onOpenContactModal }) {
         </div>
 
         {/* Callout */}
-        <div className="glass-panel" style={{ padding: '20px 28px', borderRadius: '12px', background: 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
+        <div className="glass-panel" style={{ padding: '20px 28px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
           <div style={{ textAlign: 'left' }}>
-            <h4 style={{ fontSize: '1.15rem', color: '#fff', margin: '0 0 4px 0', fontWeight: '700' }}>{t.compFooterText}</h4>
+            <h4 style={{ fontSize: '1.15rem', color: 'var(--text-main)', margin: '0 0 4px 0', fontWeight: '700' }}>{t.compFooterText}</h4>
             <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0 }}>{t.compFooterSub}</p>
           </div>
           <button onClick={onOpenContactModal} className="btn-primary" style={{ padding: '12px 24px', borderRadius: '6px', fontSize: '0.9rem' }}>

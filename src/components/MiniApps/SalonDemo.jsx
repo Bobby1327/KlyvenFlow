@@ -206,7 +206,7 @@ export default function SalonDemo({ lang }) {
                       fontSize: '0.85rem',
                       fontWeight: '600',
                       background: selectedTime === time ? '#ec4899' : 'var(--bg-card-hover)',
-                      color: '#fff'
+                      color: selectedTime === time ? '#fff' : 'var(--text-main)'
                     }}
                   >
                     {time}

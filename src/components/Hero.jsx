@@ -124,13 +124,13 @@ export default function Hero({ lang, onOpenContactModal, onSelectIndustry }) {
                     padding: '10px 20px',
                     borderRadius: '6px',
                     textDecoration: 'none',
-                    color: '#ffffff',
+                    color: 'var(--text-main)',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '8px',
                     fontWeight: '600',
                     fontSize: '0.88rem',
-                    background: 'transparent',
+                    background: 'var(--bg-card)',
                     border: '1px solid var(--border-line)'
                   }}
                 >
@@ -143,14 +143,14 @@ export default function Hero({ lang, onOpenContactModal, onSelectIndustry }) {
         </div>
 
         {/* Metric Cards Banner - Editorial Grid layout */}
-        <div className="editorial-grid">
+        <div className="editorial-grid" style={{ background: 'var(--bg-card)' }}>
           {HERO_METRICS.map((metric, idx) => (
             <div key={idx} className="editorial-grid-item">
               <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', fontWeight: '700', textTransform: 'uppercase', marginBottom: '12px', letterSpacing: '0.08em' }}>
                 {metric.label}
               </div>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px', marginBottom: '12px' }}>
-                <span style={{ fontSize: '3rem', fontWeight: '800', fontFamily: 'monospace', color: '#ffffff', letterSpacing: '-0.03em' }}>
+                <span style={{ fontSize: '3rem', fontWeight: '800', fontFamily: 'monospace', color: 'var(--text-main)', letterSpacing: '-0.03em' }}>
                   {metric.value}
                 </span>
                 <span style={{ fontSize: '0.95rem', fontWeight: '600', color: 'var(--theme-accent)' }}>

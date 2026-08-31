@@ -75,7 +75,7 @@ export default function ContactModal({ lang, isOpen, onClose }) {
               </div>
             </div>
 
-            <div style={{ fontSize: '1.25rem', fontWeight: '800', color: '#ffffff', marginBottom: '14px', letterSpacing: '0.02em', fontFamily: 'var(--font-main)' }}>
+            <div style={{ fontSize: '1.25rem', fontWeight: '800', color: 'var(--text-main)', marginBottom: '14px', letterSpacing: '0.02em', fontFamily: 'var(--font-main)' }}>
               (55) 35 99774-5407
             </div>
 
@@ -137,7 +137,7 @@ export default function ContactModal({ lang, isOpen, onClose }) {
               </span>
             </div>
 
-            <div style={{ fontSize: '1.1rem', fontWeight: '800', color: '#ffffff', marginBottom: '14px', letterSpacing: '0.01em', wordBreak: 'break-all', fontFamily: 'var(--font-main)' }}>
+            <div style={{ fontSize: '1.1rem', fontWeight: '800', color: 'var(--text-main)', marginBottom: '14px', letterSpacing: '0.01em', wordBreak: 'break-all', fontFamily: 'var(--font-main)' }}>
               KlyvenFlow@gmail.com
             </div>
 

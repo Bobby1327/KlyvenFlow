@@ -78,11 +78,11 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
         </div>
 
         {proposalSent ? (
-          <div className="glass-panel" style={{ padding: '36px 24px', textAlign: 'center', maxWidth: '600px', margin: '0 auto', borderRadius: '12px', border: '1px solid #10b981', background: 'transparent' }}>
+          <div className="glass-panel" style={{ padding: '36px 24px', textAlign: 'center', maxWidth: '600px', margin: '0 auto', borderRadius: '12px', border: '1px solid #10b981' }}>
             <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: '#10b981', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px auto' }}>
               <Check size={24} />
             </div>
-            <h3 style={{ fontSize: '1.4rem', color: '#fff', marginBottom: '10px', fontWeight: '700' }}>{t.propSummaryTitle}</h3>
+            <h3 style={{ fontSize: '1.4rem', color: 'var(--text-main)', marginBottom: '10px', fontWeight: '700' }}>{t.propSummaryTitle}</h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginBottom: '20px', lineHeight: '1.5' }}>
               {lang === 'pt' 
                 ? `Escopo personalizado gerado com sucesso. Investimento total estimado: ${formatPrice(totalEstimate)} com entrega estimada em ${daysEstimate}.`
@@ -124,11 +124,11 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 360px', gap: '28px' }} className="demo-grid-layout">
             
             {/* Left: Step Builder */}
-            <div className="glass-panel" style={{ padding: '28px', borderRadius: '12px', background: 'transparent' }}>
+            <div className="glass-panel" style={{ padding: '28px', borderRadius: '12px' }}>
               
               {/* Step 1: Industry */}
               <div style={{ marginBottom: '24px' }}>
-                <h4 style={{ fontSize: '1rem', color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '700' }}>
+                <h4 style={{ fontSize: '1rem', color: 'var(--text-main)', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '700' }}>
                   <span style={{ width: '18px', height: '18px', borderRadius: '50%', background: 'var(--theme-accent)', color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.72rem', fontWeight: '800' }}>1</span>
                   {t.propStep1}
                 </h4>
@@ -141,8 +141,8 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
                         padding: '10px 12px',
                         borderRadius: '6px',
                         border: '1px solid var(--border-line)',
-                        background: selectedInd === ind.id ? 'var(--theme-accent)' : 'transparent',
-                        color: '#fff',
+                        background: selectedInd === ind.id ? 'var(--theme-accent)' : 'var(--bg-card)',
+                        color: selectedInd === ind.id ? '#ffffff' : 'var(--text-main)',
                         fontWeight: '600',
                         fontSize: '0.82rem',
                         cursor: 'pointer',
@@ -158,7 +158,7 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
 
               {/* Step 2: Feature Selection */}
               <div style={{ marginBottom: '24px' }}>
-                <h4 style={{ fontSize: '1rem', color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '700' }}>
+                <h4 style={{ fontSize: '1rem', color: 'var(--text-main)', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '700' }}>
                   <span style={{ width: '18px', height: '18px', borderRadius: '50%', background: 'var(--theme-accent)', color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.72rem', fontWeight: '800' }}>2</span>
                   {t.propStep2}
                 </h4>
@@ -173,7 +173,7 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
                           padding: '10px 12px',
                           borderRadius: '6px',
                           border: isChecked ? '1px solid var(--theme-accent)' : '1px solid var(--border-line)',
-                          background: isChecked ? 'var(--theme-accent-light)' : 'transparent',
+                          background: isChecked ? 'var(--theme-accent-light)' : 'var(--bg-card)',
                           cursor: 'pointer',
                           display: 'flex',
                           alignItems: 'center',
@@ -186,7 +186,7 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
                             {isChecked && <Check size={11} color="#fff" />}
                           </div>
                           <div>
-                            <div style={{ fontSize: '0.82rem', fontWeight: '600', color: '#fff' }}>{getFeatureName(opt)}</div>
+                            <div style={{ fontSize: '0.82rem', fontWeight: '600', color: 'var(--text-main)' }}>{getFeatureName(opt)}</div>
                             <span style={{ fontSize: '0.68rem', color: 'var(--text-dim)' }}>{getCategoryLabel(opt)}</span>
                           </div>
                         </div>
@@ -199,7 +199,7 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
 
               {/* Step 3: Speed */}
               <div>
-                <h4 style={{ fontSize: '1rem', color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '700' }}>
+                <h4 style={{ fontSize: '1rem', color: 'var(--text-main)', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '700' }}>
                   <span style={{ width: '18px', height: '18px', borderRadius: '50%', background: 'var(--theme-accent)', color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.72rem', fontWeight: '800' }}>3</span>
                   {t.propStep3}
                 </h4>
@@ -210,8 +210,8 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
                       padding: '12px',
                       borderRadius: '6px',
                       border: speed === 'standard' ? '1px solid var(--theme-accent)' : '1px solid var(--border-line)',
-                      background: speed === 'standard' ? 'rgba(255, 255, 255, 0.03)' : 'transparent',
-                      color: '#fff',
+                      background: speed === 'standard' ? 'var(--theme-accent-light)' : 'var(--bg-card)',
+                      color: 'var(--text-main)',
                       cursor: 'pointer',
                       textAlign: 'left'
                     }}
@@ -226,8 +226,8 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
                       padding: '12px',
                       borderRadius: '6px',
                       border: speed === 'express' ? '1px solid var(--accent-orange)' : '1px solid var(--border-line)',
-                      background: speed === 'express' ? 'rgba(249, 115, 22, 0.05)' : 'transparent',
-                      color: '#fff',
+                      background: speed === 'express' ? 'rgba(249, 115, 22, 0.1)' : 'var(--bg-card)',
+                      color: 'var(--text-main)',
                       cursor: 'pointer',
                       textAlign: 'left'
                     }}
@@ -243,17 +243,17 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
             </div>
 
             {/* Right: Live Quote Summary Card */}
-            <div className="glass-panel" style={{ padding: '28px', borderRadius: '12px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: '1px solid var(--theme-accent)', background: 'transparent' }}>
+            <div className="glass-panel" style={{ padding: '28px', borderRadius: '12px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: '1px solid var(--theme-accent)' }}>
               <div>
-                <h4 style={{ fontSize: '1.1rem', color: '#fff', marginBottom: '18px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '700' }}>
+                <h4 style={{ fontSize: '1.1rem', color: 'var(--text-main)', marginBottom: '18px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '700' }}>
                   <Sparkles size={16} color="var(--theme-accent)" />
                   {t.propSummaryTitle}
                 </h4>
 
-                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid var(--border-line)', marginBottom: '18px' }}>
+                <div style={{ background: 'var(--bg-card-hover)', padding: '16px', borderRadius: '8px', border: '1px solid var(--border-line)', marginBottom: '18px' }}>
                   <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)', textTransform: 'uppercase', fontWeight: '700', letterSpacing: '0.05em' }}>{t.propOneTimeBuild}</div>
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', margin: '4px 0', flexWrap: 'wrap' }}>
-                    <span style={{ fontSize: '2.4rem', fontWeight: '800', color: '#ffffff', fontFamily: 'monospace', letterSpacing: '-0.02em' }}>
+                    <span style={{ fontSize: '2.4rem', fontWeight: '800', color: 'var(--text-main)', fontFamily: 'monospace', letterSpacing: '-0.02em' }}>
                       {formatPrice(totalEstimate)}
                     </span>
                     <span style={{ fontSize: '0.88rem', fontWeight: '700', color: 'var(--text-dim)', fontFamily: 'monospace' }}>

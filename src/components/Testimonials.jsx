@@ -73,8 +73,8 @@ export default function Testimonials({ lang, onOpenContactModal }) {
                 fontSize: '0.82rem',
                 fontWeight: '700',
                 textTransform: 'capitalize',
-                background: filter === cat ? 'var(--theme-accent)' : 'transparent',
-                color: '#fff',
+                background: filter === cat ? 'var(--theme-accent)' : 'var(--bg-card)',
+                color: filter === cat ? '#ffffff' : 'var(--text-main)',
                 transition: 'all 0.2s ease'
               }}
             >
@@ -85,7 +85,7 @@ export default function Testimonials({ lang, onOpenContactModal }) {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
           {filteredStudies.map(study => (
-            <div key={study.id} className="glass-panel" style={{ padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: 'transparent', borderRadius: '12px' }}>
+            <div key={study.id} className="glass-panel" style={{ padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderRadius: '12px' }}>
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
                   <span style={{ fontSize: '0.72rem', fontWeight: '800', color: '#10b981', background: 'rgba(16, 185, 129, 0.08)', padding: '3px 10px', borderRadius: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>

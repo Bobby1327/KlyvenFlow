@@ -109,7 +109,7 @@ export default function RestaurantDemo({ lang }) {
             onClick={() => setActiveTab('menu')}
             style={{
               padding: '6px 14px', borderRadius: '4px', border: 'none', cursor: 'pointer', fontSize: '0.8rem', fontWeight: '600',
-              background: activeTab === 'menu' ? '#f97316' : 'transparent', color: '#fff', transition: 'all 0.1s ease'
+              background: activeTab === 'menu' ? '#f97316' : 'transparent', color: activeTab === 'menu' ? '#fff' : 'var(--text-main)', transition: 'all 0.1s ease'
             }}
           >
             {t.restTabMenu}
@@ -118,7 +118,7 @@ export default function RestaurantDemo({ lang }) {
             onClick={() => setActiveTab('reservation')}
             style={{
               padding: '6px 14px', borderRadius: '4px', border: 'none', cursor: 'pointer', fontSize: '0.8rem', fontWeight: '600',
-              background: activeTab === 'reservation' ? '#f97316' : 'transparent', color: '#fff', transition: 'all 0.1s ease'
+              background: activeTab === 'reservation' ? '#f97316' : 'transparent', color: activeTab === 'reservation' ? '#fff' : 'var(--text-main)', transition: 'all 0.1s ease'
             }}
           >
             {t.restTabReserve}
@@ -127,7 +127,7 @@ export default function RestaurantDemo({ lang }) {
             onClick={() => setActiveTab('qr')}
             style={{
               padding: '6px 14px', borderRadius: '4px', border: 'none', cursor: 'pointer', fontSize: '0.8rem', fontWeight: '600',
-              background: activeTab === 'qr' ? '#f97316' : 'transparent', color: '#fff', transition: 'all 0.1s ease'
+              background: activeTab === 'qr' ? '#f97316' : 'transparent', color: activeTab === 'qr' ? '#fff' : 'var(--text-main)', transition: 'all 0.1s ease'
             }}
           >
             {t.restTabQr}
@@ -254,7 +254,7 @@ export default function RestaurantDemo({ lang }) {
                     onClick={() => setOrderType('pickup')}
                     style={{
                       padding: '6px', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '0.75rem', fontWeight: '600',
-                      background: orderType === 'pickup' ? '#f97316' : 'transparent', color: '#fff'
+                      background: orderType === 'pickup' ? '#f97316' : 'transparent', color: orderType === 'pickup' ? '#fff' : 'var(--text-main)'
                     }}
                   >
                     {t.restCartPickup}
@@ -263,7 +263,7 @@ export default function RestaurantDemo({ lang }) {
                     onClick={() => setOrderType('delivery')}
                     style={{
                       padding: '6px', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '0.75rem', fontWeight: '600',
-                      background: orderType === 'delivery' ? '#f97316' : 'transparent', color: '#fff'
+                      background: orderType === 'delivery' ? '#f97316' : 'transparent', color: orderType === 'delivery' ? '#fff' : 'var(--text-main)'
                     }}
                   >
                     {t.restCartDelivery}

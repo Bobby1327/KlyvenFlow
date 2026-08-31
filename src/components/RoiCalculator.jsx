@@ -60,8 +60,8 @@ export default function RoiCalculator({ lang, onOpenContactModal }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }} className="demo-grid-layout">
           
           {/* Left Column: Interactive Inputs */}
-          <div className="glass-panel" style={{ padding: '28px', borderRadius: '12px', background: 'transparent' }}>
-            <h3 style={{ fontSize: '1.2rem', marginBottom: '20px', color: '#fff', fontWeight: '700' }}>{t.roiSectionParams}</h3>
+          <div className="glass-panel" style={{ padding: '28px', borderRadius: '12px' }}>
+            <h3 style={{ fontSize: '1.2rem', marginBottom: '20px', color: 'var(--text-main)', fontWeight: '700' }}>{t.roiSectionParams}</h3>
             
             {/* Industry Selector */}
             <div style={{ marginBottom: '22px' }}>
@@ -87,8 +87,8 @@ export default function RoiCalculator({ lang, onOpenContactModal }) {
                       cursor: 'pointer',
                       fontSize: '0.8rem',
                       fontWeight: '700',
-                      background: selectedInd === ind.id ? 'var(--theme-accent)' : 'transparent',
-                      color: '#fff',
+                      background: selectedInd === ind.id ? 'var(--theme-accent)' : 'var(--bg-card)',
+                      color: selectedInd === ind.id ? '#ffffff' : 'var(--text-main)',
                       transition: 'all 0.2s ease'
                     }}
                   >
@@ -149,14 +149,14 @@ export default function RoiCalculator({ lang, onOpenContactModal }) {
           </div>
 
           {/* Right Column: Live Projected Returns */}
-          <div className="glass-panel" style={{ padding: '28px', borderRadius: '12px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: 'transparent', borderColor: 'var(--theme-accent)' }}>
+          <div className="glass-panel" style={{ padding: '28px', borderRadius: '12px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderColor: 'var(--theme-accent)' }}>
             <div>
               <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', color: 'var(--theme-accent)', fontWeight: '800', letterSpacing: '0.08em', marginBottom: '8px' }}>
                 {t.roiProjTitle}
               </div>
               
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '20px' }}>
-                <span style={{ fontSize: '3rem', fontWeight: '800', fontFamily: 'monospace', color: '#ffffff', letterSpacing: '-0.02em' }}>
+                <span style={{ fontSize: '3rem', fontWeight: '800', fontFamily: 'monospace', color: 'var(--text-main)', letterSpacing: '-0.02em' }}>
                   {formatPrice(totalAnnualValue)}
                 </span>
                 <span style={{ fontSize: '0.9rem', color: '#10b981', fontWeight: '700' }}>
@@ -171,7 +171,7 @@ export default function RoiCalculator({ lang, onOpenContactModal }) {
                     <DollarSign size={16} color="var(--accent-orange)" />
                     <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: '600' }}>{t.roiSavedCommCard}</span>
                   </div>
-                  <span style={{ fontSize: '0.95rem', fontWeight: '700', fontFamily: 'monospace', color: '#fff' }}>
+                  <span style={{ fontSize: '0.95rem', fontWeight: '700', fontFamily: 'monospace', color: 'var(--text-main)' }}>
                     +{formatPrice(annualCommissionSaved)}
                   </span>
                 </div>
@@ -181,7 +181,7 @@ export default function RoiCalculator({ lang, onOpenContactModal }) {
                     <TrendingUp size={16} color="var(--accent-orange)" />
                     <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: '600' }}>{t.roiGrowthCard}</span>
                   </div>
-                  <span style={{ fontSize: '0.95rem', fontWeight: '700', fontFamily: 'monospace', color: '#fff' }}>
+                  <span style={{ fontSize: '0.95rem', fontWeight: '700', fontFamily: 'monospace', color: 'var(--text-main)' }}>
                     +{formatPrice(annualExtraRevenue)}
                   </span>
                 </div>
@@ -191,7 +191,7 @@ export default function RoiCalculator({ lang, onOpenContactModal }) {
                     <Clock size={16} color="var(--accent-orange)" />
                     <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: '600' }}>{t.roiHoursCard}</span>
                   </div>
-                  <span style={{ fontSize: '0.95rem', fontWeight: '700', fontFamily: 'monospace', color: '#fff' }}>
+                  <span style={{ fontSize: '0.95rem', fontWeight: '700', fontFamily: 'monospace', color: 'var(--text-main)' }}>
                     ~{monthlyHoursSaved} {t.roiHoursUnit.split(' ')[0]} / {lang === 'pt' ? 'mês' : 'mo'}
                   </span>
                 </div>

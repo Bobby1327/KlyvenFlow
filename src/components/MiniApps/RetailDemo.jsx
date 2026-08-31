@@ -103,8 +103,8 @@ export default function RetailDemo({ lang }) {
                           if (!inCart) setCartItems([...cartItems, product]);
                         }}
                         style={{
-                          width: '100%', padding: '8px', borderRadius: '4px', border: 'none', cursor: 'pointer', fontSize: '0.8rem', fontWeight: '600',
-                          background: inCart ? 'var(--bg-card-hover)' : '#8b5cf6', color: '#fff', border: inCart ? '1px solid var(--border-line)' : 'none'
+                          width: '100%', padding: '8px', borderRadius: '4px', cursor: 'pointer', fontSize: '0.8rem', fontWeight: '600',
+                          background: inCart ? 'var(--bg-card-hover)' : '#8b5cf6', color: inCart ? 'var(--text-muted)' : '#fff', border: inCart ? '1px solid var(--border-line)' : 'none'
                         }}
                       >
                         {inCart ? t.retailAdded : t.retailAdd}
