@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 :root {
-  /* Default Dark Theme (Slightly Brighter Slate) */
-  --bg-dark: #151822;
-  --bg-card: #1c212f;
-  --bg-card-hover: #262c3e;
-  --bg-input: #232938;
-  --border-line: rgba(255, 255, 255, 0.1);
-  --border-line-hover: rgba(255, 255, 255, 0.18);
-  --bg-grid: rgba(255, 255, 255, 0.015);
+  /* Default Light Theme (Main Version) */
+  --bg-dark: #e8ecf2;
+  --bg-card: #f8fafc;
+  --bg-card-hover: #ffffff;
+  --bg-input: #ffffff;
+  --border-line: rgba(15, 23, 42, 0.12);
+  --border-line-hover: rgba(15, 23, 42, 0.24);
+  --bg-grid: rgba(15, 23, 42, 0.025);
 
   --primary: #8b5cf6;
   --primary-light: rgba(139, 92, 246, 0.12);
@@ -16,20 +16,20 @@
   --accent-pink: #ec4899;
   --accent-blue: #3b82f6;
 
-  --text-main: #f3f4f6;
-  --text-muted: #9ca3af;
-  --text-dim: #6b7280;
+  --text-main: #0f172a;
+  --text-muted: #334155;
+  --text-dim: #64748b;
 
   --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-heading: 'Playfair Display', Georgia, serif;
 
   --theme-accent: #8b5cf6;
-  --theme-accent-light: rgba(139, 92, 246, 0.1);
+  --theme-accent-light: rgba(139, 92, 246, 0.12);
 
-  --bg-simulator: #08090d;
+  --bg-simulator: #dbe2ec;
 }
 
-/* Light Theme Variables (Soft Slate & Warm Natural Lighting) */
+/* Light Theme Variables */
 :root.light {
   --bg-dark: #e8ecf2;
   --bg-card: #f8fafc;
@@ -46,6 +46,25 @@
   --theme-accent-light: rgba(139, 92, 246, 0.12);
 
   --bg-simulator: #dbe2ec;
+}
+
+/* Optional Dark Theme Variables (When toggled) */
+:root.dark {
+  --bg-dark: #151822;
+  --bg-card: #1c212f;
+  --bg-card-hover: #262c3e;
+  --bg-input: #232938;
+  --border-line: rgba(255, 255, 255, 0.1);
+  --border-line-hover: rgba(255, 255, 255, 0.18);
+  --bg-grid: rgba(255, 255, 255, 0.015);
+
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --text-dim: #6b7280;
+
+  --theme-accent-light: rgba(139, 92, 246, 0.1);
+
+  --bg-simulator: #08090d;
 }
 
 * {

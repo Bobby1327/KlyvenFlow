@@ -13,7 +13,7 @@ import Footer from './components/Footer';
 
 export default function App() {
   const [lang, setLang] = useState('pt'); // Default to Portuguese ('pt')
-  const [isLightMode, setIsLightMode] = useState(false);
+  const [isLightMode, setIsLightMode] = useState(true); // Default to Light Mode as main version
   const [activeIndustry, setActiveIndustry] = useState('restaurant');
   const [isThemeModalOpen, setIsThemeModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -51,7 +51,7 @@ export default function App() {
     ripple.style.top = `${y - radius}px`;
 
     // Set color to the theme we are changing TO
-    ripple.style.backgroundColor = isLightMode ? '#151822' : '#f1f5f9';
+    ripple.style.backgroundColor = isLightMode ? '#151822' : '#e8ecf2';
     document.body.appendChild(ripple);
 
     // Request animation frames to execute transition smoothly
@@ -66,8 +66,10 @@ export default function App() {
       setIsLightMode(prev => {
         const next = !prev;
         if (next) {
+          document.documentElement.classList.remove('dark');
           document.documentElement.classList.add('light');
         } else {
+          document.documentElement.classList.add('dark');
           document.documentElement.classList.remove('light');
         }
         return next;
@@ -101,6 +103,10 @@ export default function App() {
     const timer = setTimeout(() => {
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }, 50);
+
+    // Ensure light mode is applied on initial mount
+    document.documentElement.classList.remove('dark');
+    document.documentElement.classList.add('light');
 
     // Set initial theme properties
     document.documentElement.style.setProperty('--theme-accent', currentTheme.primary);
