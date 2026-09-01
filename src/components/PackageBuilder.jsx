@@ -16,7 +16,7 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
     );
   };
 
-  const basePrice = 499; // base development price in R$
+  const basePrice = 599; // base development price in R$ / $
   const featuresTotal = selectedFeatures.reduce((sum, fId) => {
     const feat = PACKAGE_OPTIONS.find(p => p.id === fId);
     return sum + (feat ? feat.costEstimate : 0);
