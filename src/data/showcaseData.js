@@ -193,7 +193,7 @@ export const TRANSLATIONS = {
     // Proposal Builder
     propBadge: 'Calculador de ideias',
     propTitle: 'Monte o pacote ideal para o seu negócio',
-    propSub: 'Selecione o modelo do seu negócio e as ferramentas que você precisa. O investimento começa a partir de R$ 799 e o valor final é definido após uma conversa rápida com a gente.',,
+    propSub: 'Selecione o modelo do seu negócio e as ferramentas que você precisa. O investimento começa a partir de R$ 799 e o valor final é definido após uma conversa rápida com a gente.',
     propStep1: '1. Modelo de Negócio',
     propStep2: '2. Ferramentas Desejadas',
     propStep3: '3. Prazo de entrega ideal',
@@ -452,7 +452,7 @@ export const TRANSLATIONS = {
     // Proposal Builder
     propBadge: 'Scope calculator',
     propTitle: 'Build your own custom feature package',
-    propSub: 'Select your business model and the features you need. Investment starts at $799 and the final price is set after a quick conversation about your specific requirements.',,
+    propSub: 'Select your business model and the features you need. Investment starts at $799 and the final price is set after a quick conversation about your specific requirements.',
     propStep1: '1. Select Business Sector',
     propStep2: '2. Select Features Needed',
     propStep3: '3. Delivery timeline preference',
