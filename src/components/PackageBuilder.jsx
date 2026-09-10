@@ -6,7 +6,7 @@ import { PACKAGE_OPTIONS, INDUSTRIES, TRANSLATIONS } from '../data/showcaseData'
 export default function PackageBuilder({ lang, onOpenContactModal }) {
   const t = TRANSLATIONS[lang];
   const [selectedInd, setSelectedInd] = useState('restaurant');
-  const [selectedFeatures, setSelectedFeatures] = useState(['ordering', 'qr', 'sms', 'google']);
+  const [selectedFeatures, setSelectedFeatures] = useState(['ordering', 'sms']);
   const [speed, setSpeed] = useState('standard'); // 'standard' | 'express'
   const [proposalSent, setProposalSent] = useState(false);
 

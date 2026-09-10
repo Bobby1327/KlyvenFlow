@@ -783,7 +783,4 @@ export const PACKAGE_OPTIONS = [
   { id: 'quote', name: 'Simulador de Cotação de Mão de Obra', nameEn: 'Automatic Cost Estimator Widget', category: 'Core App', costEstimate: 0 },
   { id: 'loyalty', name: 'Cartão Fidelidade Digital (Acumular Selos)', nameEn: 'Digital Stamp Loyalty Card Module', category: 'Features', costEstimate: 0 },
   { id: 'sms', name: 'Lembretes de Agenda Enviados pelo WhatsApp', nameEn: 'WhatsApp Booking Confirmation Alert', category: 'Features', costEstimate: 0 },
-  { id: 'analytics', name: 'Painel de Controle Financeiro Simples', nameEn: 'Simple Sales & Customer Dashboard', category: 'Growth', costEstimate: 0 },
-  { id: 'google', name: 'Otimização Local do Google Maps & Perfil', nameEn: 'Local Google Map Profile Optimization', category: 'Growth', costEstimate: 0 },
-  { id: 'qr', name: 'Impressões de QR Code para Balcão/Mesa', nameEn: 'Printable Table QR codes / Menu link', category: 'Features', costEstimate: 0 }
 ];
