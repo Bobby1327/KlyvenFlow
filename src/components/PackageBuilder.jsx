@@ -10,12 +10,7 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
   const [speed, setSpeed] = useState('standard'); // 'standard' | 'express'
   const [proposalSent, setProposalSent] = useState(false);
 
-  // Pricing is decided after consulting with the business — show range only
-  const BASE_START = 799;
-  const BASE_MAX = 2600;
-  const expressMultiplier = 1.25;
-  const expressStart = Math.round(BASE_START * expressMultiplier);
-  const expressMax = Math.round(BASE_MAX * expressMultiplier);
+  const BASE_PRICE = 699;
 
   const toggleFeature = (id) => {
     setSelectedFeatures(prev =>
@@ -23,8 +18,13 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
     );
   };
 
-  const priceStart = speed === 'express' ? expressStart : BASE_START;
-  const priceMax   = speed === 'express' ? expressMax   : BASE_MAX;
+  const featuresTotal = selectedFeatures.reduce((sum, fId) => {
+    const feat = PACKAGE_OPTIONS.find(p => p.id === fId);
+    return sum + (feat ? feat.costEstimate : 0);
+  }, 0);
+
+  const speedMultiplier = speed === 'express' ? 1.25 : 1.0;
+  const totalEstimate = Math.round((BASE_PRICE + featuresTotal) * speedMultiplier);
 
   const daysEstimate = speed === 'express'
     ? (lang === 'pt' ? '5 - 6 Dias Úteis' : '5 - 6 Business Days')
@@ -63,13 +63,6 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
     return `$${Math.round(price).toLocaleString('en-US')}`;
   };
 
-  const formatRange = () => {
-    if (lang === 'pt') {
-      return `R$ ${priceStart.toLocaleString('pt-BR')} – R$ ${priceMax.toLocaleString('pt-BR')}`;
-    }
-    return `$${priceStart.toLocaleString('en-US')} – $${priceMax.toLocaleString('en-US')}`;
-  };
-
   return (
     <section id="package-builder" style={{ padding: '60px 24px', borderBottom: '1px solid var(--border-line)' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -94,13 +87,13 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
             <h3 style={{ fontSize: '1.4rem', color: 'var(--text-main)', marginBottom: '10px', fontWeight: '700' }}>{t.propSummaryTitle}</h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginBottom: '20px', lineHeight: '1.5' }}>
               {lang === 'pt'
-                ? `Escopo configurado! Faixa de investimento: ${formatRange()}. O valor exato será definido após uma conversa rápida sobre o seu negócio. Prazo de entrega estimado: ${daysEstimate}.`
-                : `Scope configured! Investment range: ${formatRange()}. The exact price will be set after a quick chat about your business needs. Delivery window: ${daysEstimate}.`
+                ? `Escopo configurado! Investimento estimado: ${formatPrice(totalEstimate)}. O valor final é confirmado após uma conversa rápida sobre o seu negócio. Prazo de entrega: ${daysEstimate}.`
+                : `Scope configured! Estimated investment: ${formatPrice(totalEstimate)}. Final price confirmed after a quick chat about your business needs. Delivery window: ${daysEstimate}.`
               }
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '18px' }}>
               <a 
-                href={`https://wa.me/5535997745407?text=${encodeURIComponent(lang === 'pt' ? `Olá! Montei uma proposta no KlyvenFlow. Gostaria de conversar sobre o projeto e definir o investimento (faixa: ${formatRange()}). Prazo desejado: ${daysEstimate}.` : `Hello! I configured a package on KlyvenFlow and would like to chat about the project to finalize the price (range: ${formatRange()}). Delivery preference: ${daysEstimate}.`)}`}
+                href={`https://wa.me/5535997745407?text=${encodeURIComponent(lang === 'pt' ? `Olá! Montei uma proposta no KlyvenFlow com estimativa de ${formatPrice(totalEstimate)}. Gostaria de conversar sobre o projeto e confirmar o valor final. Prazo desejado: ${daysEstimate}.` : `Hello! I configured a package on KlyvenFlow with an estimate of ${formatPrice(totalEstimate)}. I'd like to chat to confirm the final price. Delivery preference: ${daysEstimate}.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary" 
@@ -111,7 +104,7 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
               </a>
 
               <a
-                href={`mailto:KlyvenFlow@gmail.com?subject=${encodeURIComponent(lang === 'pt' ? 'Proposta Personalizada KlyvenFlow' : 'KlyvenFlow Custom Package Proposal')}&body=${encodeURIComponent(lang === 'pt' ? `Olá! Configurei uma proposta no KlyvenFlow. Faixa de investimento: ${formatRange()}. Prazo desejado: ${daysEstimate}. Gostaria de conversar para definir o valor final.` : `Hello! I configured a proposal on KlyvenFlow. Investment range: ${formatRange()}. Preferred delivery: ${daysEstimate}. I'd like to chat to finalize the price.`)}`}
+                href={`mailto:KlyvenFlow@gmail.com?subject=${encodeURIComponent(lang === 'pt' ? 'Proposta Personalizada KlyvenFlow' : 'KlyvenFlow Custom Package Proposal')}&body=${encodeURIComponent(lang === 'pt' ? `Olá! Configurei uma proposta no KlyvenFlow com estimativa de ${formatPrice(totalEstimate)}. Prazo desejado: ${daysEstimate}. Gostaria de confirmar o valor final.` : `Hello! I configured a proposal on KlyvenFlow with an estimate of ${formatPrice(totalEstimate)}. Preferred delivery: ${daysEstimate}. I'd like to confirm the final price.`)}`}
                 className="btn-secondary"
                 style={{ borderRadius: '6px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 16px', fontSize: '0.88rem' }}
               >
@@ -209,7 +202,7 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
                             <div style={{ fontSize: '0.82rem', fontWeight: '600', color: 'var(--text-main)' }}>{getFeatureName(opt)}</div>
                           </div>
                         </div>
-                        <span style={{ fontSize: '0.68rem', fontWeight: '600', color: 'var(--theme-accent)', background: 'var(--theme-accent-light)', borderRadius: '4px', padding: '2px 6px' }}>{getCategoryLabel(opt)}</span>
+                        <span style={{ fontSize: '0.78rem', fontWeight: '700', fontFamily: 'monospace', color: 'var(--theme-accent)' }}>+{formatPrice(opt.costEstimate)}</span>
                       </div>
                     );
                   })}
@@ -271,23 +264,20 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
 
                 <div style={{ background: 'var(--bg-card-hover)', padding: '16px', borderRadius: '8px', border: '1px solid var(--border-line)', marginBottom: '18px' }}>
                   <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)', textTransform: 'uppercase', fontWeight: '700', letterSpacing: '0.05em' }}>{t.propOneTimeBuild}</div>
-                  <div style={{ margin: '6px 0 2px 0' }}>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)', fontWeight: '600' }}>
-                      {lang === 'pt' ? 'A partir de' : 'Starting at'}
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', margin: '4px 0', flexWrap: 'wrap' }}>
+                    <span style={{ fontSize: '2.4rem', fontWeight: '800', color: 'var(--text-main)', fontFamily: 'monospace', letterSpacing: '-0.02em' }}>
+                      {formatPrice(totalEstimate)}
                     </span>
-                    <div style={{ fontSize: '2.2rem', fontWeight: '800', color: 'var(--theme-accent)', fontFamily: 'monospace', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
-                      {formatPrice(priceStart)}
-                    </div>
-                    <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', fontWeight: '600', marginTop: '2px' }}>
-                      {lang === 'pt' ? `Faixa: ${formatRange()}` : `Range: ${formatRange()}`}
-                    </div>
-                    <div style={{ fontSize: '0.73rem', color: 'var(--text-dim)', marginTop: '4px', fontStyle: 'italic' }}>
-                      {lang === 'pt'
-                        ? '✦ Valor final definido após conversa com o negócio'
-                        : '✦ Final price set after consulting with your business'}
-                    </div>
+                    <span style={{ fontSize: '0.88rem', fontWeight: '700', color: 'var(--text-dim)', fontFamily: 'monospace' }}>
+                      {t.propMonthlyFee}
+                    </span>
                   </div>
-                  <div style={{ fontSize: '0.78rem', color: '#10b981', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '4px', marginTop: '10px' }}>
+                  <div style={{ fontSize: '0.73rem', color: 'var(--text-dim)', marginTop: '2px', fontStyle: 'italic' }}>
+                    {lang === 'pt'
+                      ? '✦ Valor final confirmado após conversa com o negócio'
+                      : '✦ Final price confirmed after consulting with your business'}
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: '#10b981', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '4px', marginTop: '8px' }}>
                     <Clock size={12} /> {t.propReadyIn.replace('{days}', daysEstimate)}
                   </div>
                 </div>

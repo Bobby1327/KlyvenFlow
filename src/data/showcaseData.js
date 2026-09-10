@@ -778,9 +778,9 @@ export const CASE_STUDIES = [
 ];
 
 export const PACKAGE_OPTIONS = [
-  { id: 'ordering', name: 'Painel de Pedidos Direto (Comida / Loja)', nameEn: 'Direct Ordering System (Food / Shop)', category: 'Core App', costEstimate: 0 },
-  { id: 'booking', name: 'Agenda Automática com Horários Livres', nameEn: '24/7 Self-Service Scheduling System', category: 'Core App', costEstimate: 0 },
-  { id: 'quote', name: 'Simulador de Cotação de Mão de Obra', nameEn: 'Automatic Cost Estimator Widget', category: 'Core App', costEstimate: 0 },
-  { id: 'loyalty', name: 'Cartão Fidelidade Digital (Acumular Selos)', nameEn: 'Digital Stamp Loyalty Card Module', category: 'Features', costEstimate: 0 },
-  { id: 'sms', name: 'Lembretes de Agenda Enviados pelo WhatsApp', nameEn: 'WhatsApp Booking Confirmation Alert', category: 'Features', costEstimate: 0 },
+  { id: 'ordering', name: 'Painel de Pedidos Direto (Comida / Loja)', nameEn: 'Direct Ordering System (Food / Shop)', category: 'Core App', costEstimate: 99 },
+  { id: 'booking', name: 'Agenda Automática com Horários Livres', nameEn: '24/7 Self-Service Scheduling System', category: 'Core App', costEstimate: 99 },
+  { id: 'quote', name: 'Simulador de Cotação de Mão de Obra', nameEn: 'Automatic Cost Estimator Widget', category: 'Core App', costEstimate: 99 },
+  { id: 'loyalty', name: 'Cartão Fidelidade Digital (Acumular Selos)', nameEn: 'Digital Stamp Loyalty Card Module', category: 'Features', costEstimate: 99 },
+  { id: 'sms', name: 'Lembretes de Agenda Enviados pelo WhatsApp', nameEn: 'WhatsApp Booking Confirmation Alert', category: 'Features', costEstimate: 99 },
 ];
