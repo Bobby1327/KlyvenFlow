@@ -27,8 +27,8 @@ export default function FitnessDemo({ lang }) {
     <div style={{ background: 'var(--bg-card)', borderRadius: '12px', border: '1px solid var(--border-line)', overflow: 'hidden' }}>
       
       {/* Mini App Top Header Bar */}
-      <div style={{ 
-        padding: '20px 24px', 
+      <div className="mini-app-header-bar" style={{ 
+        padding: '16px', 
         background: 'var(--bg-card-hover)', 
         borderBottom: '1px solid var(--border-line)',
         display: 'flex',
@@ -63,7 +63,7 @@ export default function FitnessDemo({ lang }) {
         )}
       </div>
 
-      <div style={{ padding: '24px' }}>
+      <div className="mini-app-content-body" style={{ padding: '24px' }}>
         {freeTrialClaimed && (
           <div style={{ padding: '14px 18px', background: 'var(--bg-card-hover)', borderRadius: '8px', border: '1px solid #10b981', color: 'var(--text-main)', fontSize: '0.85rem', marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <span>{t.fitTrialSuccess}</span>

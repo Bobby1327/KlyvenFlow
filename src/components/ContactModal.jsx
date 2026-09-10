@@ -80,12 +80,14 @@ export default function ContactModal({ lang, isOpen, onClose }) {
               (55) 35 99774-5407
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '8px' }}>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
               <a
                 href="https://wa.me/5535997745407"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
+                  flex: 1,
+                  minWidth: '120px',
                   background: '#10b981',
                   color: '#ffffff',
                   padding: '10px 16px',
@@ -142,10 +144,12 @@ export default function ContactModal({ lang, isOpen, onClose }) {
               KlyvenFlow@gmail.com
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '8px' }}>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
               <a
                 href="mailto:KlyvenFlow@gmail.com"
                 style={{
+                  flex: 1,
+                  minWidth: '120px',
                   background: 'var(--theme-accent)',
                   color: '#ffffff',
                   padding: '10px 16px',
@@ -202,12 +206,14 @@ export default function ContactModal({ lang, isOpen, onClose }) {
               @KlyvenFlow
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '8px' }}>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
               <a
                 href="https://instagram.com/KlyvenFlow"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
+                  flex: 1,
+                  minWidth: '120px',
                   background: 'linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%)',
                   color: '#ffffff',
                   padding: '10px 16px',

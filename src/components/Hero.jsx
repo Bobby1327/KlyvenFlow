@@ -28,7 +28,7 @@ export default function Hero({ lang, onOpenContactModal, onSelectIndustry }) {
   };
 
   return (
-    <section style={{ padding: '56px 24px 44px 24px', position: 'relative', borderBottom: '1px solid var(--border-line)' }}>
+    <section style={{ padding: 'clamp(36px, 6vw, 56px) 16px clamp(28px, 4vw, 44px) 16px', position: 'relative', borderBottom: '1px solid var(--border-line)' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         
         {/* Animated Badge */}
@@ -111,7 +111,7 @@ export default function Hero({ lang, onOpenContactModal, onSelectIndustry }) {
           <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-dim)', marginBottom: '12px', fontWeight: '700' }}>
             {t.heroQuickLinks}
           </div>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
+          <div className="industry-quick-links" style={{ display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
             {INDUSTRIES.map((item) => {
               const IconComponent = getIcon(item.icon);
               return (
@@ -143,7 +143,7 @@ export default function Hero({ lang, onOpenContactModal, onSelectIndustry }) {
         </div>
 
         {/* Metric Cards Banner - Editorial Grid layout */}
-        <div className="editorial-grid" style={{ background: 'var(--bg-card)' }}>
+        <div className="editorial-grid" style={{ background: 'var(--bg-card)', borderTop: '1px solid var(--border-line)', borderLeft: '1px solid var(--border-line)' }}>
           {HERO_METRICS.map((metric, idx) => (
             <div key={idx} className="editorial-grid-item">
               <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', fontWeight: '700', textTransform: 'uppercase', marginBottom: '12px', letterSpacing: '0.08em' }}>

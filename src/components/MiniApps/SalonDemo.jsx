@@ -43,8 +43,8 @@ export default function SalonDemo({ lang }) {
     <div style={{ background: 'var(--bg-card)', borderRadius: '12px', border: '1px solid var(--border-line)', overflow: 'hidden' }}>
       
       {/* Mini App Top Header Bar */}
-      <div style={{ 
-        padding: '20px 24px', 
+      <div className="mini-app-header-bar" style={{ 
+        padding: '16px', 
         background: 'var(--bg-card-hover)', 
         borderBottom: '1px solid var(--border-line)',
         display: 'flex',
@@ -67,14 +67,14 @@ export default function SalonDemo({ lang }) {
         </div>
 
         {/* Step Indicator */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+        <div className="salon-step-indicator" style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.75rem', color: 'var(--text-muted)', flexWrap: 'wrap' }}>
           <span style={{ color: step >= 1 ? '#ec4899' : 'var(--text-dim)', fontWeight: '700' }}>{t.salonStepService}</span> &rarr;
           <span style={{ color: step >= 2 ? '#ec4899' : 'var(--text-dim)', fontWeight: '700' }}>{t.salonStepStylist}</span> &rarr;
           <span style={{ color: step >= 3 ? '#ec4899' : 'var(--text-dim)', fontWeight: '700' }}>{t.salonStepTime}</span>
         </div>
       </div>
 
-      <div style={{ padding: '24px' }}>
+      <div className="mini-app-content-body" style={{ padding: '24px' }}>
         
         {/* STEP 1: SELECT SERVICE */}
         {step === 1 && (
@@ -82,7 +82,7 @@ export default function SalonDemo({ lang }) {
             <h4 style={{ fontSize: '1.2rem', marginBottom: '8px', color: 'var(--text-main)' }}>{t.salonChooseService}</h4>
             <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '20px' }}>{t.salonChooseServiceSub}</p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px', marginBottom: '24px' }}>
+            <div className="mini-app-inner-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px', marginBottom: '24px' }}>
               {SALON_SERVICES.map(service => {
                 const isSelected = selectedService.id === service.id;
                 return (
@@ -130,7 +130,7 @@ export default function SalonDemo({ lang }) {
             <h4 style={{ fontSize: '1.2rem', marginBottom: '8px', color: 'var(--text-main)' }}>{t.salonChooseStylist}</h4>
             <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '20px' }}>{t.salonChooseStylistSub}</p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px', marginBottom: '24px' }}>
+            <div className="mini-app-inner-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px', marginBottom: '24px' }}>
               {SALON_STYLISTS.map(stylist => {
                 const isSelected = selectedStylist.id === stylist.id;
                 return (
@@ -193,7 +193,7 @@ export default function SalonDemo({ lang }) {
 
             <div style={{ marginBottom: '24px' }}>
               <label style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', marginBottom: '8px', fontWeight: '600' }}>{t.salonSelectTime}</label>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
+              <div className="mini-app-timeslot-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
                 {timeSlots.map(time => (
                   <button
                     key={time}

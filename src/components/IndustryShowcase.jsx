@@ -110,10 +110,14 @@ export default function IndustryShowcase({ lang, activeIndustry, onSelectIndustr
         {/* Industry Tab Buttons Header */}
         <div style={{ 
           display: 'flex', 
-          justifyContent: 'center', 
-          gap: '10px', 
-          flexWrap: 'wrap',
-          marginBottom: '24px'
+          justifyContent: 'flex-start', 
+          gap: '8px', 
+          flexWrap: 'nowrap',
+          overflowX: 'auto',
+          WebkitOverflowScrolling: 'touch',
+          marginBottom: '24px',
+          paddingBottom: '4px',
+          scrollbarWidth: 'none'
         }}>
           {INDUSTRIES.map((ind) => {
             const Icon = getIcon(ind.icon);

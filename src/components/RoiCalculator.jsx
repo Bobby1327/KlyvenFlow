@@ -68,7 +68,7 @@ export default function RoiCalculator({ lang, onOpenContactModal }) {
               <label style={{ fontSize: '0.75rem', fontWeight: '700', color: 'var(--text-dim)', display: 'block', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                 {t.roiLabelIndustry}
               </label>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px' }}>
+              <div className="roi-industry-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(80px, 1fr))', gap: '8px' }}>
                 {INDUSTRIES.map(ind => (
                   <button
                     key={ind.id}

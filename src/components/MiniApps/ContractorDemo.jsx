@@ -39,8 +39,8 @@ export default function ContractorDemo({ lang }) {
     <div style={{ background: 'var(--bg-card)', borderRadius: '12px', border: '1px solid var(--border-line)', overflow: 'hidden' }}>
       
       {/* Mini App Top Header Bar */}
-      <div style={{ 
-        padding: '20px 24px', 
+      <div className="mini-app-header-bar" style={{ 
+        padding: '16px', 
         background: 'var(--bg-card-hover)', 
         borderBottom: '1px solid var(--border-line)',
         display: 'flex',
@@ -75,7 +75,7 @@ export default function ContractorDemo({ lang }) {
         </a>
       </div>
 
-      <div style={{ padding: '24px' }}>
+      <div className="mini-app-content-body" style={{ padding: '24px' }}>
         {isSubmitted ? (
           <div style={{ padding: '40px 20px', textAlign: 'center', background: 'var(--bg-card-hover)', borderRadius: '8px', border: '1px solid #3b82f6', maxWidth: '540px', margin: '0 auto' }}>
             <Check size={36} color="#3b82f6" style={{ margin: '0 auto 12px auto' }} />
@@ -96,7 +96,7 @@ export default function ContractorDemo({ lang }) {
                 <label style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-muted)', display: 'block', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   {t.contractorStepService}
                 </label>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
+                <div className="mini-app-two-col" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
                   {CONTRACTOR_SERVICES.map(service => {
                     const isSelected = selectedService.id === service.id;
                     return (
@@ -127,7 +127,7 @@ export default function ContractorDemo({ lang }) {
               </div>
 
               {/* Urgency & Property Type */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+              <div className="mini-app-two-col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                 <div>
                   <label style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-muted)', display: 'block', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     {t.contractorStepUrgency}

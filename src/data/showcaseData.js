@@ -193,14 +193,14 @@ export const TRANSLATIONS = {
     // Proposal Builder
     propBadge: 'Calculador de ideias',
     propTitle: 'Monte o pacote ideal para o seu negócio',
-    propSub: 'Escolha as ferramentas que você realmente precisa usar no dia a dia para ver uma estimativa realista de investimento e prazo.',
+    propSub: 'Selecione o modelo do seu negócio e as ferramentas que você precisa. O investimento começa a partir de R$ 799 e o valor final é definido após uma conversa rápida com a gente.',,
     propStep1: '1. Modelo de Negócio',
     propStep2: '2. Ferramentas Desejadas',
     propStep3: '3. Prazo de entrega ideal',
     propStandardSpeed: 'Prazo Normal',
-    propStandardSub: '10 a 12 dias úteis',
+    propStandardSub: '12 a 14 dias úteis',
     propExpressSpeed: '⚡ Entrega Rápida (+25%)',
-    propExpressSub: '4 a 6 dias úteis (Prioritário)',
+    propExpressSub: '5 a 6 dias úteis (Prioritário)',
     propSummaryTitle: 'Resumo da Proposta de Desenvolvimento',
     propOneTimeBuild: 'Investimento único de criação',
     propReadyIn: 'Sistema pronto em {days}',
@@ -452,14 +452,14 @@ export const TRANSLATIONS = {
     // Proposal Builder
     propBadge: 'Scope calculator',
     propTitle: 'Build your own custom feature package',
-    propSub: 'Choose the exact tools you need in your daily operations to get a transparent and realistic development estimate.',
+    propSub: 'Select your business model and the features you need. Investment starts at $799 and the final price is set after a quick conversation about your specific requirements.',,
     propStep1: '1. Select Business Sector',
     propStep2: '2. Select Features Needed',
     propStep3: '3. Delivery timeline preference',
     propStandardSpeed: 'Standard Delivery',
-    propStandardSub: '10 to 12 business days',
+    propStandardSub: '12 to 14 business days',
     propExpressSpeed: '⚡ Priority Rush (+25%)',
-    propExpressSub: '4 to 6 business days (Express)',
+    propExpressSub: '5 to 6 business days (Express)',
     propSummaryTitle: 'Development Scope Proposal',
     propOneTimeBuild: 'One-time custom build investment',
     propReadyIn: 'System ready in {days}',
@@ -591,7 +591,7 @@ export const RESTAURANT_MENU = [
     price: 42.00,
     desc: 'Nhoque artesanal de batata feito na casa, molho rústico de tomate San Marzano e folhas de manjericão fresco.',
     descEn: 'Homemade potato gnocchi, rustic San Marzano tomato sauce & fresh basil leaves.',
-    image: '/assets/images/restaurant_dish.jpg',
+    image: 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80',
     tags: ['Chef Special', 'Vegetarian'],
     calories: '520 kcal'
   },
@@ -778,12 +778,12 @@ export const CASE_STUDIES = [
 ];
 
 export const PACKAGE_OPTIONS = [
-  { id: 'ordering', name: 'Painel de Pedidos Direto (Comida / Loja)', nameEn: 'Direct Ordering System (Food / Shop)', category: 'Core App', costEstimate: 219 },
-  { id: 'booking', name: 'Agenda Automática com Horários Livres', nameEn: '24/7 Self-Service Scheduling System', category: 'Core App', costEstimate: 179 },
-  { id: 'quote', name: 'Simulador de Cotação de Mão de Obra', nameEn: 'Automatic Cost Estimator Widget', category: 'Core App', costEstimate: 159 },
-  { id: 'loyalty', name: 'Cartão Fidelidade Digital (Acumular Selos)', nameEn: 'Digital Stamp Loyalty Card Module', category: 'Features', costEstimate: 139 },
-  { id: 'sms', name: 'Lembretes de Agenda Enviados pelo WhatsApp', nameEn: 'WhatsApp Booking Confirmation Alert', category: 'Features', costEstimate: 109 },
-  { id: 'analytics', name: 'Painel de Controle Financeiro Simples', nameEn: 'Simple Sales & Customer Dashboard', category: 'Growth', costEstimate: 99 },
-  { id: 'google', name: 'Otimização Local do Google Maps & Perfil', nameEn: 'Local Google Map Profile Optimization', category: 'Growth', costEstimate: 89 },
-  { id: 'qr', name: 'Impressões de QR Code para Balcão/Mesa', nameEn: 'Printable Table QR codes / Menu link', category: 'Features', costEstimate: 59 }
+  { id: 'ordering', name: 'Painel de Pedidos Direto (Comida / Loja)', nameEn: 'Direct Ordering System (Food / Shop)', category: 'Core App', costEstimate: 0 },
+  { id: 'booking', name: 'Agenda Automática com Horários Livres', nameEn: '24/7 Self-Service Scheduling System', category: 'Core App', costEstimate: 0 },
+  { id: 'quote', name: 'Simulador de Cotação de Mão de Obra', nameEn: 'Automatic Cost Estimator Widget', category: 'Core App', costEstimate: 0 },
+  { id: 'loyalty', name: 'Cartão Fidelidade Digital (Acumular Selos)', nameEn: 'Digital Stamp Loyalty Card Module', category: 'Features', costEstimate: 0 },
+  { id: 'sms', name: 'Lembretes de Agenda Enviados pelo WhatsApp', nameEn: 'WhatsApp Booking Confirmation Alert', category: 'Features', costEstimate: 0 },
+  { id: 'analytics', name: 'Painel de Controle Financeiro Simples', nameEn: 'Simple Sales & Customer Dashboard', category: 'Growth', costEstimate: 0 },
+  { id: 'google', name: 'Otimização Local do Google Maps & Perfil', nameEn: 'Local Google Map Profile Optimization', category: 'Growth', costEstimate: 0 },
+  { id: 'qr', name: 'Impressões de QR Code para Balcão/Mesa', nameEn: 'Printable Table QR codes / Menu link', category: 'Features', costEstimate: 0 }
 ];

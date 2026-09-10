@@ -80,15 +80,15 @@ export default function RestaurantDemo({ lang }) {
     <div style={{ background: 'var(--bg-card)', borderRadius: '12px', border: '1px solid var(--border-line)', overflow: 'hidden' }}>
       
       {/* Mini App Top Header Bar */}
-      <div style={{ 
-        padding: '20px 24px', 
+      <div className="mini-app-header-bar" style={{ 
+        padding: '16px', 
         background: 'var(--bg-card-hover)', 
         borderBottom: '1px solid var(--border-line)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
         flexWrap: 'wrap',
-        gap: '16px'
+        gap: '12px'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <div style={{ width: '36px', height: '36px', borderRadius: '6px', background: '#f97316', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -104,7 +104,7 @@ export default function RestaurantDemo({ lang }) {
         </div>
 
         {/* Tab Selector */}
-        <div style={{ display: 'flex', background: 'var(--bg-card)', padding: '2px', borderRadius: '6px', border: '1px solid var(--border-line)' }}>
+        <div className="mini-app-tab-bar" style={{ display: 'flex', background: 'var(--bg-card)', padding: '2px', borderRadius: '6px', border: '1px solid var(--border-line)', flexShrink: 0 }}>
           <button 
             onClick={() => setActiveTab('menu')}
             style={{
@@ -137,7 +137,7 @@ export default function RestaurantDemo({ lang }) {
 
       {/* TAB CONTENT 1: DIGITAL MENU */}
       {activeTab === 'menu' && (
-        <div style={{ padding: '24px' }}>
+        <div className="mini-app-content-body" style={{ padding: '24px' }}>
           
           {/* Order Placed Success Banner */}
           {isOrderPlaced ? (
@@ -164,7 +164,7 @@ export default function RestaurantDemo({ lang }) {
               <div>
                 {/* Search & Category Filter Bar */}
                 <div style={{ display: 'flex', gap: '12px', marginBottom: '20px', flexWrap: 'wrap' }}>
-                  <div style={{ position: 'relative', flex: 1, minWidth: '200px' }}>
+                  <div className="mini-app-search-input" style={{ position: 'relative', flex: 1, minWidth: '200px' }}>
                     <Search size={16} color="#6b7280" style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)' }} />
                     <input 
                       type="text" 
@@ -177,7 +177,7 @@ export default function RestaurantDemo({ lang }) {
                       }}
                     />
                   </div>
-                  <div style={{ display: 'flex', gap: '6px', overflowX: 'auto', paddingBottom: '4px' }}>
+                  <div style={{ display: 'flex', gap: '6px', overflowX: 'auto', paddingBottom: '4px', WebkitOverflowScrolling: 'touch' }}>
                     {CATEGORIES.map((cat) => {
                       const isCatSelected = selectedCategory === cat.id;
                       return (
@@ -209,7 +209,7 @@ export default function RestaurantDemo({ lang }) {
                         <img 
                           src={item.image} 
                           alt={itemName} 
-                          style={{ width: '100%', height: '130px', objectFit: 'cover', borderRadius: '4px', marginBottom: '10px' }} 
+                          style={{ width: '100%', height: '120px', objectFit: 'cover', borderRadius: '4px', marginBottom: '10px', display: 'block' }} 
                         />
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '8px', marginBottom: '6px' }}>
                           <h5 style={{ fontSize: '0.9rem', fontWeight: '700', margin: 0, color: 'var(--text-main)' }}>{itemName}</h5>
@@ -249,7 +249,7 @@ export default function RestaurantDemo({ lang }) {
                 </div>
 
                 {/* Pickup / Delivery Toggle */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px', background: 'var(--bg-card)', padding: '2px', borderRadius: '6px', border: '1px solid var(--border-line)', marginBottom: '16px' }}>
+                <div className="mini-app-toggle-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px', background: 'var(--bg-card)', padding: '2px', borderRadius: '6px', border: '1px solid var(--border-line)', marginBottom: '16px' }}>
                   <button 
                     onClick={() => setOrderType('pickup')}
                     style={{
@@ -340,7 +340,7 @@ export default function RestaurantDemo({ lang }) {
 
       {/* TAB CONTENT 2: TABLE RESERVATION */}
       {activeTab === 'reservation' && (
-        <div style={{ padding: '36px 24px', maxWidth: '520px', margin: '0 auto' }}>
+        <div className="mini-app-content-body" style={{ padding: '36px 24px', maxWidth: '520px', margin: '0 auto' }}>
           {resConfirmed ? (
             <div style={{ textAlign: 'center', padding: '24px', background: 'var(--bg-card-hover)', borderRadius: '8px', border: '1px solid #10b981' }}>
               <Check size={36} color="#10b981" style={{ margin: '0 auto 12px auto' }} />
@@ -367,7 +367,7 @@ export default function RestaurantDemo({ lang }) {
                 />
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+              <div className="mini-app-two-col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 <div>
                   <label style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', marginBottom: '4px', fontWeight: '600' }}>{t.restTime}</label>
                   <select 
@@ -406,7 +406,7 @@ export default function RestaurantDemo({ lang }) {
 
       {/* TAB CONTENT 3: QR MENU SIMULATOR */}
       {activeTab === 'qr' && (
-        <div style={{ padding: '40px 24px', textAlign: 'center', maxWidth: '500px', margin: '0 auto' }}>
+        <div className="mini-app-content-body" style={{ padding: '40px 24px', textAlign: 'center', maxWidth: '500px', margin: '0 auto' }}>
           <div style={{ display: 'inline-block', padding: '20px', background: '#ffffff', borderRadius: '8px', marginBottom: '20px', border: '1px solid var(--border-line)' }}>
             <QrCode size={140} color="#0c0e14" />
           </div>

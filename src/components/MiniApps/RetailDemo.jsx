@@ -46,8 +46,8 @@ export default function RetailDemo({ lang }) {
     <div style={{ background: 'var(--bg-card)', borderRadius: '12px', border: '1px solid var(--border-line)', overflow: 'hidden' }}>
       
       {/* Mini App Top Header Bar */}
-      <div style={{ 
-        padding: '20px 24px', 
+      <div className="mini-app-header-bar" style={{ 
+        padding: '16px', 
         background: 'var(--bg-card-hover)', 
         borderBottom: '1px solid var(--border-line)',
         display: 'flex',
@@ -69,7 +69,7 @@ export default function RetailDemo({ lang }) {
         </div>
       </div>
 
-      <div style={{ padding: '24px' }}>
+      <div className="mini-app-content-body" style={{ padding: '24px' }}>
         {isOrdered ? (
           <div style={{ padding: '40px 20px', textAlign: 'center', background: 'var(--bg-card-hover)', borderRadius: '8px', border: '1px solid #8b5cf6', maxWidth: '540px', margin: '0 auto' }}>
             <Check size={36} color="#8b5cf6" style={{ margin: '0 auto 12px auto' }} />
@@ -87,7 +87,7 @@ export default function RetailDemo({ lang }) {
             {/* Left: Product Catalog Selection */}
             <div>
               <h4 style={{ fontSize: '1rem', color: 'var(--text-main)', marginBottom: '14px', fontWeight: '700' }}>{t.retailCatalogTitle}</h4>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '12px' }}>
                 {RETAIL_PRODUCTS.map(product => {
                   const inCart = cartItems.some(i => i.id === product.id);
                   return (

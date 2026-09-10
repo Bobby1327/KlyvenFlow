@@ -197,7 +197,7 @@ export default function App() {
       >
         <span className="live-pulse-dot" style={{ backgroundColor: '#ffffff' }} />
         <MessageCircle size={20} />
-        <span>WhatsApp: <strong>(55) 35 99774-5407</strong></span>
+        <span className="floating-btn-text">WhatsApp: <strong>(55) 35 99774-5407</strong></span>
       </a>
 
     </div>

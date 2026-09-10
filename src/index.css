@@ -132,6 +132,7 @@ h6 {
 .gradient-text {
   background: linear-gradient(135deg, var(--text-main) 30%, var(--text-muted) 70%, var(--theme-accent) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -465,6 +466,7 @@ select:focus {
 /* Custom Interactive Sliders */
 input[type=range] {
   -webkit-appearance: none;
+  appearance: none;
   width: 100%;
   background: transparent;
 }
@@ -488,6 +490,7 @@ input[type=range]::-webkit-slider-thumb {
   background: var(--theme-accent);
   cursor: pointer;
   -webkit-appearance: none;
+  appearance: none;
   margin-top: -7px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   transition: transform 0.1s ease;
@@ -639,21 +642,71 @@ input[type=range]::-webkit-slider-thumb:hover {
 }
 
 /* ==========================================================================
-   MOBILE RESPONSIVENESS & MEDIA QUERIES
+   RESPONSIVE DESIGN — MAX-WIDTH APPROACH
+   (Base = Desktop. Overrides applied at smaller breakpoints.)
    ========================================================================== */
 
-@media (max-width: 900px) {
+/* Prevent horizontal scroll on entire page & clean touch behavior */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  -webkit-tap-highlight-color: transparent;
+}
 
-  /* Force all layouts wrapped in .demo-grid-layout to collapse into single column */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  overflow-wrap: break-word;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── ≤ 900px: Collapse all 2-column demo grids ── */
+@media (max-width: 900px) {
   .demo-grid-layout {
     grid-template-columns: 1fr !important;
-    gap: 16px !important;
+    gap: 20px !important;
+  }
+
+  /* Inner mini-app grids with fixed min widths: let them use 1 column */
+  .mini-app-inner-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* 2-column inner grids */
+  .mini-app-two-col {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Time slot grid: 2 cols on tablet instead of 3 */
+  .mini-app-timeslot-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 
+/* ── ≤ 768px: General tablet/mobile layout ── */
 @media (max-width: 768px) {
 
-  /* Navigation & Header elements */
+  /* Prevent iOS auto-zoom on inputs & selects */
+  input[type="text"],
+  input[type="date"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  /* Navigation */
   .desktop-nav {
     display: none !important;
   }
@@ -666,84 +719,202 @@ input[type=range]::-webkit-slider-thumb:hover {
     display: none !important;
   }
 
-  /* Sections Padding */
+  /* Section padding tightened */
   section {
-    padding: 44px 16px !important;
+    padding: 36px 12px !important;
   }
 
-  /* Reduce sandbox padding so content fits on narrow mobile displays */
-  .browser-device-body {
-    padding: 12px !important;
+  /* Browser device frame */
+  .browser-device-frame {
+    border-radius: 8px !important;
   }
 
-  .browser-device-address-bar {
-    max-width: 220px !important;
-    font-size: 0.7rem !important;
-  }
-
-  .browser-device-status-indicator {
-    font-size: 0.65rem !important;
-  }
-
-  /* Modal responsive sizing */
-  .modal-overlay>div {
-    max-width: 92% !important;
-    padding: 20px !important;
-  }
-}
-
-@media (max-width: 600px) {
-
-  /* Sub-grids collapsing to prevent narrow container overflows */
-  .browser-device-body div[style*="display: grid"],
-  .browser-device-body div[style*="display:grid"] {
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-  }
-
-  /* Force mini-app header bars to stack cleanly on mobile screen widths */
-  .browser-device-body div[style*="justify-content: space-between"][style*="align-items: center"],
-  .browser-device-body div[style*="justifyContent: 'space-between'"][style*="alignItems: 'center'"] {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    gap: 12px !important;
-  }
-
-  .browser-device-body div[style*="justify-content: space-between"]>div {
-    display: flex;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-}
-
-@media (max-width: 500px) {
-
-  /* Hide minor elements in browser mockup on small devices to prevent wrapping glitches */
-  .browser-device-dots {
-    display: none !important;
-  }
-
-  .browser-device-status-indicator {
-    display: none !important;
-  }
-
-  .browser-device-address-bar {
-    max-width: 100% !important;
-    width: 100% !important;
-  }
-}
-
-@media (max-width: 480px) {
   .browser-device-body {
     padding: 6px !important;
   }
 
-  .editorial-grid-item {
-    padding: 20px !important;
+  .browser-device-dots {
+    display: none !important;
   }
 
   .browser-device-header {
-    padding: 8px 12px !important;
+    padding: 8px 10px !important;
+    height: auto !important;
+  }
+
+  .browser-device-address-bar {
+    max-width: 100% !important;
+    font-size: 0.68rem !important;
+    padding: 2px 8px !important;
+  }
+
+  /* Mini app inner content padding */
+  .mini-app-content-body {
+    padding: 14px 10px !important;
+  }
+
+  /* Metric cards */
+  .editorial-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .editorial-grid-item {
+    padding: 18px 14px !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-line) !important;
+  }
+
+  /* Modals */
+  .modal-overlay>div {
+    max-width: 95vw !important;
+    width: 95vw !important;
+    padding: 18px 14px !important;
+    margin: 0 auto !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+  }
+
+  /* Contact highlight bar: stacked */
+  .contact-highlight-bar {
+    flex-direction: column !important;
+    border-radius: 12px !important;
+    gap: 8px !important;
+    padding: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .contact-highlight-bar a {
+    width: 100% !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Floating WhatsApp button: icon only */
+  .floating-contact-btn {
+    bottom: 16px !important;
+    right: 16px !important;
+    padding: 12px 14px !important;
+  }
+
+  .floating-btn-text {
+    display: none !important;
+  }
+
+  /* Top bar: WhatsApp only */
+  .top-bar-email-pill,
+  .top-bar-instagram-pill {
+    display: none !important;
+  }
+
+  /* Header button gap */
+  .header-controls {
+    gap: 6px !important;
+  }
+
+  /* Mini-app header bars: stack */
+  .mini-app-header-bar {
+    padding: 12px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+
+  /* Salon step indicator */
+  .salon-step-indicator {
+    font-size: 0.68rem !important;
+    flex-wrap: wrap !important;
+  }
+
+  /* Testimonials filter: scrollable */
+  .testimonials-filter-row {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    padding-bottom: 6px !important;
+    scrollbar-width: none !important;
+  }
+
+  .testimonials-filter-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .testimonials-filter-row button {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  /* Industry quick links: scrollable */
+  .industry-quick-links {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    padding-bottom: 8px !important;
+    scrollbar-width: none !important;
+  }
+
+  .industry-quick-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .industry-quick-links>* {
+    flex-shrink: 0 !important;
+  }
+
+  /* Tab bar: scrollable */
+  .mini-app-tab-bar {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    flex-wrap: nowrap !important;
+    scrollbar-width: none !important;
+  }
+
+  .mini-app-tab-bar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ── ≤ 480px: Small phone cleanup ── */
+@media (max-width: 480px) {
+
+  /* Mini app inner content padding */
+  .mini-app-content-body {
+    padding: 12px 8px !important;
+  }
+
+  /* 2-col inner grids: collapse to 1 col on phones */
+  .mini-app-two-col {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* Toggle grid (Pickup/Delivery): keep 2-col as it's a simple toggle */
+  .mini-app-toggle-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Time slot grid: 2 cols on mobile too */
+  .mini-app-timeslot-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Search input: remove min-width constraint on narrow screens */
+  .mini-app-search-input {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Package Builder industry selector */
+  #package-builder .demo-grid-layout>div {
+    padding: 16px !important;
+  }
+
+  /* Footer bottom row: stack on mobile */
+  footer [style*="justifyContent: 'space-between'"],
+  footer [style*="justify-content: space-between"] {
+    flex-direction: column !important;
+    gap: 8px !important;
   }
 }

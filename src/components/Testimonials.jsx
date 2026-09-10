@@ -60,7 +60,7 @@ export default function Testimonials({ lang, onOpenContactModal }) {
         </div>
 
         {/* Filter buttons */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: '24px' }}>
+        <div className="testimonials-filter-row" style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: '24px' }}>
           {['all', 'restaurant', 'salon', 'contractor'].map(cat => (
             <button
               key={cat}
