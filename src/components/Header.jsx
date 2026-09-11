@@ -156,16 +156,6 @@ export default function Header({ lang, setLang, isLightMode, onToggleTheme, onOp
               <span style={{ fontWeight: '800' }}>{lang === 'pt' ? 'EN' : 'PT'}</span>
             </button>
 
-            {/* Theme Picker - Desktop only */}
-            <button 
-              onClick={onOpenThemeModal}
-              className="btn-secondary hide-mobile"
-              title={lang === 'pt' ? 'Mudar tom visual' : 'Change brand colors'}
-              style={{ padding: '8px 12px', fontSize: '0.82rem', flexShrink: 0, display: 'flex', alignItems: 'center', gap: '4px' }}
-            >
-              <Palette size={15} color="var(--theme-accent)" />
-              <span>{t.testBrandColors.split(' ')[0]}</span>
-            </button>
 
             {/* Primary CTA */}
             <button 
@@ -243,26 +233,17 @@ export default function Header({ lang, setLang, isLightMode, onToggleTheme, onOp
             </div>
 
             {/* Mobile Utility Actions */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '8px' }}>
+            <div style={{ display: 'flex', gap: '8px', marginBottom: '8px' }}>
               {/* Language Switch */}
               <button
                 onClick={() => setLang(lang === 'pt' ? 'en' : 'pt')}
                 className="btn-secondary"
-                style={{ padding: '10px', fontSize: '0.85rem', justifyContent: 'center' }}
+                style={{ padding: '10px', fontSize: '0.85rem', justifyContent: 'center', flex: 1 }}
               >
                 <Globe size={15} />
                 <span>{lang === 'pt' ? 'English (EN)' : 'Português (PT)'}</span>
               </button>
 
-              {/* Theme Palette */}
-              <button
-                onClick={() => { setMobileNavOpen(false); onOpenThemeModal(); }}
-                className="btn-secondary"
-                style={{ padding: '10px', fontSize: '0.85rem', justifyContent: 'center' }}
-              >
-                <Palette size={15} color="var(--theme-accent)" />
-                <span>{lang === 'pt' ? 'Cores da Marca' : 'Color Palette'}</span>
-              </button>
             </div>
 
             {/* Big CTA */}

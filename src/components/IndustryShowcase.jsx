@@ -186,7 +186,7 @@ export default function IndustryShowcase({ lang, activeIndustry, onSelectIndustr
 
             <div className="browser-device-status-indicator">
               <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10b981', display: 'inline-block' }} />
-              <span>{lang === 'pt' ? 'PROTÓTIPO ATIVO' : 'LIVE DEMO'}</span>
+              <span>{t.livePrototypeBadge}</span>
             </div>
           </div>
 

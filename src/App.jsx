@@ -12,10 +12,10 @@ import ContactModal from './components/ContactModal';
 import Footer from './components/Footer';
 
 export default function App() {
-  const [lang, setLang] = useState('pt'); // Default to Portuguese ('pt')
-  const [isLightMode, setIsLightMode] = useState(true); // Default to Light Mode as main version
+  const [lang, setLang] = useState('pt');
+  const [isLightMode, setIsLightMode] = useState(true);
   const [activeIndustry, setActiveIndustry] = useState('restaurant');
-  const [isThemeModalOpen, setIsThemeModalOpen] = useState(false);
+  // const [isThemeModalOpen, setIsThemeModalOpen] = useState(false); // Internal dev tool — hidden from public
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const [currentTheme, setCurrentTheme] = useState({
@@ -124,7 +124,6 @@ export default function App() {
         setLang={setLang}
         isLightMode={isLightMode}
         onToggleTheme={handleToggleTheme}
-        onOpenThemeModal={() => setIsThemeModalOpen(true)}
         onOpenContactModal={() => setIsContactModalOpen(true)}
       />
 
@@ -172,14 +171,14 @@ export default function App() {
         onOpenContactModal={() => setIsContactModalOpen(true)}
       />
 
-      {/* Modals */}
-      <ThemeCustomizerModal
+      {/* ThemeCustomizerModal — internal dev tool, not shown to public visitors */}
+      {/* <ThemeCustomizerModal
         lang={lang}
         isOpen={isThemeModalOpen}
         onClose={() => setIsThemeModalOpen(false)}
         currentTheme={currentTheme}
         onSelectTheme={handleSelectTheme}
-      />
+      /> */}
 
       <ContactModal
         lang={lang}

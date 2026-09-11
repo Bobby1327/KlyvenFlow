@@ -1,19 +1,19 @@
 export const TRANSLATIONS = {
   pt: {
     // Header & Hero
-    navDemos: 'Protótipos',
+    navDemos: 'Soluções',
     navRoi: 'Calculadora de Custos',
     navComparison: 'O Que Muda',
-    navProposal: 'Montar Ideia',
-    bookConsultation: 'Falar com Desenvolvedor',
+    navProposal: 'Montar Proposta',
+    bookConsultation: 'Falar com a KlyvenFlow',
     testBrandColors: 'Mudar Cor Visual',
-    heroBadge: 'Feito à mão para comércios de bairro',
-    heroTitlePart1: 'Sistemas simples de pedido e agenda para',
-    heroTitlePart2: 'negócios locais.',
-    heroSub: 'Chega de pagar 27% de taxa para o iFood ou depender de sistemas lentos de terceiros. Criamos páginas rápidas, focadas no celular, para o seu cliente comprar ou agendar em menos de 30 segundos.',
-    heroCtaPrimary: 'Testar Protótipos Abaixo',
-    heroCtaSecondary: 'Ver quanto custaria para o meu negócio',
-    heroQuickLinks: 'Escolha um setor para testar o protótipo:',
+    heroBadge: 'Agência de Web Apps • Especialistas em Negócios Locais',
+    heroTitlePart1: 'Seu sistema de pedidos e agendamentos,',
+    heroTitlePart2: 'construído pela KlyvenFlow.',
+    heroSub: 'Criamos páginas rápidas e focadas no celular para restaurantes, salões, prestadores de serviço e lojas locais. Seu cliente compra ou agenda em menos de 30 segundos — sem comissão de plataforma.',
+    heroCtaPrimary: 'Ver Exemplos do Nosso Trabalho',
+    heroCtaSecondary: 'Montar minha proposta agora',
+    heroQuickLinks: 'Veja como ficaria para o seu setor:',
     
     // Metrics
     metricSavedCommissionTitle: 'Sua Margem no Bolso',
@@ -32,13 +32,13 @@ export const TRANSLATIONS = {
     metricHoursSub: 'O cliente agenda sozinho no sábado à noite enquanto você descansa.',
 
     // Showcase General
-    showcaseBadge: 'Protótipos que você pode mexer',
-    showcaseTitlePart1: 'Como funciona no',
-    showcaseTitlePart2: 'mundo real',
-    showcaseSub: 'Toque nos botões do protótipo abaixo como se estivesse no celular do seu cliente. É exatamente essa velocidade que eles vão sentir.',
+    showcaseBadge: 'Exemplos do Nosso Trabalho',
+    showcaseTitlePart1: 'Como funciona o sistema que',
+    showcaseTitlePart2: 'construímos para você',
+    showcaseSub: 'Explore os sistemas abaixo como se fosse seu cliente. É exatamente essa velocidade e experiência que eles vão ter.',
     keyProblemSolved: 'O que resolvemos para',
     quickStatsTitle: 'Métricas Reais',
-    livePrototypeBadge: 'PROTÓTIPO ATIVO',
+    livePrototypeBadge: 'EXEMPLO REAL',
 
     // Restaurant Demo
     restOpenStatus: 'Recebendo pedidos agora no WhatsApp',
@@ -186,14 +186,14 @@ export const TRANSLATIONS = {
     compOldSub: 'Lento, confuso e perde vendas',
     compNewTitle: 'Seu Web App Dedicado',
     compNewSub: '⚡ Rápido, direto e fácil para o cliente',
-    compFooterText: 'Quer um sistema simples rodando no seu negócio?',
-    compFooterSub: 'Nós desenhamos, desenvolvemos e colocamos no ar em poucos dias. Sem complicação técnica.',
+    compFooterText: 'Pronto para escalar a operação com tecnologia própria?',
+    compFooterSub: 'A KlyvenFlow entrega sua infraestrutura digital completa de forma ágil e sem fricção técnica ou taxas abusivas por transação.',
     compCta: 'Quero modernizar meu negócio',
 
     // Proposal Builder
-    propBadge: 'Calculador de ideias',
-    propTitle: 'Monte o pacote ideal para o seu negócio',
-    propSub: 'Selecione o modelo do seu negócio e as ferramentas que você precisa. O investimento começa a partir de R$ 799 e o valor final é definido após uma conversa rápida com a gente.',
+    propBadge: 'Configurador de Soluções',
+    propTitle: 'Configure sua solução empresarial personalizada',
+    propSub: 'Selecione o segmento e os módulos operacionais necessários. Projeções de investimento a partir de R$ 699, com validação técnica sob medida.',
     propStep1: '1. Modelo de Negócio',
     propStep2: '2. Ferramentas Desejadas',
     propStep3: '3. Prazo de entrega ideal',
@@ -260,19 +260,19 @@ export const TRANSLATIONS = {
   },
   en: {
     // Header & Hero
-    navDemos: 'Prototypes',
+    navDemos: 'Solutions',
     navRoi: 'Cost Calculator',
     navComparison: 'What Changes',
     navProposal: 'Build Proposal',
-    bookConsultation: 'Talk to Developer',
+    bookConsultation: 'Contact KlyvenFlow',
     testBrandColors: 'Change Theme Color',
-    heroBadge: 'Handcrafted for neighborhood shops',
-    heroTitlePart1: 'Simple ordering and booking tools for',
-    heroTitlePart2: 'local business.',
-    heroSub: 'Stop giving away 30% to delivery platforms or struggling with clunky booking software. We build fast, mobile-focused landing systems where your customers can order or book in under 30 seconds.',
-    heroCtaPrimary: 'Test Prototypes Below',
-    heroCtaSecondary: 'See what it costs for my shop',
-    heroQuickLinks: 'Select a category to test the preview:',
+    heroBadge: 'Web App Agency • Local Business Specialists',
+    heroTitlePart1: 'Your ordering and booking system,',
+    heroTitlePart2: 'built by KlyvenFlow.',
+    heroSub: 'We build fast, mobile-first pages for restaurants, salons, contractors and local shops. Your customers order or book in under 30 seconds — with zero platform commission.',
+    heroCtaPrimary: 'See Examples of Our Work',
+    heroCtaSecondary: 'Build my proposal now',
+    heroQuickLinks: 'See how it would look for your sector:',
     
     // Metrics
     metricSavedCommissionTitle: 'Your Profit Stays Yours',
@@ -291,13 +291,13 @@ export const TRANSLATIONS = {
     metricHoursSub: 'Clients book slot online on Saturday night while you are enjoying your weekend.',
 
     // Showcase General
-    showcaseBadge: 'Working Prototypes',
-    showcaseTitlePart1: 'How it works in the',
-    showcaseTitlePart2: 'real world',
-    showcaseSub: 'Interact with the demo previews below. This is exactly the speed and look your customer will feel on their phone.',
+    showcaseBadge: 'Examples of Our Work',
+    showcaseTitlePart1: 'How the system we build',
+    showcaseTitlePart2: 'works for you',
+    showcaseSub: 'Explore the demos below as if you were your own customer. This is exactly the speed and experience they will get.',
     keyProblemSolved: 'What we solve for',
     quickStatsTitle: 'Real Metrics',
-    livePrototypeBadge: 'LIVE DEMO',
+    livePrototypeBadge: 'REAL EXAMPLE',
 
     // Restaurant Demo
     restOpenStatus: 'Taking orders now directly via WhatsApp',
@@ -445,14 +445,14 @@ export const TRANSLATIONS = {
     compOldSub: 'Slow, clunky, loses orders',
     compNewTitle: 'Your Dedicated Web App',
     compNewSub: '⚡ Fast, direct and dead-simple for clients',
-    compFooterText: 'Need a simple system running in your business?',
-    compFooterSub: 'We design, build, and deploy it in days. No complex hosting headaches, no licensing fees.',
+    compFooterText: 'Ready to have your own system running in your business?',
+    compFooterSub: 'KlyvenFlow designs, builds, and deploys it in days. No complex hosting headaches, no abusive fees.',
     compCta: 'Get my direct web app',
 
     // Proposal Builder
-    propBadge: 'Scope calculator',
-    propTitle: 'Build your own custom feature package',
-    propSub: 'Select your business model and the features you need. Investment starts at $799 and the final price is set after a quick conversation about your specific requirements.',
+    propBadge: 'Build Your Proposal',
+    propTitle: 'Build your custom KlyvenFlow proposal',
+    propSub: 'Select your business model and the features you need. Investment starts at $699 and the final price is set after a quick conversation about your specific requirements.',
     propStep1: '1. Select Business Sector',
     propStep2: '2. Select Features Needed',
     propStep3: '3. Delivery timeline preference',

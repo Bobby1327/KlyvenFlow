@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArrowRight, Sparkles, Utensils, Scissors, Wrench, ShoppingBag, Dumbbell, Zap, MessageCircle, Mail } from 'lucide-react';
-import { TRANSLATIONS, INDUSTRIES } from '../data/showcaseData';
+import { ArrowRight, Sparkles, Zap, MessageCircle, Mail } from 'lucide-react';
+import { TRANSLATIONS } from '../data/showcaseData';
 
 export default function Hero({ lang, onOpenContactModal, onSelectIndustry }) {
   const t = TRANSLATIONS[lang];
@@ -11,21 +11,6 @@ export default function Hero({ lang, onOpenContactModal, onSelectIndustry }) {
     { label: t.metricHoursTitle, value: t.metricHoursValue, suffix: t.metricHoursSuffix, sub: t.metricHoursSub },
   ];
 
-  const getIndustryLabel = (ind) => {
-    if (lang === 'pt') return ind.namePt;
-    return ind.name;
-  };
-
-  const getIcon = (iconName) => {
-    switch (iconName) {
-      case 'Utensils': return Utensils;
-      case 'Scissors': return Scissors;
-      case 'Wrench': return Wrench;
-      case 'ShoppingBag': return ShoppingBag;
-      case 'Dumbbell': return Dumbbell;
-      default: return Utensils;
-    }
-  };
 
   return (
     <section style={{ padding: 'clamp(36px, 6vw, 56px) 16px clamp(28px, 4vw, 44px) 16px', position: 'relative', borderBottom: '1px solid var(--border-line)' }}>
@@ -106,41 +91,6 @@ export default function Hero({ lang, onOpenContactModal, onSelectIndustry }) {
           </span>
         </div>
 
-        {/* Industry Quick Selector */}
-        <div style={{ marginBottom: '40px', textAlign: 'center' }}>
-          <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-dim)', marginBottom: '12px', fontWeight: '700' }}>
-            {t.heroQuickLinks}
-          </div>
-          <div className="industry-quick-links" style={{ display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
-            {INDUSTRIES.map((item) => {
-              const IconComponent = getIcon(item.icon);
-              return (
-                <a
-                  key={item.id}
-                  href="#showcase"
-                  onClick={() => onSelectIndustry(item.id)}
-                  className="glass-card"
-                  style={{
-                    padding: '10px 20px',
-                    borderRadius: '6px',
-                    textDecoration: 'none',
-                    color: 'var(--text-main)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    fontWeight: '600',
-                    fontSize: '0.88rem',
-                    background: 'var(--bg-card)',
-                    border: '1px solid var(--border-line)'
-                  }}
-                >
-                  <IconComponent size={17} color={item.accentColor} />
-                  <span>{getIndustryLabel(item)}</span>
-                </a>
-              );
-            })}
-          </div>
-        </div>
 
         {/* Metric Cards Banner - Editorial Grid layout */}
         <div className="editorial-grid" style={{ background: 'var(--bg-card)', borderTop: '1px solid var(--border-line)', borderLeft: '1px solid var(--border-line)' }}>
