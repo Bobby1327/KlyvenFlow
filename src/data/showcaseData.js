@@ -452,7 +452,7 @@ export const TRANSLATIONS = {
     // Proposal Builder
     propBadge: 'Build Your Proposal',
     propTitle: 'Build your custom KlyvenFlow proposal',
-    propSub: 'Select your business model and the features you need. Investment starts at $699 and the final price is set after a quick conversation about your specific requirements.',
+    propSub: 'Select your business model and the features you need. Investment starts at $499 and the final price is set after a quick conversation about your specific requirements.',
     propStep1: '1. Select Business Sector',
     propStep2: '2. Select Features Needed',
     propStep3: '3. Delivery timeline preference',
