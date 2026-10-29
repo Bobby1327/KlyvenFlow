@@ -10,7 +10,7 @@ export default function PackageBuilder({ lang, onOpenContactModal }) {
   const [speed, setSpeed] = useState('standard'); // 'standard' | 'express'
   const [proposalSent, setProposalSent] = useState(false);
 
-  const BASE_PRICE = 499;
+  const BASE_PRICE = 424;
 
   const toggleFeature = (id) => {
     setSelectedFeatures(prev =>
