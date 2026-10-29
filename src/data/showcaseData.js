@@ -193,7 +193,7 @@ export const TRANSLATIONS = {
     // Proposal Builder
     propBadge: 'Configurador de Soluções',
     propTitle: 'Configure sua solução empresarial personalizada',
-    propSub: 'Selecione o segmento e os módulos operacionais necessários. Projeções de investimento a partir de R$ 594, com validação técnica sob medida.',
+    propSub: 'Selecione o segmento e os módulos operacionais necessários. Projeções de investimento a partir de R$ 699, com validação técnica sob medida.',
     propStep1: '1. Modelo de Negócio',
     propStep2: '2. Ferramentas Desejadas',
     propStep3: '3. Prazo de entrega ideal',
@@ -452,7 +452,7 @@ export const TRANSLATIONS = {
     // Proposal Builder
     propBadge: 'Build Your Proposal',
     propTitle: 'Build your custom KlyvenFlow proposal',
-    propSub: 'Select your business model and the features you need. Investment starts at $424 and the final price is set after a quick conversation about your specific requirements.',
+    propSub: 'Select your business model and the features you need. Investment starts at $499 and the final price is set after a quick conversation about your specific requirements.',
     propStep1: '1. Select Business Sector',
     propStep2: '2. Select Features Needed',
     propStep3: '3. Delivery timeline preference',
@@ -778,9 +778,9 @@ export const CASE_STUDIES = [
 ];
 
 export const PACKAGE_OPTIONS = [
-  { id: 'ordering', name: 'Painel de Pedidos Direto (Comida / Loja)', nameEn: 'Direct Ordering System (Food / Shop)', category: 'Core App', costEstimate: 85 },
-  { id: 'booking', name: 'Agenda Automática com Horários Livres', nameEn: '24/7 Self-Service Scheduling System', category: 'Core App', costEstimate: 85 },
-  { id: 'quote', name: 'Simulador de Cotação de Mão de Obra', nameEn: 'Automatic Cost Estimator Widget', category: 'Core App', costEstimate: 85 },
-  { id: 'loyalty', name: 'Cartão Fidelidade Digital (Acumular Selos)', nameEn: 'Digital Stamp Loyalty Card Module', category: 'Features', costEstimate: 85 },
-  { id: 'sms', name: 'Lembretes de Agenda Enviados pelo WhatsApp', nameEn: 'WhatsApp Booking Confirmation Alert', category: 'Features', costEstimate: 85 },
+  { id: 'ordering', name: 'Painel de Pedidos Direto (Comida / Loja)', nameEn: 'Direct Ordering System (Food / Shop)', category: 'Core App', costEstimate: 99 },
+  { id: 'booking', name: 'Agenda Automática com Horários Livres', nameEn: '24/7 Self-Service Scheduling System', category: 'Core App', costEstimate: 99 },
+  { id: 'quote', name: 'Simulador de Cotação de Mão de Obra', nameEn: 'Automatic Cost Estimator Widget', category: 'Core App', costEstimate: 99 },
+  { id: 'loyalty', name: 'Cartão Fidelidade Digital (Acumular Selos)', nameEn: 'Digital Stamp Loyalty Card Module', category: 'Features', costEstimate: 99 },
+  { id: 'sms', name: 'Lembretes de Agenda Enviados pelo WhatsApp', nameEn: 'WhatsApp Booking Confirmation Alert', category: 'Features', costEstimate: 99 },
 ];
